@@ -65,7 +65,7 @@ public class UnidadTrabajo {
     /**
      * Accesor peso de la UT en la evaluación
      */
-    public double getPesoUnidad() {
+    public int getPesoUnidad() {
         return this.pesoUnidad;
     }
 
@@ -104,10 +104,12 @@ public class UnidadTrabajo {
      * Se clonan también los objetos que incluya
      */
     public UnidadTrabajo clonar() {
-         //TODO
+        UnidadTrabajo clon;
+        clon = new UnidadTrabajo("Copia de " + getNombre(), getFechaFin(), 
+                                  getPesoUnidad(), getPonderacion());
          
          
-        return null;
+        return clon;
     }
 
     /**
