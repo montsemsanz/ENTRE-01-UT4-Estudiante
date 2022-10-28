@@ -107,8 +107,6 @@ public class UnidadTrabajo {
         UnidadTrabajo clon;
         clon = new UnidadTrabajo("Copia de " + getNombre(), getFechaFin(), 
                                   getPesoUnidad(), getPonderacion());
-         
-         
         return clon;
     }
 
