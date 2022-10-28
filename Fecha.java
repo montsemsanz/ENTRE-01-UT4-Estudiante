@@ -3,6 +3,7 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
 /**
+ * @author - Almudena Iparraguirre
  * Representa un fecha
  */
 public class Fecha {
