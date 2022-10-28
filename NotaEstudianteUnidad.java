@@ -13,8 +13,8 @@ public class NotaEstudianteUnidad {
      * Constructor
      */
     public NotaEstudianteUnidad(UnidadTrabajo unidad, double notaControles,
-                                double notaActividades,
-                                double notaProyectos) {
+    double notaActividades,
+    double notaProyectos) {
         this.unidad = unidad;
         this.notaControles = notaControles;
         this.notaActividades = notaActividades;
@@ -82,23 +82,22 @@ public class NotaEstudianteUnidad {
      * en cuenta la ponderación de los instrumentos de evaluación
      */
     public double calcularNotaUnidad() {
-         //TODO
-         
-         
-         return 0;
-
-
+        PonderacionInstrumentos ponderacion = unidad.getPonderacion();
+        return notaControles * ponderacion.getControles() / 100 +
+        notaActividades * ponderacion.getActividades() / 100 +
+        notaProyectos * ponderacion.getProyectos() / 100;
     }
 
     /**
      * Representación textual del objeto (ver enunciado)
      */
     public String toString() {
-        //TODO
-        
-        
-        
-        return null;
+        String str = String.format("Controles: %6.2f    Actividades clase: %6.2f    " + 
+                        "Proyectos: %6.2f \nNota final obtenida en Unidad de trabajo: %6.2f \n",
+                    getNotaControles(), getNotaActividades(), getNotaProyectos(),
+                    calcularNotaUnidad());
+        // str += String.format("+",repeat(80));  NO SE COMO HACER EL REPEAT
+        return str;
     }
 
     /**
@@ -109,6 +108,5 @@ public class NotaEstudianteUnidad {
 
     }
 
-   
 
 }
