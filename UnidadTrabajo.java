@@ -16,8 +16,14 @@ public class UnidadTrabajo {
      */
     public UnidadTrabajo(String nombre, int dia, int mes, int year, int peso,
                          int controles, int actividades, int proyectos) {
-       //TODO
-       
+       nombre = nombre;
+       dia = dia;
+       mes = mes;
+       year = year;
+       peso = peso;
+       controles = controles;
+       actividades = actividades;
+       proyectos = proyectos;
        
     }
 
