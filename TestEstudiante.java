@@ -1,4 +1,7 @@
 /**
+ * 
+ * @author (Jagoba Inda)
+ * 
  * Prueba del todas las clases
  */
 public class TestEstudiante {
