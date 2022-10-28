@@ -16,9 +16,10 @@ public class UnidadTrabajo {
      */
     public UnidadTrabajo(String nombre, int dia, int mes, int year, int peso,
                          int controles, int actividades, int proyectos) {
-       //TODO
-       
-       
+       this.nombre = nombre;
+       fechaFin = new Fecha(0, 0, 0);
+       pesoUnidad = peso;
+       ponderacion = new PonderacionInstrumentos(0, 0, 0);
     }
 
     /**
