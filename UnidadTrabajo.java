@@ -95,10 +95,10 @@ public class UnidadTrabajo {
      * que la recibida como parámetro
      */
     public boolean anteriorA(UnidadTrabajo unidad) {
-        //TODO
-        
-        
-        return true;
+        if (fechaFin.antesQue(unidad.getFechaFin())){
+            return true;
+        }    
+        return false;
     }
 
     /**
@@ -107,7 +107,7 @@ public class UnidadTrabajo {
      * Se clonan también los objetos que incluya
      */
     public UnidadTrabajo clonar() {
-         //TODO
+        
          
          
         return null;
