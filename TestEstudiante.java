@@ -1,5 +1,6 @@
 /**
  * Prueba del todas las clases
+ * @author Aimar Urquizu Diego
  */
 public class TestEstudiante {
 

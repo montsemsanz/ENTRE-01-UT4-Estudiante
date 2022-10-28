@@ -4,6 +4,7 @@
  * Toda UT además del nombre,  fecha de finalización,
  * y peso en la evaluación tiene asociado un objeto ponderación
  * que incluye las ponderaciones usadas para cada instrumento de evaluación
+ * @author (Aimar Urquizu Diego)
  */
 public class UnidadTrabajo {
     private String nombre;
@@ -16,8 +17,11 @@ public class UnidadTrabajo {
      */
     public UnidadTrabajo(String nombre, int dia, int mes, int year, int peso,
                          int controles, int actividades, int proyectos) {
-       //TODO
-       
+       this.nombre = nombre;
+       fechaFin = new Fecha(dia, mes, year);
+       pesoUnidad = peso;
+       ponderacion = new PonderacionInstrumentos(controles, actividades, 
+                                            proyectos);
        
     }
 
