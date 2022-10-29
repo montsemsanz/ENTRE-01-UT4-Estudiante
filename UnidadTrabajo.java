@@ -7,29 +7,65 @@
  */
 public class UnidadTrabajo {
     private String nombre;
-    private Fecha fechaFin;
+    private Fecha fechaFin; //atributo con TD la Clase Fecha
     private int pesoUnidad;
-    private PonderacionInstrumentos ponderacion;
+    private PonderacionInstrumentos ponderacion; //atributo con TD la Clase Ponderacion..
 
     /**
      * Constructor 1
      */
     public UnidadTrabajo(String nombre, int dia, int mes, int year, int peso,
-                         int controles, int actividades, int proyectos) {
-       //TODO
-       
-       
+    int controles, int actividades, int proyectos) {
+        this.nombre = nombre;
+        fechaFin = new Fecha(dia,mes,year); //referencia a un metodo de la clase Fecga
+        pesoUnidad = peso;
+        ponderacion = new PonderacionInstrumentos(controles, actividades, proyectos);
+        //ATR tenga TipoDato una Clase(Server), para definir sus valores 
+        //creo el objeto-(¿metódo?) que necesite y pongo (si hay) los PARAM de la Clase Cliente
+
     }
 
     /**
      * Constructor 2
      */
     public UnidadTrabajo(String nombre, Fecha fechaFin, int peso,
-                         PonderacionInstrumentos ponderacion) {
+    PonderacionInstrumentos ponderacion) {
         this.nombre = nombre;
-        this.fechaFin = fechaFin;
+        this.fechaFin = fechaFin; //ATB fechaFin = Param de TD (Fecha) fechaFin
         this.pesoUnidad = peso;
         this.ponderacion = ponderacion;
+    }
+
+    /**
+     * - Da true si la UT actual ha finalizado antes que la recibida como parámetro
+     */
+    public boolean AnteriorA(Fecha queFecha) {
+        return this.fechaFin != queFecha; //creo que se le debe llamar fechaFin igualmente
+    }
+
+    // /**
+    // * Devuelve una copia de la UT actual con el  nombre: 
+    // * ("Copia de " + nombre de la UT actual)
+    // * Se clonan también los objetos que incluya.
+    // */
+    // public void clonar() {
+
+    // }
+
+    /**
+     * 
+     */
+    public void print() {
+        System.out.println("Unidad de trabajo- Objetos y clases");
+
+        System.out.print("Fecha finalizacion: " + fechaFin + "|");
+        System.out.println("Peso UT: " + pesoUnidad + "%");
+
+        System.out.println("Ponderación Instrumentos Evaluación");
+
+        System.out.println("Controles: " + ponderacion.getControles() + "%");
+        System.out.println("Actividades: " + ponderacion.getActividades() + "%");
+        System.out.println("Proyectos: " + ponderacion.getProyectos() + "%");
     }
 
     /**
@@ -94,8 +130,7 @@ public class UnidadTrabajo {
      */
     public boolean anteriorA(UnidadTrabajo unidad) {
         //TODO
-        
-        
+
         return true;
     }
 
@@ -105,9 +140,8 @@ public class UnidadTrabajo {
      * Se clonan también los objetos que incluya
      */
     public UnidadTrabajo clonar() {
-         //TODO
-         
-         
+        //TODO
+
         return null;
     }
 
@@ -116,20 +150,18 @@ public class UnidadTrabajo {
      */
     public String toString() {
         String str = "Unidad de trabajo - " + this.nombre +
-                "\n\tFecha finalización: " + this.getFechaFin().toString() +
-                " | Peso UT: " + this.pesoUnidad + "%\n";
+            "\n\tFecha finalización: " + this.getFechaFin().toString() +
+            " | Peso UT: " + this.pesoUnidad + "%\n";
         str += this.ponderacion;
         return str;
     }
 
-    /**
-     * Este método se ha incluido solo para testear la clase más fácilmente
-     */
-    public void print() {
-        System.out.println(this.toString());
+    // /**
+    // * Este método se ha incluido solo para testear la clase más fácilmente
+    // */
+    // public void print() {
+    // System.out.println(this.toString());
 
-    }
+    // }
 
-
-     
 }
