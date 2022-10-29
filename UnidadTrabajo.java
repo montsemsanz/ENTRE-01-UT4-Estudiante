@@ -113,7 +113,7 @@ public class UnidadTrabajo {
      */
     public UnidadTrabajo clonar() {
         
-        return new UnidadTrabajo(this.nombre, this.fechaFin, this.pesoUnidad, this.ponderacion);
+        return new UnidadTrabajo("Copia de " + this.nombre, this.fechaFin, this.pesoUnidad, this.ponderacion);
          
         //return null;
     }
