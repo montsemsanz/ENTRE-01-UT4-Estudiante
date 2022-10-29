@@ -1,6 +1,6 @@
 /**
  * 
- * @author - Cristina López Lusarreta
+ * @author - Cristina López Lusarreta -
  * 
  * Describe a un estudiante
  * Todo estudiante tiene un nombre

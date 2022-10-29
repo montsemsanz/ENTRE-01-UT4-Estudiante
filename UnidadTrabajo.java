@@ -97,10 +97,13 @@ public class UnidadTrabajo {
      * que la recibida como parámetro
      */
     public boolean anteriorA(UnidadTrabajo unidad) {
-        //TODO
+        //UnidadTrabajo unidadIntroducida = new UnidadTrabajo(unidad.nombre, unidad.fechaFin, 
+                                                            //unidad.pesoUnidad, unidad.ponderacion);      
+        
+        return fechaFin.antesQue(unidad.fechaFin);
         
         
-        return true;
+        //return true;
     }
 
     /**
