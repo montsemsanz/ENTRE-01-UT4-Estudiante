@@ -17,9 +17,9 @@ public class UnidadTrabajo {
     public UnidadTrabajo(String nombre, int dia, int mes, int year, int peso,
     int controles, int actividades, int proyectos) {
         this.nombre = nombre;
-        fechaFin = new Fecha(dia,mes,year); //referencia a un metodo de la clase Fecga
-        pesoUnidad = peso;
-        ponderacion = new PonderacionInstrumentos(controles, actividades, proyectos);
+        this.fechaFin = new Fecha(dia,mes,year); //referencia a un metodo de la clase Fecga
+        this.pesoUnidad = peso;
+        this.ponderacion = new PonderacionInstrumentos(controles, actividades, proyectos);
         //ATR tenga TipoDato una Clase(Server), para definir sus valores 
         //creo el objeto-(¿metódo?) que necesite y pongo (si hay) los PARAM de la Clase Cliente
 
@@ -34,38 +34,6 @@ public class UnidadTrabajo {
         this.fechaFin = fechaFin; //ATB fechaFin = Param de TD (Fecha) fechaFin
         this.pesoUnidad = peso;
         this.ponderacion = ponderacion;
-    }
-
-    /**
-     * - Da true si la UT actual ha finalizado antes que la recibida como parámetro
-     */
-    public boolean AnteriorA(Fecha queFecha) {
-        return this.fechaFin != queFecha; //creo que se le debe llamar fechaFin igualmente
-    }
-
-    // /**
-    // * Devuelve una copia de la UT actual con el  nombre: 
-    // * ("Copia de " + nombre de la UT actual)
-    // * Se clonan también los objetos que incluya.
-    // */
-    // public void clonar() {
-
-    // }
-
-    /**
-     * 
-     */
-    public void print() {
-        System.out.println("Unidad de trabajo- Objetos y clases");
-
-        System.out.print("Fecha finalizacion: " + fechaFin + "|");
-        System.out.println("Peso UT: " + pesoUnidad + "%");
-
-        System.out.println("Ponderación Instrumentos Evaluación");
-
-        System.out.println("Controles: " + ponderacion.getControles() + "%");
-        System.out.println("Actividades: " + ponderacion.getActividades() + "%");
-        System.out.println("Proyectos: " + ponderacion.getProyectos() + "%");
     }
 
     /**
@@ -99,7 +67,7 @@ public class UnidadTrabajo {
     /**
      * Accesor peso de la UT en la evaluación
      */
-    public double getPesoUnidad() {
+    public int getPesoUnidad() { //le cambie double por int (revertir)
         return this.pesoUnidad;
     }
 
@@ -128,10 +96,19 @@ public class UnidadTrabajo {
      * Devuelve true si la UT actual ha finalizado antes
      * que la recibida como parámetro
      */
-    public boolean anteriorA(UnidadTrabajo unidad) {
-        //TODO
+    public boolean anteriorA(UnidadTrabajo unidad) { //Que comparar dos objetos unidad su fecha
+        UnidadTrabajo unidadNueva = 
+            new UnidadTrabajo(unidad.getNombre() , unidad.getFechaFin() , unidad.getPesoUnidad() ,
+                unidad.getPonderacion());
+                
+        Fecha fechaUTNueva = unidad.getFechaFin();
 
-        return true;
+        // if(this.fechaFin.antesQue(unidadNueva.fechaFin)){
+            // return true;
+        // }
+        // return true;
+        
+        return (this.fechaFin.antesQue(fechaUTNueva));
     }
 
     /**
@@ -156,12 +133,12 @@ public class UnidadTrabajo {
         return str;
     }
 
-    // /**
-    // * Este método se ha incluido solo para testear la clase más fácilmente
-    // */
-    // public void print() {
-    // System.out.println(this.toString());
+    /**
+     * Este método se ha incluido solo para testear la clase más fácilmente
+     */
+    public void print() {
+        System.out.println(this.toString());
 
-    // }
+    }
 
 }
