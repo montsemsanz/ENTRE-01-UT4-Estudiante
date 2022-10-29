@@ -97,10 +97,9 @@ public class UnidadTrabajo {
      * que la recibida como parámetro
      */
     public boolean anteriorA(UnidadTrabajo unidad) {
-        //TODO
         
+        return getFechaFin().antesQue(fechaFin);
         
-        return true;
     }
 
     /**
