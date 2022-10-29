@@ -1,4 +1,7 @@
 /**
+ * 
+ * @author - Cristina López Lusarreta
+ * 
  * Un objeto de esta clase está asociado con una unidad de trabajo
  * y guarda la nota que un estudiante ha sacado en los controles, actividades y
  * proyectos de esa unidad

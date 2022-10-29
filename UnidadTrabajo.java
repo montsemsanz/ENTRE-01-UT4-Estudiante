@@ -1,4 +1,7 @@
 /**
+ * 
+ * @author - Cristina López Lusarreta
+ * 
  * Un objeto de esta clase guarda información de una unidad
  * de trabajo
  * Toda UT además del nombre,  fecha de finalización,
@@ -16,9 +19,10 @@ public class UnidadTrabajo {
      */
     public UnidadTrabajo(String nombre, int dia, int mes, int year, int peso,
                          int controles, int actividades, int proyectos) {
-       //TODO
-       
-       
+       // this.nombre = nombre;
+       // this.fechaFin = new Fecha(dia, mes, year);
+       // this.ponderacion = new PonderacionInstrumentos(controles, actividades, proyectos);
+       // this.pesoUnidad = peso;
     }
 
     /**

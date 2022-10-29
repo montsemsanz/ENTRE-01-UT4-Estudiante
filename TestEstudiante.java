@@ -1,4 +1,7 @@
 /**
+ * 
+ * @author - Cristina López Lusarreta
+ * 
  * Prueba del todas las clases
  */
 public class TestEstudiante {
