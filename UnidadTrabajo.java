@@ -108,7 +108,7 @@ public class UnidadTrabajo {
      */
     public UnidadTrabajo clonar() {
         String result = "Copia de ";
-        result += nombre.toString();
+        result += nombre;
         System.out.println(result.toString());
         return null;
     }

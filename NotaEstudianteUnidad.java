@@ -78,17 +78,26 @@ public class NotaEstudianteUnidad {
         this.notaProyectos = notaProyectos;
     }
 
-    // /**
-     // * Calcula y devuelve la nota obtenida en la UT teniendo
-     // * en cuenta la ponderación de los instrumentos de evaluación
-     // */
-    // public double calcularNotaUnidad() {
-         // double notaUnidad = 0;
-         // notaUnidad = getControles() / 100 * notaControles;
-         // return notaUnidad;
-    // }
-
     /**
+     * Calcula y devuelve la nota obtenida en la UT teniendo
+     * en cuenta la ponderación de los instrumentos de evaluación
+     */
+    public double calcularNotaUnidad() {
+        double notaPondControl;
+        double notaPondActividades;
+        double notaPondProyecto;
+        double notaTotal;
+         
+        notaPondControl = notaControles * 70 / 100;
+        notaPondActividades =  notaActividades * 10 / 100;
+        notaPondProyecto = notaProyectos * 20 / 100;
+         
+        notaTotal = notaPondControl + notaPondActividades + notaPondProyecto;
+         
+        return notaTotal;
+    }
+
+        /**
      * Representación textual del objeto (ver enunciado)
      */
     public String toString() {
@@ -97,7 +106,7 @@ public class NotaEstudianteUnidad {
         result += "Controles: " + notaControles + "\n";
         result += "Actividades clase: " + notaActividades + "\n";
         result += "Proyectos: " + notaProyectos + "\n";
-        result += "Nota final obtenida en Unidad de Trabajo: ";
+        result += "Nota final obtenida en Unidad de Trabajo: " + calcularNotaUnidad();
         return result;        
     }
 
