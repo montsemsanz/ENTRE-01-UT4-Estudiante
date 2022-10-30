@@ -108,22 +108,15 @@ public class UnidadTrabajo {
      */
     public UnidadTrabajo clonar() {
         String result = "Copia de ";
-        result += this.nombre;
-        result += "\n";
-        result += this.getFechaFin();
-        result += "\n";
-        result += this.pesoUnidad;
-        result += "\n";
-        result += this.ponderacion;
-        result += "\n";
-        System.out.println(result);
+        result += nombre.toString();
+        System.out.println(result.toString());
         return null;
     }
 
     /**
      * Representación textual de la UT
      */
-        public String toString() {
+    public String toString() {
         String str = "Unidad de trabajo - " + this.nombre +
             "\n\tFecha finalización: " + this.getFechaFin().toString() +
             " | Peso UT: " + this.pesoUnidad + "%\n";
