@@ -9,7 +9,7 @@ public class NotaEstudianteUnidad {
     private double notaControles;
     private double notaActividades;
     private double notaProyectos;
-
+    
     /**
      * Constructor
      */
@@ -88,9 +88,9 @@ public class NotaEstudianteUnidad {
         double notaPondProyecto;
         double notaTotal;
          
-        notaPondControl = notaControles * 70 / 100;
-        notaPondActividades =  notaActividades * 10 / 100;
-        notaPondProyecto = notaProyectos * 20 / 100;
+        notaPondControl = notaControles / 100 * unidad.getPonderacion().getControles();
+        notaPondActividades =  notaActividades / 100 * unidad.getPonderacion().getActividades();
+        notaPondProyecto = notaProyectos / 100 * unidad.getPonderacion().getProyectos();
          
         notaTotal = notaPondControl + notaPondActividades + notaPondProyecto;
          
@@ -106,7 +106,8 @@ public class NotaEstudianteUnidad {
         result += "Controles: " + notaControles + "\n";
         result += "Actividades clase: " + notaActividades + "\n";
         result += "Proyectos: " + notaProyectos + "\n";
-        result += "Nota final obtenida en Unidad de Trabajo: " + calcularNotaUnidad();
+        result += "Nota final obtenida en Unidad de Trabajo: " + calcularNotaUnidad() + "\n";
+        result += "-".repeat(80);
         return result;        
     }
 
