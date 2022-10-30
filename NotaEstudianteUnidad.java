@@ -81,11 +81,9 @@ public class NotaEstudianteUnidad {
      * Calcula y devuelve la nota obtenida en la UT teniendo
      * en cuenta la ponderación de los instrumentos de evaluación
      */
-    public double calcularNotaUnidad() {
-         //TODO
-         
-         
-         return 0;
+    public double calcularNotaUnidad(PonderacionInstrumentos porcentaje) {
+        
+         return getNotaControles() * porcentaje.getControles() + getNotaProyectos() * porcentaje.getProyectos() + getNotaActividades() * porcentaje.getActividades();
 
 
     }
