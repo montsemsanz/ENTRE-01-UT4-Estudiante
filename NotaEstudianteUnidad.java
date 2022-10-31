@@ -83,23 +83,21 @@ public class NotaEstudianteUnidad {
      * en cuenta la ponderación de los instrumentos de evaluación
      */
     public double calcularNotaUnidad() {
-         //TODO
-         
-         
-         return 0;
-
-
+         // Sumar las notas, ya contienen el porcentaje incluido
+         return notaControles + notaActividades + notaProyectos;
     }
 
     /**
      * Representación textual del objeto (ver enunciado)
      */
     public String toString() {
-        //TODO
-        
-        
-        
-        return null;
+        // Falta arreglarlo. Error
+        return "Unidad de trabajo - " + this.unidad +
+                "\n        Fecha finalicación: " + toString() + " | Peso UT: " +
+                getPesoUnidad() + "%" + "\nPonderación Instrumentos Evaluación" +
+                "Controles = " + controles.getControles() + "%" + 
+                "\nActividades = " + actividades.getActividades() + "%" +
+                "\nProyectos = " + proyectos.getProyectos() + "%";
     }
 
     /**
