@@ -104,7 +104,7 @@ public class NotaEstudianteUnidad {
         str += "-".repeat(80);
         return str;
     }
-
+    
     /**
      * Este método se ha incluido solo para testear la clase más fácilmente
      */
