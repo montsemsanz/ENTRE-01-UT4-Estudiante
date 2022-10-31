@@ -84,20 +84,22 @@ public class NotaEstudianteUnidad {
      * Calcula y devuelve la nota obtenida en la UT teniendo
      * en cuenta la ponderación de los instrumentos de evaluación
      */
-    public double calcularNotaUnidad(NotaEstudianteUnidad NotaUT) {
+    public double calcularNotaUnidad() {
 
-        NotaEstudianteUnidad NuevaNota = new NotaEstudianteUnidad(NotaUT.getUnidad() , 
-                NotaUT.getNotaControles() , NotaUT.getNotaActividades() , NotaUT.getNotaProyectos());
+        // UnidadTrabajo nota_controles =  unidad.getControles();
+        //tengo que obtener el int de getControles en PInst
 
-        double notaControles = NotaUT.getNotaControles();
+        int ponderacionControles = (unidad.getPonderacion().getControles())/10;
 
-        double notaActividades =  NotaUT.getNotaActividades();
+        int ponderacionActividades = (unidad.getPonderacion().getActividades())/10;
 
-        double notaProyectos =  NotaUT.getNotaProyectos();
+        int ponderacionProyectos = (unidad.getPonderacion().getProyectos())/10;
 
-        return (notaControles + notaActividades + notaProyectos)/3;
+        return ((notaControles * ponderacionControles + 
+            notaActividades * ponderacionActividades + notaProyectos * ponderacionProyectos)/10);
 
     }
+
     /**
      * Representación textual del objeto (ver enunciado)
      */
@@ -120,6 +122,5 @@ public class NotaEstudianteUnidad {
         System.out.println(this.toString());
 
     }
-
 
 }
