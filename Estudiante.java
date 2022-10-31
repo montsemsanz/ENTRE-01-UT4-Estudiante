@@ -114,8 +114,8 @@ public class Estudiante {
        }
        else {
            sumaA = (notaA.getUnidad().getPesoUnidad() * notaA.calcularNotaUnidad()) / 100;
-           sumaB = (notaA.getUnidad().getPesoUnidad() * notaA.calcularNotaUnidad()) / 100;
-           sumaC = (notaA.getUnidad().getPesoUnidad() * notaA.calcularNotaUnidad()) / 100;
+           sumaB = (notaB.getUnidad().getPesoUnidad() * notaA.calcularNotaUnidad()) / 100;
+           sumaC = (notaC.getUnidad().getPesoUnidad() * notaA.calcularNotaUnidad()) / 100;
        }
        return sumaA + sumaB + sumaC;
     }
@@ -134,7 +134,7 @@ public class Estudiante {
            str += "No es posible calcular su nota final de evaluación, faltan notas por registrar.\n";
        }
        else {
-           str += "Nota final de evaluación: " + calcularNotaFinalEstudiante() + "\n";
+           str += String.format("Nota final de evaluación: %4.2f\n", calcularNotaFinalEstudiante());
        }
        str += "=".repeat(60) + "\n\n\n";
        

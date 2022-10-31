@@ -87,8 +87,8 @@ public class NotaEstudianteUnidad {
     public double calcularNotaUnidad() {
         PonderacionInstrumentos pond = unidad.getPonderacion();
         double notaUnidad = ((getNotaControles() * pond.getControles()) / 100) +
-        ((getNotaActividades() * pond.getActividades()) / 100) +
-        ((getNotaProyectos() * pond.getProyectos()) / 100);
+                            ((getNotaActividades() * pond.getActividades()) / 100) +
+                            ((getNotaProyectos() * pond.getProyectos()) / 100);
         return notaUnidad;
     }
 
