@@ -97,6 +97,7 @@ public class NotaEstudianteUnidad {
      */
     public String toString() {
         String str = "";
+        str += unidad.toString();
         str += String.format("Controles: %6.2f", getNotaControles());
         str += String.format("    Actividades de clase: %6.2f", getNotaActividades());
         str += String.format("    Proyectos: %6.2f\n", getNotaProyectos());
