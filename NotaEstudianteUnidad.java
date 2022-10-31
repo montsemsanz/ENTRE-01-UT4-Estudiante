@@ -4,17 +4,19 @@
  * proyectos de esa unidad
  */
 public class NotaEstudianteUnidad {
-    private UnidadTrabajo unidad;
+    private UnidadTrabajo unidad; //ATR "unidad" TD Clase UT
     private double notaControles;
     private double notaActividades;
     private double notaProyectos;
+
+    //estos 3 ATR relacionados a Clase Ponderacion, se llega objeto UT "ponderacion"
 
     /**
      * Constructor
      */
     public NotaEstudianteUnidad(UnidadTrabajo unidad, double notaControles,
-                                double notaActividades,
-                                double notaProyectos) {
+    double notaActividades,
+    double notaProyectos) {
         this.unidad = unidad;
         this.notaControles = notaControles;
         this.notaActividades = notaActividades;
@@ -76,29 +78,39 @@ public class NotaEstudianteUnidad {
     public void setNotaProyectos(double notaProyectos) {
         this.notaProyectos = notaProyectos;
     }
+    //aki lo ya dado
 
     /**
      * Calcula y devuelve la nota obtenida en la UT teniendo
      * en cuenta la ponderación de los instrumentos de evaluación
      */
-    public double calcularNotaUnidad() {
-         //TODO
-         
-         
-         return 0;
+    public double calcularNotaUnidad(NotaEstudianteUnidad NotaUT) {
 
+        NotaEstudianteUnidad NuevaNota = new NotaEstudianteUnidad(NotaUT.getUnidad() , 
+                NotaUT.getNotaControles() , NotaUT.getNotaActividades() , NotaUT.getNotaProyectos());
+
+        double notaControles = NotaUT.getNotaControles();
+
+        double notaActividades =  NotaUT.getNotaActividades();
+
+        double notaProyectos =  NotaUT.getNotaProyectos();
+
+        return (notaControles + notaActividades + notaProyectos)/3;
 
     }
-
     /**
      * Representación textual del objeto (ver enunciado)
      */
     public String toString() {
-        //TODO
-        
-        
-        
-        return null;
+        String str = unidad.toString(); //llamamos el metodo toString de la Clase UT
+
+        str += System.out.printf("Controles: %3.2f", getNotaControles());
+
+        str += System.out.printf("Actividades clase: %4.2f", getNotaActividades());
+
+        str += System.out.printf("Proyectos: %3.2f", this.getNotaProyectos());
+
+        return str;
     }
 
     /**
@@ -109,6 +121,5 @@ public class NotaEstudianteUnidad {
 
     }
 
-   
 
 }

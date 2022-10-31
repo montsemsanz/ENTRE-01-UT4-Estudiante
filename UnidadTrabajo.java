@@ -97,18 +97,17 @@ public class UnidadTrabajo {
      * que la recibida como parámetro
      */
     public boolean anteriorA(UnidadTrabajo unidad) { //Que comparar dos objetos unidad su fecha
-        UnidadTrabajo unidadNueva = 
-            new UnidadTrabajo(unidad.getNombre() , unidad.getFechaFin() , unidad.getPesoUnidad() ,
+        UnidadTrabajo unidadNueva =  // Crear variable con TDato UT, 
+        new UnidadTrabajo(unidad.getNombre() , unidad.getFechaFin() , unidad.getPesoUnidad() , //creo objeto UT y 
+                                                                                                //le asigno sus valores 
+                                                                                                //van a ser (los que tenga el objeto UT creado por usuario)
                 unidad.getPonderacion());
-                
-        Fecha fechaUTNueva = unidad.getFechaFin();
 
-        // if(this.fechaFin.antesQue(unidadNueva.fechaFin)){
-            // return true;
-        // }
-        // return true;
-        
-        return (this.fechaFin.antesQue(fechaUTNueva));
+        Fecha fechaUTNueva = unidad.getFechaFin(); //hago variable local separando el dato de la fecha del nuevo objeto "unidad" del resto
+
+        return (this.fechaFin.antesQue(fechaUTNueva)); //utilizo el met de la Clasae fecha "antesQue()" llamandolo con el ATB fecha de este objeto UT y lo comparo
+                                                        //en forma de PARAM con el objeto unidadNueva, como el met "antesQue()" es booleano lo que salga de ahi
+                                                        // me devuelve aqui ya sea T o F. (Es decir la evaluacion se hace en el otro met)// return true;
     }
 
     /**
