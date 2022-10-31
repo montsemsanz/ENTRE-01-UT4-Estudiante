@@ -1,4 +1,6 @@
 /**
+ * @author Danna Cielo Cardenas Portugal
+ * 
  * Prueba del todas las clases
  */
 public class TestEstudiante {

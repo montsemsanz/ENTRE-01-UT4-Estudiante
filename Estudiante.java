@@ -1,4 +1,6 @@
 /**
+ * @author Danna Cielo Cardenas Portugal
+ * 
  * Describe a un estudiante
  * Todo estudiante tiene un nombre
  * y guarda las 3 notas que ha sacado en cada una de las tres unidades de

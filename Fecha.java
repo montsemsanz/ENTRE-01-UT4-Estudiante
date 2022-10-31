@@ -3,6 +3,8 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
 /**
+ * @author Danna Cielo Cardenas Portugal
+ * 
  * Representa un fecha
  */
 public class Fecha {

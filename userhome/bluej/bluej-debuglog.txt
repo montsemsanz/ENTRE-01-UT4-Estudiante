@@ -1,0 +1,31 @@
+BlueJ run started: Thu Oct 27 23:02:06 CEST 2022
+BlueJ version 5.0.3
+Java version 11.0.14.1
+JavaFX version 11.0.13.1+1
+Virtual machine: OpenJDK 64-Bit Server VM 11.0.14.1+1 (Eclipse Adoptium)
+Running on: Windows 10 10.0 (amd64)
+Java Home: C:\Program Files\bluej\jdk
+----
+Detected language "spanish" based on iso639-2 code "spa"
+Internal error: Unable to load frame labels file: C:\Program Files\bluej\lib\spanish\frame-labels
+Opening project: C:\Users\Danna\Programación\Estudiante\ENTRE-01-UT4-Estudiante
+1666904529394: Listening for JDWP connection on address: javadebug
+Connected to debug VM via dt_shmem transport...
+java.io.FileNotFoundException while reading import cache: userhome\bluej\import-cache.xml (El sistema no puede encontrar el archivo especificado)
+Communication with debug VM fully established.
+====
+
+====
+BlueJ run started: Sun Oct 30 19:31:20 CET 2022
+BlueJ version 5.0.3
+Java version 11.0.14.1
+JavaFX version 11.0.13.1+1
+Virtual machine: OpenJDK 64-Bit Server VM 11.0.14.1+1 (Eclipse Adoptium)
+Running on: Windows 10 10.0 (amd64)
+Java Home: C:\Program Files\bluej\jdk
+----
+Internal error: Unable to load frame labels file: C:\Program Files\bluej\lib\spanish\frame-labels
+Opening project: C:\Users\Danna\Programación\Estudiante\ENTRE-01-UT4-Estudiante
+1667154682789: Listening for JDWP connection on address: javadebug
+Connected to debug VM via dt_shmem transport...
+Communication with debug VM fully established.

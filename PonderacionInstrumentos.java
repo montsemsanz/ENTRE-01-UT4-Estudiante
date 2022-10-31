@@ -1,4 +1,6 @@
 /**
+ * @author Danna Cielo Cardenas Portugal
+ * 
  * Un objeto de esta clase almacena la ponderación que tiene
  * cada instrumento de evaluación (los controles, las actividades
  * y los proyectos)

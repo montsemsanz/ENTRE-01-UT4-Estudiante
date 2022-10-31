@@ -1,4 +1,6 @@
 /**
+ * @author Danna Cielo Cardenas Portugal
+ * 
  * Un objeto de esta clase guarda información de una unidad
  * de trabajo
  * Toda UT además del nombre,  fecha de finalización,
@@ -16,7 +18,10 @@ public class UnidadTrabajo {
      */
     public UnidadTrabajo(String nombre, int dia, int mes, int year, int peso,
                          int controles, int actividades, int proyectos) {
-       //TODO
+        this.nombre = nombre;
+        fechaFin = new Fecha(dia, mes, year);
+        pesoUnidad = peso;
+        ponderacion = new PonderacionInstrumentos(controles, actividades, proyectos);
        
        
     }
@@ -63,7 +68,7 @@ public class UnidadTrabajo {
     /**
      * Accesor peso de la UT en la evaluación
      */
-    public double getPesoUnidad() {
+    public int getPesoUnidad() {
         return this.pesoUnidad;
     }
 
@@ -93,10 +98,11 @@ public class UnidadTrabajo {
      * que la recibida como parámetro
      */
     public boolean anteriorA(UnidadTrabajo unidad) {
-        //TODO
+        if (fechaFin.antesQue(unidad.getFechaFin())){
+            return true;
+        }
         
-        
-        return true;
+        return false;
     }
 
     /**
@@ -105,9 +111,8 @@ public class UnidadTrabajo {
      * Se clonan también los objetos que incluya
      */
     public UnidadTrabajo clonar() {
-         //TODO
-         
-         
+        
+        
         return null;
     }
 
@@ -127,7 +132,7 @@ public class UnidadTrabajo {
      */
     public void print() {
         System.out.println(this.toString());
-
+        
     }
 
 
