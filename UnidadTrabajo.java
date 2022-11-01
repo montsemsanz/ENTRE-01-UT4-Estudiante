@@ -105,9 +105,10 @@ public class UnidadTrabajo {
      * Se clonan también los objetos que incluya
      */
     public UnidadTrabajo clonar(UnidadTrabajo queUnidad) {
-        UnidadTrabajo clon = queUnidad
+        UnidadTrabajo clon = queUnidad;
+        clon.setNombre("Copia de "+ queUnidad.getNombre());
 
-        return null;
+        return clon;
     }
 
     /**
