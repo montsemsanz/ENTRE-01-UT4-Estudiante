@@ -68,7 +68,37 @@ public class Estudiante {
      * Pista!! En este método se utilizará el método totalNotas()
      */
     public void registrarNotaUnidad(NotaEstudianteUnidad nota) {
-        //TODO
+        NotaEstudianteUnidad extra = notaA;
+        //si la nota B es mas reciente que la A la B pasa a ser A y biceversa
+        if(notaB.getUnidad().getFechaFin().antesQue(notaA.getUnidad().getFechaFin())){
+           
+            notaA = notaB;
+            notaB = extra;
+            
+        }
+        //si la nota C es mas reciente que la A la C pasa a ser A y biceversa        
+        if(notaC.getUnidad().getFechaFin().antesQue(notaA.getUnidad().getFechaFin())){
+            extra = notaA;
+            notaA = notaC;
+            notaC = extra;
+        }
+        //si la nota C es mas reciente que la B la C pasa a ser B y biceversa
+        if(notaC.getUnidad().getFechaFin().antesQue(notaA.getUnidad().getFechaFin())){
+            extra = notaB;
+            notaB = notaC;
+            notaC = extra;
+        }
+        
+        if(totalNotas() == 0){
+            notaA=nota;  
+        }
+        if(totalNotas() == 1){
+            notaB=nota;
+        }
+        if(totalNotas() == 2){
+            notaC=nota;
+        }
+
 
     }
 
@@ -80,7 +110,7 @@ public class Estudiante {
      * objetos NotaEstudianteUnidad que se necesitan para calcular la nota final
      */
     public double calcularNotaFinalEstudiante() {
-       //TODO
+       
        
        
        return 0;
