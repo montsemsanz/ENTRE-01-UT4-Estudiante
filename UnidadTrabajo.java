@@ -94,9 +94,9 @@ public class UnidadTrabajo {
      * que la recibida como parámetro
      */
     public boolean anteriorA(UnidadTrabajo unidad) {
-        //TODO
+        boolean anteriorA = this.fechaFin.antesQue(unidad.fechaFin);
 
-        return true;
+        return anteriorA;
     }
 
     /**
@@ -104,8 +104,8 @@ public class UnidadTrabajo {
      * "Copia de " + nombre de la UT actual
      * Se clonan también los objetos que incluya
      */
-    public UnidadTrabajo clonar() {
-        //TODO
+    public UnidadTrabajo clonar(UnidadTrabajo queUnidad) {
+        UnidadTrabajo clon = queUnidad
 
         return null;
     }
