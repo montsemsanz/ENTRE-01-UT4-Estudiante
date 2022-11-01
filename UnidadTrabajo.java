@@ -103,10 +103,9 @@ public class UnidadTrabajo {
      * Se clonan también los objetos que incluya
      */
     public UnidadTrabajo clonar() {
-         //TODO
-         
-         
-        return null;
+        String nuevoNombre =("Copia de " + this.nombre);
+        UnidadTrabajo copiaUnidad = new UnidadTrabajo(nuevoNombre,fechaFin, pesoUnidad, ponderacion); 
+        return copiaUnidad;  
     }
 
     /**
