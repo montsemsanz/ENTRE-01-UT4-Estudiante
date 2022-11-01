@@ -92,12 +92,9 @@ public class NotaEstudianteUnidad {
      */
     public String toString() {
         // Falta arreglarlo. Error
-        return "Unidad de trabajo - " + this.unidad +
-                "\n        Fecha finalicación: " + toString() + " | Peso UT: " +
-                getPesoUnidad() + "%" + "\nPonderación Instrumentos Evaluación" +
-                "Controles = " + controles.getControles() + "%" + 
-                "\nActividades = " + actividades.getActividades() + "%" +
-                "\nProyectos = " + proyectos.getProyectos() + "%";
+        String str = String.format("");
+                
+        return str;
     }
 
     /**
