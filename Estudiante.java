@@ -68,39 +68,38 @@ public class Estudiante {
      * Pista!! En este método se utilizará el método totalNotas()
      */
     public void registrarNotaUnidad(NotaEstudianteUnidad nota) {
+       
         NotaEstudianteUnidad extra = notaA;
-        //si la nota B es mas reciente que la A la B pasa a ser A y biceversa
-        if(notaB.getUnidad().getFechaFin().antesQue(notaA.getUnidad().getFechaFin())){
+        NotaEstudianteUnidad extra2 = notaB;
+        //pone la nota en la primera posición
+           if (totalNotas() == 0) {
+            notaA = nota;
+        }
+        //pone la nota en segunda posicion y la que estaba en la 2 en la primera
+        else if (totalNotas() == 1) {
+            notaB = nota;
+            if (notaB.getUnidad().getFechaFin().antesQue(notaA.getUnidad().getFechaFin())) {
+                notaA = notaB;
+                notaB = extra;
+            }
+            
+        }//pone la nota en tercera posicion y la que estaba en tercera en segunda o en primera
+        else if (totalNotas() == 2) {
+            notaC = nota;
+            if (notaC.getUnidad().getFechaFin().antesQue(notaA.getUnidad().getFechaFin()) && notaC.getUnidad().getFechaFin().antesQue(notaB.getUnidad().getFechaFin())) {
+                notaA = notaC;
+                notaB = extra;
+                notaC = extra2;
+            }
 
-            notaA = notaB;
-            notaB = extra;
-
+            else if (notaC.getUnidad().getFechaFin().antesQue(notaB.getUnidad().getFechaFin())) {
+                notaB = notaC;
+                notaC = extra;
+            }
         }
-        //si la nota C es mas reciente que la A la C pasa a ser A y biceversa        
-        if(notaC.getUnidad().getFechaFin().antesQue(notaA.getUnidad().getFechaFin())){
-            extra = notaA;
-            notaA = notaC;
-            notaC = extra;
-        }
-        //si la nota C es mas reciente que la B la C pasa a ser B y biceversa
-        if(notaC.getUnidad().getFechaFin().antesQue(notaA.getUnidad().getFechaFin())){
-            extra = notaB;
-            notaB = notaC;
-            notaC = extra;
-        }
-
-        if(totalNotas() == 0){
-            notaA=nota;  
-        }
-        if(totalNotas() == 1){
-            notaB=nota;
-        }
-        if(totalNotas() == 2){
-            notaC=nota;
-        }
+       
 
     }
-
     /**
      * Calcula y devuelve la nota final obtenida por el estudiante en la
      * evaluación que dependerá de la ponderación de cada UT
@@ -125,7 +124,6 @@ public class Estudiante {
         return resultado;
     }
 
-
     /**
      * Representación textual del estudiante (ver enunciado)
      */
@@ -137,16 +135,16 @@ public class Estudiante {
         // notaA.toString() + "\n" +
         // notaB.toString() + "\n" +
         // notaC.toString() + "\n";
-        
+
         if (calcularNotaFinalEstudiante() == -1) {
-             string = nombre + "/n" +
+            string = nombre + "/n" +
             "No es posible calcular su nota final de evaluación, faltan notas por registrar.\n" +
             "=".repeat(60) + "\n\n\n";
         }else {
-             string = String.format("Nota final de evaluación: %4.2f\n", calcularNotaFinalEstudiante())+"/n" +
-             "=".repeat(60) + "\n\n\n";
+            string = String.format("Nota final de evaluación: %4.2f\n", calcularNotaFinalEstudiante())+"/n" +
+            "=".repeat(60) + "\n\n\n";
         }
-        
+
         return string;
     }
 
