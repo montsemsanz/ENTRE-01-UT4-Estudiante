@@ -89,11 +89,12 @@ public class Estudiante {
      */
     public double calcularNotaFinalEstudiante() {
        double notaFinalEstudiante = 0;
-       // Falta terminar, falta el peso de cada unidad
+       // Multiplicar nota de la unidad por el peso que tiene cuando ninguna UT es null
        if (notaA != null && notaB != null && notaC != null) {
-            notaFinalEstudiante = notaA.calcularNotaUnidad() *  + 
-                notaB.calcularNotaUnidad() + 
-                notaC.calcularNotaUnidad();
+            notaFinalEstudiante = notaA.calcularNotaUnidad() * 
+                notaA.getUnidad().getPesoUnidad() + 
+                notaB.calcularNotaUnidad() * notaB.getUnidad().getPesoUnidad() + 
+                notaC.calcularNotaUnidad() * notaC.getUnidad().getPesoUnidad();
        }
        else {
            notaFinalEstudiante = -1;
