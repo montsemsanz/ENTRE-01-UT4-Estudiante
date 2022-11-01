@@ -46,11 +46,11 @@ public class Estudiante {
         if (notaA != null){
             tmp ++;
         }
-        
+
         if (notaB != null){
             tmp ++;
         }
-        
+
         if (notaC != null){
             tmp ++;
         }
@@ -66,11 +66,38 @@ public class Estudiante {
      * Pista!! En este método se utilizará el método totalNotas()
      */
     public void registrarNotaUnidad(NotaEstudianteUnidad nota) {
-        //TODO
-
+        if(totalNotas() == 0){
+            notaA = nota;
+        }
+        else if (totalNotas() == 1 ){
+            notaB = nota;
+            if (notaB.getUnidad().getFechaFin().antesQue(notaA.getUnidad().getFechaFin())){
+                NotaEstudianteUnidad nota1 = notaA;
+                notaA = notaB;
+                notaB = nota1;
+            }
+        }
+        else if (totalNotas() == 2){
+            notaC = nota;
+            if (notaC.getUnidad().getFechaFin().antesQue(notaB.getUnidad().getFechaFin())
+            && notaC.getUnidad().getFechaFin().antesQue(notaA.getUnidad().getFechaFin())){
+                NotaEstudianteUnidad nota1 = notaA;
+                NotaEstudianteUnidad nota2 = notaB;
+                notaA = notaC;
+                notaB = nota1;
+                notaC = nota2;
+            }
+            else if(notaC.getUnidad().getFechaFin().antesQue(notaB.getUnidad().getFechaFin())){
+                NotaEstudianteUnidad nota1 = notaB;
+                notaB = notaC;
+                notaC = nota1;
+            }
+        }
+        else {
+            System.out.println("No puede añadirse una UT nueva, para cambiarla use otro método");
+        }
     }
 
-   
     /**
      * Calcula y devuelve la nota final obtenida por el estudiante en la
      * evaluación que dependerá de la ponderación de cada UT
@@ -78,21 +105,18 @@ public class Estudiante {
      * objetos NotaEstudianteUnidad que se necesitan para calcular la nota final
      */
     public double calcularNotaFinalEstudiante() {
-       //TODO
-       
-       
-       return 0;
+        //TODO
 
+        return 0;
     }
 
     /**
      * Representación textual del estudiante (ver enunciado)
      */
     public String toString() {
-       //TODO
-       
-       
-       return null;
+        //TODO
+
+        return null;
     }
 
     /**
@@ -102,7 +126,5 @@ public class Estudiante {
         System.out.println(this.toString());
 
     }
-
-    
 
 }
