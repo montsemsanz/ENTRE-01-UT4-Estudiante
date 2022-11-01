@@ -14,8 +14,8 @@ public class NotaEstudianteUnidad {
      * Constructor
      */
     public NotaEstudianteUnidad(UnidadTrabajo unidad, double notaControles,
-                                double notaActividades,
-                                double notaProyectos) {
+    double notaActividades,
+    double notaProyectos) {
         this.unidad = unidad;
         this.notaControles = notaControles;
         this.notaActividades = notaActividades;
@@ -82,18 +82,27 @@ public class NotaEstudianteUnidad {
      * Calcula y devuelve la nota obtenida en la UT teniendo
      * en cuenta la ponderación de los instrumentos de evaluación
      */
-    public double calcularNotaUnidad() {
-         // Sumar las notas, ya contienen el porcentaje incluido
-         return notaControles + notaActividades + notaProyectos;
+    public  double calcularNotaUnidad() {
+        // Error, solucionarlo / cN = calcular nota unidad
+
+        double calcularNotaUnidad = this.notaControles * getControles() + 
+            this.notaActividades * getActividades() +
+            this.notaProyectos * getProyectos();
+        return calcularNotaUnidad;
+
     }
 
     /**
      * Representación textual del objeto (ver enunciado)
      */
     public String toString() {
-        // Falta arreglarlo. Error
-        String str = String.format("");
-                
+        // Necesario comprobar al acabar la clase
+        String str = String.format("Controles: %6.2f", getNotaControles() + 
+                    "      " + "Actividades: %6.2f", getNotaActividades() + 
+                    "      " + "Proyectos: %6.2f", getNotaProyectos() + 
+                    "\nNota final obtenida en Unidad de Trabajo: %6.2f", 
+                    calcularNotaUnidad());
+
         return str;
     }
 
@@ -105,6 +114,5 @@ public class NotaEstudianteUnidad {
 
     }
 
-   
 
 }

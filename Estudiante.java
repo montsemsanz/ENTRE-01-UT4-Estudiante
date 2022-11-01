@@ -88,10 +88,17 @@ public class Estudiante {
      * objetos NotaEstudianteUnidad que se necesitan para calcular la nota final
      */
     public double calcularNotaFinalEstudiante() {
-       //TODO
+       double notaFinalEstudiante = 0;
+       if (notaA != null && notaB != null && notaC != null) {
+           //notaFinalEstudiante = notaA ; //getPesoUnidad() + 
+                           //notaB * getPesoUnidad() + 
+                           //notaC * getPesoUnidad();
+       }
+       else {
+           notaFinalEstudiante = -1;
+       }
        
-       
-       return 0;
+       return notaFinalEstudiante;
 
     }
 
