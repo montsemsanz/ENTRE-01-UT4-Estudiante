@@ -42,10 +42,21 @@ public class Estudiante {
      * (0, 1, 2 o 3)
      */
     public int totalNotas() {
-        //TODO
+        int cantidadNotas = 0;
         
-        
-        return 0;
+         if (notaA != null){
+            cantidadNotas++;
+        }
+       
+         if (notaB != null){
+            cantidadNotas++;
+        }
+       
+         if (notaB != null){
+            cantidadNotas++;
+        }
+            
+        return cantidadNotas;
     }
 
     /**
