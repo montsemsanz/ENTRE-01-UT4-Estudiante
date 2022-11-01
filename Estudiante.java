@@ -43,19 +43,19 @@ public class Estudiante {
      */
     public int totalNotas() {
         int cantidadNotas = 0;
-        
-         if (notaA != null){
+
+        if (notaA != null){
             cantidadNotas++;
         }
-       
-         if (notaB != null){
+
+        if (notaB != null){
             cantidadNotas++;
         }
-       
-         if (notaB != null){
+
+        if (notaB != null){
             cantidadNotas++;
         }
-            
+
         return cantidadNotas;
     }
 
@@ -71,10 +71,10 @@ public class Estudiante {
         NotaEstudianteUnidad extra = notaA;
         //si la nota B es mas reciente que la A la B pasa a ser A y biceversa
         if(notaB.getUnidad().getFechaFin().antesQue(notaA.getUnidad().getFechaFin())){
-           
+
             notaA = notaB;
             notaB = extra;
-            
+
         }
         //si la nota C es mas reciente que la A la C pasa a ser A y biceversa        
         if(notaC.getUnidad().getFechaFin().antesQue(notaA.getUnidad().getFechaFin())){
@@ -88,7 +88,7 @@ public class Estudiante {
             notaB = notaC;
             notaC = extra;
         }
-        
+
         if(totalNotas() == 0){
             notaA=nota;  
         }
@@ -99,10 +99,8 @@ public class Estudiante {
             notaC=nota;
         }
 
-
     }
 
-   
     /**
      * Calcula y devuelve la nota final obtenida por el estudiante en la
      * evaluación que dependerá de la ponderación de cada UT
@@ -110,21 +108,46 @@ public class Estudiante {
      * objetos NotaEstudianteUnidad que se necesitan para calcular la nota final
      */
     public double calcularNotaFinalEstudiante() {
-       
-       
-       
-       return 0;
 
+        double notaFinalA = 0.0;
+        double notaFinalB = 0.0;
+        double notaFinalC = 0.0;
+        double resultado = 0.0;
+        if (totalNotas() == 3) {
+            notaFinalA = notaA.getUnidad().getPesoUnidad() * notaA.calcularNotaUnidad() / 100;
+            notaFinalB = notaB.getUnidad().getPesoUnidad() * notaA.calcularNotaUnidad() / 100;
+            notaFinalC = notaC.getUnidad().getPesoUnidad() * notaA.calcularNotaUnidad() / 100;
+            resultado = notaFinalA + notaFinalB + notaFinalC;
+        }
+        else {
+            resultado = -1;
+        }
+        return resultado;
     }
+
 
     /**
      * Representación textual del estudiante (ver enunciado)
      */
     public String toString() {
-       //TODO
-       
-       
-       return null;
+        String string = "";
+
+        // string = nombre + "/n" +
+        // "*".repeat(80) + "\n" +
+        // notaA.toString() + "\n" +
+        // notaB.toString() + "\n" +
+        // notaC.toString() + "\n";
+        
+        if (calcularNotaFinalEstudiante() == -1) {
+             string = nombre + "/n" +
+            "No es posible calcular su nota final de evaluación, faltan notas por registrar.\n" +
+            "=".repeat(60) + "\n\n\n";
+        }else {
+             string = String.format("Nota final de evaluación: %4.2f\n", calcularNotaFinalEstudiante())+"/n" +
+             "=".repeat(60) + "\n\n\n";
+        }
+        
+        return string;
     }
 
     /**
@@ -134,7 +157,5 @@ public class Estudiante {
         System.out.println(this.toString());
 
     }
-
-    
 
 }
