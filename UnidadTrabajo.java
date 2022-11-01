@@ -97,13 +97,7 @@ public class UnidadTrabajo {
      * que la recibida como parámetro
      */
     public boolean anteriorA(UnidadTrabajo unidad) {
-        //UnidadTrabajo unidadIntroducida = new UnidadTrabajo(unidad.nombre, unidad.fechaFin, 
-                                                            //unidad.pesoUnidad, unidad.ponderacion);      
-        
         return fechaFin.antesQue(unidad.fechaFin);
-        
-        
-        //return true;
     }
 
     /**
@@ -112,10 +106,8 @@ public class UnidadTrabajo {
      * Se clonan también los objetos que incluya
      */
     public UnidadTrabajo clonar() {
-        
-        return new UnidadTrabajo("Copia de " + this.nombre, this.fechaFin, this.pesoUnidad, this.ponderacion);
-         
-        //return null;
+        return new UnidadTrabajo("Copia de " + this.nombre, this.fechaFin, 
+                                    this.pesoUnidad, this.ponderacion);
     }
 
     /**
