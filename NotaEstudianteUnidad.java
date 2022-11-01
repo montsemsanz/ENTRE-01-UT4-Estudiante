@@ -81,9 +81,9 @@ public class NotaEstudianteUnidad {
      * Calcula y devuelve la nota obtenida en la UT teniendo
      * en cuenta la ponderación de los instrumentos de evaluación
      */
-    public double calcularNotaUnidad(PonderacionInstrumentos porcentaje) {
-        
-         return getNotaControles() * porcentaje.getControles() + getNotaProyectos() * porcentaje.getProyectos() + getNotaActividades() * porcentaje.getActividades();
+    public double calcularNotaUnidad() {
+            
+         return getNotaControles() * unidad.getPonderacion().getControles() + getNotaProyectos() * unidad.getPonderacion().getProyectos() + getNotaActividades() * unidad.getPonderacion().getActividades();
 
 
     }
@@ -92,11 +92,12 @@ public class NotaEstudianteUnidad {
      * Representación textual del objeto (ver enunciado)
      */
     public String toString() {
-        //TODO
         
+        String stringFormateado = String.format("controles: " + "%6.2f" + "    Actividad clase: " + "%6.2f" + "Proyectos: "+ "%6.2f" + "\n",
+        "Nota final obtenida en Unidad de Trabajo: " + "%6.2f"+ "\n" + "-".repeat(80),
+        getNotaControles(),getNotaActividades(),getNotaProyectos(),calcularNotaUnidad());
         
-        
-        return null;
+        return stringFormateado;
     }
 
     /**
