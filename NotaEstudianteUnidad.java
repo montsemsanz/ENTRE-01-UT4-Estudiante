@@ -86,7 +86,8 @@ public class NotaEstudianteUnidad {
      */
     public double calcularNotaUnidad() {
 
-        // UnidadTrabajo nota_controles =  unidad.getControles();
+        //Este metodo solo funciona si se mete 70% tal cual 70 y no 7.
+
         //tengo que obtener el int de getControles en PInst
 
         int ponderacionControles = (unidad.getPonderacion().getControles())/10;
@@ -96,21 +97,25 @@ public class NotaEstudianteUnidad {
         int ponderacionProyectos = (unidad.getPonderacion().getProyectos())/10;
 
         return ((notaControles * ponderacionControles + 
-            notaActividades * ponderacionActividades + notaProyectos * ponderacionProyectos)/10);
+                notaActividades * ponderacionActividades + notaProyectos * ponderacionProyectos)/10);
 
     }
 
-    /**
+        /**
      * Representación textual del objeto (ver enunciado)
      */
     public String toString() {
-        String str = unidad.toString(); //llamamos el metodo toString de la Clase UT
+        String str = "";        
+        str += unidad.toString(); //llamamos el metodo toString de la Clase UT
 
-        str += System.out.printf("Controles: %3.2f", getNotaControles());
+        // str += System.out.printf("Controles: %3.2f", getNotaControles());
 
-        str += System.out.printf("Actividades clase: %4.2f", getNotaActividades());
-
-        str += System.out.printf("Proyectos: %3.2f", this.getNotaProyectos());
+        // str += System.out.printf("Actividades clase: %4.2f", getNotaActividades());
+        
+     
+        str += System.out.printf("Proyectos: %3.2 \n" , this.getNotaProyectos());
+        
+        str += System.out.printf("Nota final obtenida en Unidad de Trabajo %6.2 " , this.calcularNotaUnidad());
 
         return str;
     }

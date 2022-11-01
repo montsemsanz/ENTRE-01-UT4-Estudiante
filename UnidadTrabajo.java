@@ -116,9 +116,9 @@ public class UnidadTrabajo {
      * Se clonan también los objetos que incluya
      */
     public UnidadTrabajo clonar() {
-        //TODO
-
-        return null;
+        UnidadTrabajo copiaUT = new UnidadTrabajo(this.getNombre(), this.getFechaFin(), this.getPesoUnidad(), this.getPonderacion());
+             
+        return copiaUT; 
     }
 
     /**

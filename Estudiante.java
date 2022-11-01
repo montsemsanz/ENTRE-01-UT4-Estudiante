@@ -42,10 +42,20 @@ public class Estudiante {
      * (0, 1, 2 o 3)
      */
     public int totalNotas() {
-        //TODO
-        
-        
-        return 0;
+        int totalNotas = 0;
+        if (notaC == null){ //totalNotas=2
+            totalNotas = 2;                
+        }
+        if(notaB == null){ //totalNotas=1
+            totalNotas = 1;
+        }
+        if(notaA == null){ //totalNotas=0
+            totalNotas = 0;
+        }
+        else{
+            totalNotas = 3;
+        }
+        return totalNotas;
     }
 
     /**
@@ -57,11 +67,17 @@ public class Estudiante {
      * Pista!! En este método se utilizará el método totalNotas()
      */
     public void registrarNotaUnidad(NotaEstudianteUnidad nota) {
-        //TODO
-
+        if(totalNotas()==0){
+            this.notaA = nota;
+        }
+        else if(totalNotas()==1){
+            this.notaB = nota;
+        }   
+        else if(totalNotas()==2){
+            this.notaC = nota;
+        }
     }
 
-   
     /**
      * Calcula y devuelve la nota final obtenida por el estudiante en la
      * evaluación que dependerá de la ponderación de cada UT
@@ -69,21 +85,43 @@ public class Estudiante {
      * objetos NotaEstudianteUnidad que se necesitan para calcular la nota final
      */
     public double calcularNotaFinalEstudiante() {
-       //TODO
-       
-       
-       return 0;
+        double A = 0;
+        double B = 0;
+        double C = 0;
+        double notaFinal = 0;
+        if(totalNotas()== 0){
+             A = notaA.calcularNotaUnidad();
+        }
+        else if((totalNotas()== 1)){
+             B = notaB.calcularNotaUnidad();
+        }
 
+        else if(totalNotas()== 2){
+             C = notaC.calcularNotaUnidad();
+        }
+        //le doy sus notas respectivas a la UT (1 2 Y 3)
+        
+        if(A>0 && B>0 && C>0){
+            notaFinal = ((A+B+C)/3);
+        }
+        else{
+            notaFinal = -1;
+        }
+        //solo calculo la notaFinal si las 3 UT tienen nota, caso contrario -1.
+        
+        return notaFinal;
     }
 
     /**
      * Representación textual del estudiante (ver enunciado)
      */
     public String toString() {
-       //TODO
-       
-       
-       return null;
+        String str = "";
+        
+        str += notaA.toString(); //da igual que sea notaA solo quiero usarlo para llamar al metodo de N.E.U
+        
+        
+        return null;
     }
 
     /**
@@ -93,7 +131,5 @@ public class Estudiante {
         System.out.println(this.toString());
 
     }
-
-    
 
 }
