@@ -83,13 +83,13 @@ public class NotaEstudianteUnidad {
      * en cuenta la ponderación de los instrumentos de evaluación
      */
     public  double calcularNotaUnidad() {
-        // Error, solucionarlo
-
-        double calcularNotaUnidad = this.notaControles * getControles() + 
-            this.notaActividades * getActividades() +
-            this.notaProyectos * getProyectos();
+        // Devuelve la nota de una UT en double / Hay que comprobar    
+        PonderacionInstrumentos ponderacion = unidad.getPonderacion();
+        double calcularNotaUnidad = (getNotaControles() * ponderacion.getControles() / 100) + 
+            (getNotaActividades() * ponderacion.getActividades() / 100) +
+            (getNotaProyectos() * ponderacion.getProyectos() / 100);
             
-        return 0;
+        return calcularNotaUnidad;
 
     }
 
