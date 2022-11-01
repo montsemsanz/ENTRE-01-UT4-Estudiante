@@ -89,10 +89,9 @@ public class Estudiante {
      */
     public double calcularNotaFinalEstudiante() {
        double notaFinalEstudiante = 0;
+       
        if (notaA != null && notaB != null && notaC != null) {
-           //notaFinalEstudiante = notaA ; //getPesoUnidad() + 
-                           //notaB * getPesoUnidad() + 
-                           //notaC * getPesoUnidad();
+            
        }
        else {
            notaFinalEstudiante = -1;
@@ -106,10 +105,11 @@ public class Estudiante {
      * Representación textual del estudiante (ver enunciado)
      */
     public String toString() {
-       //TODO
-       
-       
-       return null;
+        String str2 = String.format("MOLINA HUARTE, Isabel\n" + "*".repeat(80) +
+                    "\nNo es posible calcular su nota final de evaluación," +  
+                    "faltan notas por registrar");
+        
+        return str2;
     }
 
     /**

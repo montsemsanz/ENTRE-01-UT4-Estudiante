@@ -83,12 +83,13 @@ public class NotaEstudianteUnidad {
      * en cuenta la ponderación de los instrumentos de evaluación
      */
     public  double calcularNotaUnidad() {
-        // Error, solucionarlo / cN = calcular nota unidad
+        // Error, solucionarlo
 
         double calcularNotaUnidad = this.notaControles * getControles() + 
             this.notaActividades * getActividades() +
             this.notaProyectos * getProyectos();
-        return calcularNotaUnidad;
+            
+        return 0;
 
     }
 
@@ -97,13 +98,13 @@ public class NotaEstudianteUnidad {
      */
     public String toString() {
         // Necesario comprobar al acabar la clase
-        String str = String.format("Controles: %6.2f", getNotaControles() + 
+        String str1 = String.format("Controles: %6.2f", getNotaControles() + 
                     "      " + "Actividades: %6.2f", getNotaActividades() + 
                     "      " + "Proyectos: %6.2f", getNotaProyectos() + 
                     "\nNota final obtenida en Unidad de Trabajo: %6.2f", 
                     calcularNotaUnidad());
 
-        return str;
+        return str1;
     }
 
     /**
