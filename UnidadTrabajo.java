@@ -4,6 +4,7 @@
  * Toda UT además del nombre,  fecha de finalización,
  * y peso en la evaluación tiene asociado un objeto ponderación
  * que incluye las ponderaciones usadas para cada instrumento de evaluación
+ * @author - Aitor Cuadrado
  */
 public class UnidadTrabajo {
     private String nombre;
@@ -15,17 +16,20 @@ public class UnidadTrabajo {
      * Constructor 1
      */
     public UnidadTrabajo(String nombre, int dia, int mes, int year, int peso,
-                         int controles, int actividades, int proyectos) {
-       //TODO
-       
-       
+    int controles, int actividades, int proyectos) {
+        this.nombre = nombre;
+        this.fechaFin = new Fecha(dia, mes, year);
+        this.pesoUnidad = pesoUnidad;
+        this.ponderacion = new PonderacionInstrumentos(controles, 
+            actividades, proyectos);
+
     }
 
     /**
      * Constructor 2
      */
     public UnidadTrabajo(String nombre, Fecha fechaFin, int peso,
-                         PonderacionInstrumentos ponderacion) {
+    PonderacionInstrumentos ponderacion) {
         this.nombre = nombre;
         this.fechaFin = fechaFin;
         this.pesoUnidad = peso;
@@ -93,10 +97,7 @@ public class UnidadTrabajo {
      * que la recibida como parámetro
      */
     public boolean anteriorA(UnidadTrabajo unidad) {
-        //TODO
-        
-        
-        return true;
+        return fechaFin.antesQue(unidad.getFechaFin());
     }
 
     /**
@@ -105,10 +106,7 @@ public class UnidadTrabajo {
      * Se clonan también los objetos que incluya
      */
     public UnidadTrabajo clonar() {
-         //TODO
-         
-         
-        return null;
+        
     }
 
     /**
@@ -116,8 +114,8 @@ public class UnidadTrabajo {
      */
     public String toString() {
         String str = "Unidad de trabajo - " + this.nombre +
-                "\n\tFecha finalización: " + this.getFechaFin().toString() +
-                " | Peso UT: " + this.pesoUnidad + "%\n";
+            "\n\tFecha finalización: " + this.getFechaFin().toString() +
+            " | Peso UT: " + this.pesoUnidad + "%\n";
         str += this.ponderacion;
         return str;
     }
@@ -130,6 +128,4 @@ public class UnidadTrabajo {
 
     }
 
-
-     
 }

@@ -4,6 +4,7 @@ import java.time.format.DateTimeFormatter;
 
 /**
  * Representa un fecha
+ * @author - Aitor Cuadrado
  */
 public class Fecha {
     private LocalDate fecha;

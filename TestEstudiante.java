@@ -1,5 +1,6 @@
 /**
  * Prueba del todas las clases
+ * @author - Aitor Cuadrado
  */
 public class TestEstudiante {
 

@@ -3,6 +3,7 @@
  * Todo estudiante tiene un nombre
  * y guarda las 3 notas que ha sacado en cada una de las tres unidades de
  * trabajo que hay en la evaluación
+ * @author - Aitor Cuadrado
  */
 public class Estudiante {
     private String nombre;
