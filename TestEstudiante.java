@@ -1,5 +1,6 @@
 /**
- * Prueba del todas las clases
+ * Test para probar las clases
+ * @author (Joseba Trigo)
  */
 public class TestEstudiante {
 
@@ -7,10 +8,7 @@ public class TestEstudiante {
      * Punto de entrada a la aplicación
      */
     public static void main(String[] args) {
-       //TODO
-
-       
-       
-       
+        Estudiante estudiante = new Estudiante("MOLINA HUARTE, Isabel");
+        UnidadTrabajo 
     }
 }

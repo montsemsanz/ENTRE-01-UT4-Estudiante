@@ -140,7 +140,7 @@ public class Estudiante {
      * objetos NotaEstudianteUnidad que se necesitan para calcular la nota final
      */
     public double calcularNotaFinalEstudiante() {
-        if (notaA == null || notaB == null || notaC == null) {
+        if (totalNotas() != 3) {
             return -1;
         }
         else {
@@ -158,9 +158,11 @@ public class Estudiante {
      * Representación textual del estudiante (ver enunciado)
      */
     public String toString() {
-        //TODO
-
-        return null;
+        String str = String.format(nombre + "\n" + "*".repeat(80));
+        if (totalNotas() != 3) {
+            str += "\nNo es posible calcular su nota final de evaluación, faltan notas por registrar";
+        }
+        return str;
     }
 
     /**
