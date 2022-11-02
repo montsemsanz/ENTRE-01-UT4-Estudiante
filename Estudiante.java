@@ -44,7 +44,17 @@ public class Estudiante {
      * (0, 1, 2 o 3)
      */
     public int totalNotas() {
+        // if(notaA == null) {
+            // notaA = 1;
+        // }
         
+        // if(notaB == null) {
+            // return 0;
+        // }
+        
+        // if(notaC == null) {
+            // return 0;
+        // }
         
         return 0;
     }

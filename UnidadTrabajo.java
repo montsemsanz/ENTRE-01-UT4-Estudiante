@@ -17,20 +17,19 @@ public class UnidadTrabajo {
      * Constructor 1
      */
     public UnidadTrabajo(String nombre, int dia, int mes, int year, int peso,
-                         int controles, int actividades, int proyectos) {
+    int controles, int actividades, int proyectos) {
         this.nombre = nombre;
         fechaFin = new Fecha(dia, mes, year);
         pesoUnidad = peso;
         ponderacion = new PonderacionInstrumentos(controles, actividades, proyectos);
-       
-       
+
     }
 
     /**
      * Constructor 2
      */
     public UnidadTrabajo(String nombre, Fecha fechaFin, int peso,
-                         PonderacionInstrumentos ponderacion) {
+    PonderacionInstrumentos ponderacion) {
         this.nombre = nombre;
         this.fechaFin = fechaFin;
         this.pesoUnidad = peso;
@@ -98,10 +97,10 @@ public class UnidadTrabajo {
      * que la recibida como parámetro
      */
     public boolean anteriorA(UnidadTrabajo unidad) {
-        if (fechaFin.antesQue(unidad.getFechaFin())){
+        if (fechaFin.antesQue(unidad.fechaFin)){
             return true;
         }
-        
+
         return false;
     }
 
@@ -112,18 +111,19 @@ public class UnidadTrabajo {
      */
     public UnidadTrabajo clonar() {
         UnidadTrabajo copia = new UnidadTrabajo("Copia de " + nombre, 
-        fechaFin, pesoUnidad, ponderacion);
-        
-        return null;
+                fechaFin, pesoUnidad, ponderacion);
+
+        return copia;
     }
 
     /**
      * Representación textual de la UT
      */
     public String toString() {
-        String str = "Unidad de trabajo - " + this.nombre +
-                "\n\tFecha finalización: " + this.getFechaFin().toString() +
-                " | Peso UT: " + this.pesoUnidad + "%\n";
+        String str = "";
+        str = str + "Unidad de trabajo - " + this.nombre +
+        "\n\tFecha finalización: " + this.getFechaFin().toString() +
+        " | Peso UT: " + this.pesoUnidad + "%\n";
         str += this.ponderacion;
         return str;
     }
@@ -133,9 +133,7 @@ public class UnidadTrabajo {
      */
     public void print() {
         System.out.println(this.toString());
-        
+
     }
 
-
-     
 }
