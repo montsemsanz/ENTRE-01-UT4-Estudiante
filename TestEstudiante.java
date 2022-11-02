@@ -32,13 +32,15 @@ public class TestEstudiante {
         // System.out.println(persona.toString()); persona = new Persona (nombre, edad, sueldo, estadoCivil);
         // System.out.println(persona.toString());
         
-        System.out.println(Estudiante.setNombre("MOLINA HUARTE, Isabel"));
-        //Estudiante setNombre("MOLINA HUARTE, Isabel");
-        String nombre = teclado.nextLine();
+        System.out.println("MOLINA HUARTE, Isabel");
+        String nombreEstudiante = teclado.nextLine();
         
+        Estudiante estudiante = new Estudiante(nombreEstudiante);
         
+        System.out.println("Interacción de objetos. Estructura de control iterativa.");
+        String nombreUT = teclado.nextLine();
         
-        Estudiante estudiante = new Estudiante(nombre);
+        //FALTA POR TERMINAR
 
        
        
