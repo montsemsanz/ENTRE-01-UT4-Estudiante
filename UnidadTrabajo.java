@@ -4,6 +4,7 @@
  * Toda UT además del nombre,  fecha de finalización,
  * y peso en la evaluación tiene asociado un objeto ponderación
  * que incluye las ponderaciones usadas para cada instrumento de evaluación
+ * @author - Santi Lerga
  */
 public class UnidadTrabajo {
     private String nombre;
@@ -94,9 +95,9 @@ public class UnidadTrabajo {
      * que la recibida como parámetro
      */
     public boolean anteriorA(UnidadTrabajo unidad) {
-        boolean anteriorA = this.fechaFin.antesQue(unidad.fechaFin);
-
-        return anteriorA;
+        boolean anterior = this.getFechaFin().antesQue(unidad.getFechaFin());
+        return anterior;
+        
     }
 
     /**
@@ -105,10 +106,9 @@ public class UnidadTrabajo {
      * Se clonan también los objetos que incluya
      */
     public UnidadTrabajo clonar(UnidadTrabajo queUnidad) {
-        UnidadTrabajo clon = queUnidad;
-        clon.setNombre("Copia de "+ queUnidad.getNombre());
-
-        return clon;
+        UnidadTrabajo unClon = queUnidad;
+        unClon.setNombre("Copia de " + unClon.getNombre());
+        return unClon;
     }
 
     /**

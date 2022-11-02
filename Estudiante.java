@@ -3,6 +3,7 @@
  * Todo estudiante tiene un nombre
  * y guarda las 3 notas que ha sacado en cada una de las tres unidades de
  * trabajo que hay en la evaluación
+ * @author - Santi Lerga
  */
 public class Estudiante {
     private String nombre;
@@ -42,10 +43,19 @@ public class Estudiante {
      * (0, 1, 2 o 3)
      */
     public int totalNotas() {
-        //TODO
+        int notasRegistradas = 0;
+        if (notaA != null){
+            notasRegistradas++;
+        }
+        if (notaB != null){
+            notasRegistradas++;
+        }
+        if (notaC != null){
+            notasRegistradas++;
+        }
         
         
-        return 0;
+        return notasRegistradas;
     }
 
     /**
@@ -57,7 +67,12 @@ public class Estudiante {
      * Pista!! En este método se utilizará el método totalNotas()
      */
     public void registrarNotaUnidad(NotaEstudianteUnidad nota) {
-        //TODO
+        if(totalNotas() == 0){
+            notaA = nota;
+        }
+        else if (totalNotas() == 1){
+            notaB = nota;
+        }
 
     }
 
@@ -69,11 +84,18 @@ public class Estudiante {
      * objetos NotaEstudianteUnidad que se necesitan para calcular la nota final
      */
     public double calcularNotaFinalEstudiante() {
-       //TODO
-       
-       
-       return 0;
-
+       double notA;
+       double notB;
+       double notC;
+       if(totalNotas() != 3){
+           return -1;
+       }
+       else {
+           notA = (notaA.getUnidad().getPesoUnidad() * notaA.calcularNotaUnidad() / 100);
+           notB = (notaB.getUnidad().getPesoUnidad() * notaB.calcularNotaUnidad() / 100);
+           notC = (notaC.getUnidad().getPesoUnidad() * notaC.calcularNotaUnidad() / 100);
+       }
+        return notA + notB + notC;
     }
 
     /**

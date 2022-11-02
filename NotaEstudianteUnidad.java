@@ -2,6 +2,7 @@
  * Un objeto de esta clase está asociado con una unidad de trabajo
  * y guarda la nota que un estudiante ha sacado en los controles, actividades y
  * proyectos de esa unidad
+ * @author - Santi Lerga
  */
 public class NotaEstudianteUnidad {
     private UnidadTrabajo unidad;
@@ -82,11 +83,7 @@ public class NotaEstudianteUnidad {
      * en cuenta la ponderación de los instrumentos de evaluación
      */
     public double calcularNotaUnidad() {
-         //TODO
-         
-         
-         return 0;
-
+        return getNotaActividades() * unidad.getPesoUnidad() + getNotaControles() * unidad.getPesoUnidad() + getNotaProyectos() * unidad.getPesoUnidad();
 
     }
 
@@ -94,11 +91,14 @@ public class NotaEstudianteUnidad {
      * Representación textual del objeto (ver enunciado)
      */
     public String toString() {
-        //TODO
-        
-        
-        
-        return null;
+        String str = "";
+        str += unidad.toString();
+        str += String.format(" Controles: %6.2f" + getNotaControles());
+        str += String.format(" Actividades: %6.2f" + getNotaActividades());
+        str += String.format("Proyectos: %6.2f\n" + getNotaProyectos());
+        str += String.format(" Nota final obtenida en Unidad de Trabajo: %6.2f\n" + calcularNotaUnidad());
+        str += "-".repeat(80);
+        return str;
     }
 
     /**

@@ -1,5 +1,6 @@
 /**
  * Prueba del todas las clases
+ * @author - Santi Lerga
  */
 public class TestEstudiante {
 
