@@ -88,10 +88,20 @@ public class Estudiante {
      * objetos NotaEstudianteUnidad que se necesitan para calcular la nota final
      */
     public double calcularNotaFinalEstudiante() {
-       //TODO
+       double notaAUnidadPonderada = notaA.calcularNotaUnidad() * notaA.getUnidad().getPesoUnidad() / 10;
+       double notaBUnidadPonderada = notaB.calcularNotaUnidad() * notaB.getUnidad().getPesoUnidad() / 10;
+       double notaCUnidadPonderada = notaC.calcularNotaUnidad() * notaC.getUnidad().getPesoUnidad() / 10;
        
+       double notaFinalEstudiante = 0;
        
-       return 0;
+       if(totalNotas() == 0){
+        notaFinalEstudiante = -1;
+        }
+       else {
+        notaFinalEstudiante = (notaAUnidadPonderada + notaBUnidadPonderada + notaCUnidadPonderada) / 10;
+        }
+       
+        return notaFinalEstudiante;
 
     }
 
@@ -100,7 +110,7 @@ public class Estudiante {
      */
     public String toString() {
        //TODO
-       
+    
        
        return null;
     }
