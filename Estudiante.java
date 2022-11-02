@@ -45,10 +45,21 @@ public class Estudiante {
      * (0, 1, 2 o 3)
      */
     public int totalNotas() {
-        //TODO
+        int totalCantidadNotas = 0;
         
+        if(this.notaA != null){
+            totalCantidadNotas += 1;
+        }
         
-        return 0;
+         if(this.notaB != null){
+            totalCantidadNotas += 1;
+        }
+        
+         if(this.notaC != null){
+            totalCantidadNotas += 1;
+        }
+        
+        return totalCantidadNotas;
     }
 
     /**
@@ -59,7 +70,7 @@ public class Estudiante {
      * 
      * Pista!! En este método se utilizará el método totalNotas()
      */
-    public void registrarNotaUnidad(NotaEstudianteUnidad nota) {
+     public void registrarNotaUnidad(NotaEstudianteUnidad nota) {
         //TODO
 
     }
