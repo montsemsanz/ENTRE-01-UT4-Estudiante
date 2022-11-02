@@ -13,7 +13,6 @@ public class TestEstudiante {
      * Punto de entrada a la aplicación
      */
     public static void main(String[] args) {
-       //TODO
        Estudiante Isabel = new Estudiante("MOLINA HUARTE, Isabel");
        
        UnidadTrabajo UT3 = new UnidadTrabajo("Interacción de objetos. Estructura de control iterativa", 

@@ -126,7 +126,5 @@ public class UnidadTrabajo {
         System.out.println(this.toString());
 
     }
-
-
-     
+    
 }
