@@ -110,13 +110,13 @@ public class Estudiante {
      */
     public String toString() {
        String str = nombre + "\n" + "*".repeat(80) + "\n";
-    
+       String notaFin = String.format("\nNota final de evaluación: %5.2f", calcularNotaFinalEstudiante());
+       
        if(totalNotas() != 3){
         str += "No es posible calcular su nota final de evaluación, faltan notas por registrar.\n";
         }
         else {
-        str += notaA.toString() + notaB.toString() + notaC.toString() + 
-                "\nNota final de evaluación: " + calcularNotaFinalEstudiante();
+        str += notaA.toString() + notaB.toString() + notaC.toString() + notaFin;
         }
        
         return str;
