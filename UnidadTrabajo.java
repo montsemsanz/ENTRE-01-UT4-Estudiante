@@ -15,23 +15,23 @@ public class UnidadTrabajo {
      * Constructor 1
      */
     public UnidadTrabajo(String nombre, int dia, int mes, int year, int peso,
-                         int controles, int actividades, int proyectos) {
-       nombre = nombre;
-       dia = dia;
-       mes = mes;
-       year = year;
-       peso = peso;
-       controles = controles;
-       actividades = actividades;
-       proyectos = proyectos;
-       
+    int controles, int actividades, int proyectos) {
+        nombre = nombre;
+        dia = dia;
+        mes = mes;
+        year = year;
+        peso = peso;
+        controles = controles;
+        actividades = actividades;
+        proyectos = proyectos;
+
     }
 
     /**
      * Constructor 2
      */
     public UnidadTrabajo(String nombre, Fecha fechaFin, int peso,
-                         PonderacionInstrumentos ponderacion) {
+    PonderacionInstrumentos ponderacion) {
         this.nombre = nombre;
         this.fechaFin = fechaFin;
         this.pesoUnidad = peso;
@@ -98,11 +98,11 @@ public class UnidadTrabajo {
      * Devuelve true si la UT actual ha finalizado antes
      * que la recibida como parámetro
      */
-    public boolean anteriorA(UnidadTrabajo unidad) {
-        //TODO
-        
-        
-        return true;
+    public boolean anteriorA(Fecha unidad) {
+        if(this.fechaFin != unidad){
+            return true;
+        }  
+        return false;
     }
 
     /**
@@ -111,9 +111,7 @@ public class UnidadTrabajo {
      * Se clonan también los objetos que incluya
      */
     public UnidadTrabajo clonar() {
-         //TODO
-         
-         
+
         return null;
     }
 
@@ -122,8 +120,8 @@ public class UnidadTrabajo {
      */
     public String toString() {
         String str = "Unidad de trabajo - " + this.nombre +
-                "\n\tFecha finalización: " + this.getFechaFin().toString() +
-                " | Peso UT: " + this.pesoUnidad + "%\n";
+            "\n\tFecha finalización: " + this.getFechaFin().toString() +
+            " | Peso UT: " + this.pesoUnidad + "%\n";
         str += this.ponderacion;
         return str;
     }
@@ -135,7 +133,6 @@ public class UnidadTrabajo {
         System.out.println(this.toString());
 
     }
-
 
      
 }
