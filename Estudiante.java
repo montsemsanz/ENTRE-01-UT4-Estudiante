@@ -94,7 +94,7 @@ public class Estudiante {
        
        double notaFinalEstudiante = 0;
        
-       if(totalNotas() == 0){
+       if(totalNotas() < 3){
         notaFinalEstudiante = -1;
         }
        else {
