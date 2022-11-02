@@ -43,18 +43,22 @@ public class Estudiante {
      */
     public int totalNotas() {
         int totalNotas = 0;
-        if (notaC == null){ //totalNotas=2
-            totalNotas = 2;                
-        }
-        if(notaB == null){ //totalNotas=1
-            totalNotas = 1;
-        }
+        
         if(notaA == null){ //totalNotas=0
             totalNotas = 0;
+        }
+        
+        else if(notaB == null){ //totalNotas=1
+            totalNotas = 1;
+        }
+        
+        else if (notaC == null){ //totalNotas=2
+            totalNotas = 2;                
         }
         else{
             totalNotas = 3;
         }
+        
         return totalNotas;
     }
 
@@ -85,24 +89,27 @@ public class Estudiante {
      * objetos NotaEstudianteUnidad que se necesitan para calcular la nota final
      */
     public double calcularNotaFinalEstudiante() {
-        double A = 0;
-        double B = 0;
-        double C = 0;
-        double notaFinal = 0;
-        if(totalNotas()== 0){
-             A = notaA.calcularNotaUnidad();
-        }
-        else if((totalNotas()== 1)){
-             B = notaB.calcularNotaUnidad();
-        }
-
-        else if(totalNotas()== 2){
-             C = notaC.calcularNotaUnidad();
-        }
-        //le doy sus notas respectivas a la UT (1 2 Y 3)
+        double A = notaA.calcularNotaUnidad() * notaA.getUnidad().getPesoUnidad();
         
-        if(A>0 && B>0 && C>0){
-            notaFinal = ((A+B+C)/3);
+        double B = notaB.calcularNotaUnidad() * notaB.getUnidad().getPesoUnidad();
+        
+        double C = notaC.calcularNotaUnidad() * notaC.getUnidad().getPesoUnidad();
+         //le doy sus notas respectivas a la UT (1 2 Y 3
+        
+        double notaFinal = 0;
+        
+        // if(totalNotas()== 0){
+             // A = notaA.calcularNotaUnidad() * notaA.getUnidad().getPesoUnidad();
+        // }
+        // else if((totalNotas()== 1)){
+             // B = notaB.calcularNotaUnidad() * notaB.getUnidad().getPesoUnidad();
+        // }
+        // else if(totalNotas()== 2){
+             // C = notaC.calcularNotaUnidad() * notaC.getUnidad().getPesoUnidad();
+        // } ¡¡¡¡ "Este If sobra con definirlo al crear la variable va bien"¡¡¡¡
+        
+        if(totalNotas()==3){
+            notaFinal = ((A+B+C)/10); //divides entre 10 para que salga en formato maximo 10 y no 100. 
         }
         else{
             notaFinal = -1;
@@ -112,17 +119,17 @@ public class Estudiante {
         return notaFinal;
     }
 
-    /**
-     * Representación textual del estudiante (ver enunciado)
-     */
-    public String toString() {
-        String str = "";
+    // /**
+     // * Representación textual del estudiante (ver enunciado)
+     // */
+    // // public String toString() {
+        // // String str = "";
         
-        str += notaA.toString(); //da igual que sea notaA solo quiero usarlo para llamar al metodo de N.E.U
+        // // str += notaA.toString(); //da igual que sea notaA solo quiero usarlo para llamar al metodo toString de N.E.U
         
         
-        return null;
-    }
+        // // return null;
+    // }
 
     /**
      * Este método se ha incluido solo para testear la clase más fácilmente
