@@ -70,12 +70,17 @@ public class Estudiante {
      * 
      * Pista!! En este método se utilizará el método totalNotas()
      */
-     public void registrarNotaUnidad(NotaEstudianteUnidad nota) {
-        //TODO
-
+     public void registrarNotaUnidad(NotaEstudianteUnidad nota) {   
+         switch (totalNotas()){
+        case 0: notaA = nota;
+                break;
+        case 1: notaB = nota;
+                break;
+        case 2: notaC = nota;
+                break;
+        }
     }
-
-   
+  
     /**
      * Calcula y devuelve la nota final obtenida por el estudiante en la
      * evaluación que dependerá de la ponderación de cada UT
