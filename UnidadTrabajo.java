@@ -16,8 +16,10 @@ public class UnidadTrabajo {
      */
     public UnidadTrabajo(String nombre, int dia, int mes, int year, int peso,
                          int controles, int actividades, int proyectos) {
-       //TODO
-       
+       this.nombre = nombre;
+       fechaFin = new Fecha(dia, mes, year);
+       pesoUnidad = peso;
+       ponderacion = new PonderacionInstrumentos(controles, actividades, proyectos);
        
     }
 
@@ -92,11 +94,8 @@ public class UnidadTrabajo {
      * Devuelve true si la UT actual ha finalizado antes
      * que la recibida como parámetro
      */
-    public boolean anteriorA(UnidadTrabajo unidad) {
-        //TODO
-        
-        
-        return true;
+    public boolean anteriorA(UnidadTrabajo unidad) {        
+        return getFechaFin().antesQue(unidad.getFechaFin());
     }
 
     /**
