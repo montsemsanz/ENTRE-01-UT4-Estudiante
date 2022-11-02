@@ -68,7 +68,68 @@ public class Estudiante {
      * Pista!! En este método se utilizará el método totalNotas()
      */
     public void registrarNotaUnidad(NotaEstudianteUnidad nota) {
-        //TODO
+        if (totalNotas() == 1) {
+            notaA = nota;
+        }
+        
+        else if (totalNotas() == 2) {
+            UnidadTrabajo unidadA = notaA.getUnidad();
+            UnidadTrabajo unidadNota = nota.getUnidad();
+            Fecha fechaA = unidadA.getFechaFin();
+            Fecha fechaNota = unidadNota.getFechaFin();
+            
+            if (notaA == null) {
+                notaA = nota;
+            }
+            else if (fechaA.antesQue(fechaNota)) {
+                notaB = nota;
+            }
+            else {
+                notaB = notaA;
+                notaA = nota;
+            }
+        }
+        
+        else {
+            if (notaA == null) {
+                notaA = nota;
+            }
+            else if (notaB == null) {
+                UnidadTrabajo unidadA = notaA.getUnidad();
+                UnidadTrabajo unidadNota = nota.getUnidad();
+                Fecha fechaA = unidadA.getFechaFin();
+                Fecha fechaNota = unidadNota.getFechaFin();
+                
+                if (fechaA.antesQue(fechaNota)) {
+                    notaB = nota;
+                }
+                else {
+                    notaB = notaA;
+                    notaA = nota;
+                }
+            }
+            else {
+                UnidadTrabajo unidadA = notaA.getUnidad();
+                UnidadTrabajo unidadB = notaB.getUnidad();
+                UnidadTrabajo unidadNota = nota.getUnidad();
+                Fecha fechaA = unidadA.getFechaFin();
+                Fecha fechaB = unidadB.getFechaFin();
+                Fecha fechaNota = unidadNota.getFechaFin();
+                
+                if (fechaNota.antesQue(fechaA)) {
+                    notaC = notaB;
+                    notaB = notaA;
+                    notaA = nota;
+                }
+                else if (fechaNota.antesQue(fechaB)) {
+                    notaC = notaB;
+                    notaB = nota;
+                }
+                else {
+                    notaC = nota;
+                }
+            }
+        }
 
     }
 
@@ -79,10 +140,20 @@ public class Estudiante {
      * objetos NotaEstudianteUnidad que se necesitan para calcular la nota final
      */
     public double calcularNotaFinalEstudiante() {
-        //TODO
-
-        return 0;
+        if (notaA == null || notaB == null || notaC == null) {
+            return -1;
+        }
+        else {
+            UnidadTrabajo unidadA = notaA.getUnidad();
+            UnidadTrabajo unidadB = notaB.getUnidad();
+            UnidadTrabajo unidadC = notaC.getUnidad();
+           
+            return notaA.calcularNotaUnidad() * unidadA.getPesoUnidad() / 100 +
+                   notaB.calcularNotaUnidad() * unidadB.getPesoUnidad() / 100 +
+                   notaC.calcularNotaUnidad() * unidadC.getPesoUnidad() / 100; 
+        }
     }
+    
     /**
      * Representación textual del estudiante (ver enunciado)
      */
