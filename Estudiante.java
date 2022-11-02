@@ -45,22 +45,13 @@ public class Estudiante {
     public int totalNotas() {
         // devuelve el nº de notas registradas hasta el momento
         int totalNotas = 0;
-        if (notaA == null) {
-            totalNotas += 0;
-        }
-        else {
+        if (notaA != null) {
             totalNotas ++;
         }
-        if (notaB == null) {
-            totalNotas += 0;
-        }
-        else {
+        if (notaB != null) {
             totalNotas ++;
         }
-        if (notaC == null) {
-            totalNotas += 0;
-        }
-        else {
+        if (notaC != null) {
             totalNotas ++;
         }
         
