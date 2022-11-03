@@ -91,11 +91,11 @@ public class NotaEstudianteUnidad {
      * Representación textual del objeto (ver enunciado)
      */
     public String toString() {
-        //TODO
+        String str = "Controles:  " + getNotaControles() + "      Actividades clase:  " + getNotaActividades() + "      Proyectos:  " + getNotaProyectos() + "\n"
+        + "Nota final obtenida en Unidad de Trabajo:  " + calcularNotaUnidad();
         
         
-        
-        return null;
+        return str;
     }
 
     /**
