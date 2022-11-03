@@ -95,18 +95,7 @@ public class Estudiante {
         
         double C = notaC.calcularNotaUnidad() * notaC.getUnidad().getPesoUnidad();
          //le doy sus notas respectivas a la UT (1 2 Y 3
-        
         double notaFinal = 0;
-        
-        // if(totalNotas()== 0){
-             // A = notaA.calcularNotaUnidad() * notaA.getUnidad().getPesoUnidad();
-        // }
-        // else if((totalNotas()== 1)){
-             // B = notaB.calcularNotaUnidad() * notaB.getUnidad().getPesoUnidad();
-        // }
-        // else if(totalNotas()== 2){
-             // C = notaC.calcularNotaUnidad() * notaC.getUnidad().getPesoUnidad();
-        // } ¡¡¡¡ "Este If sobra con definirlo al crear la variable va bien"¡¡¡¡
         
         if(totalNotas()==3){
             notaFinal = ((A+B+C)/10); //divides entre 10 para que salga en formato maximo 10 y no 100. 
@@ -119,17 +108,28 @@ public class Estudiante {
         return notaFinal;
     }
 
-    // /**
-     // * Representación textual del estudiante (ver enunciado)
-     // */
-    // // public String toString() {
-        // // String str = "";
+    /**
+     * Representación textual del estudiante (ver enunciado)
+     */
+    public String toString() {
+        if(totalNotas()!= 3){ //el 40 es un ancho dado a lo random      
+            String str = String.format("%-40s\n" + "*".repeat(80) +  "\n%-40s" , nombre, "No es posible calcular su nota final de evaluación, faltan notas por registar");
+            return str;
+        }
         
-        // // str += notaA.toString(); //da igual que sea notaA solo quiero usarlo para llamar al metodo toString de N.E.U
+        //Aqui solo debo añadir el nombre del estudiante, lo demas del print viene
+        //en el toString de NotaEstudianteUnidad... obtenido objetos nota A B y C para cada UT
         
+        String str = String.format("%-40s\n" + "*".repeat(80) , nombre); //Saca el nombreEstudiante
         
-        // // return null;
-    // }
+        String str2 = String.format("Nota final de evaluacion: %%3.2f", calcularNotaFinalEstudiante());
+        
+        String str3 = String.format("Copia de la ultima UT añadida: %-40s" , notaA.getUnidad().clonar().toString()); //Estoy intentando llegar al toString de la clase UT
+        
+        return str + notaA.toString() +  notaB.toString() + notaC.toString() 
+        + "*".repeat(80) + str2 + "=".repeat(80) + str3; //str2 es para el bloque de nota final y el str3 para la copia creada antes
+        
+    }
 
     /**
      * Este método se ha incluido solo para testear la clase más fácilmente
