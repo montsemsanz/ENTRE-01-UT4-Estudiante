@@ -43,10 +43,15 @@ public class Estudiante {
      * (0, 1, 2 o 3)
      */
     public int totalNotas() {
-        //TODO
+        int totalNotas = 0;
+        notaA = this.notaA.getUnidad();
+        totalNotas++;
         
+        if (notaA == null && notaB == null && notaC == null){
+            totalNotas = 0;        
+        }
         
-        return 0;
+        return totalNotas;
     }
 
     /**
@@ -62,7 +67,6 @@ public class Estudiante {
 
     }
 
-   
     /**
      * Calcula y devuelve la nota final obtenida por el estudiante en la
      * evaluación que dependerá de la ponderación de cada UT

@@ -101,10 +101,11 @@ public class NotaEstudianteUnidad {
      * Representación textual del objeto (ver enunciado)
      */
     public String toString() {
-        String lineaFormateada = String.format("Controles:%6.2f \n Actividades clase:%6.2f \n Proyectos:%6.2f\n Nota final obtenidad en Unidad de Trabajo:%6.2f"
+        String lineaFormateada = String.format("Controles:%6.2f \n Actividades clase:%6.2f \n Proyectos:%6.2f\n Nota final obtenida en Unidad de Trabajo:%6.2f"
         ,notaControles, notaActividades,notaProyectos, calcularNotaUnidad(), "-".repeat(80) );
-        System.out.println(lineaFormateada);
-        return lineaFormateada;        
+        lineaFormateada.toString();
+        
+        return lineaFormateada; 
     }
 
     /**

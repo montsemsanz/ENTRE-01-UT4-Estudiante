@@ -107,9 +107,12 @@ public class UnidadTrabajo {
      * Se clonan también los objetos que incluya
      */
     public UnidadTrabajo clonar() {
-        String result = "Copia de ";
-        result += nombre;
-        System.out.println(result.toString());
+        String result = "";
+        result += "Copia de " + this.nombre + "\n";
+        result += "Fecha de finalización: " + this.getFechaFin().toString();
+        result += "| Peso UT: " + this.pesoUnidad;
+        result += "%\n" + this.ponderacion;
+        System.out.println(result);
         return null;
     }
 
