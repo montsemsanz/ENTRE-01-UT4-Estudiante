@@ -14,8 +14,7 @@ public class NotaEstudianteUnidad {
      * Constructor
      */
     public NotaEstudianteUnidad(UnidadTrabajo unidad, double notaControles,
-                                double notaActividades,
-                                double notaProyectos) {
+    double notaActividades,double notaProyectos) {
         this.unidad = unidad;
         this.notaControles = notaControles;
         this.notaActividades = notaActividades;
@@ -83,23 +82,26 @@ public class NotaEstudianteUnidad {
      * en cuenta la ponderación de los instrumentos de evaluación
      */
     public double calcularNotaUnidad() {
-         //TODO
-         
-         
-         return 0;
-
-
+        PonderacionInstrumentos ponderar = unidad.getPonderacion();
+        double controlesPonderados = (notaControles * ponderar.getControles()) / 100;
+        double actividadesPonderadas = (notaActividades * ponderar.getActividades()) / 100;
+        double proyectosPonderados = (notaProyectos * ponderar.getProyectos()) / 100;
+        double notaUnidad = controlesPonderados + actividadesPonderadas + proyectosPonderados;
+        return notaUnidad;
     }
 
     /**
      * Representación textual del objeto (ver enunciado)
      */
     public String toString() {
-        //TODO
-        
-        
-        
-        return null;
+        String str = "";
+        str += unidad.toString();
+        str += String.format("Controles: %6.2f", getNotaControles());
+        str += String.format("Actividades: %6.2f", getNotaActividades());
+        str += String.format("Proyectos: %6.2f", getNotaProyectos());
+        str += String.format("Nota final obtenida en Unidad de Trabajo:", calcularNotaUnidad());
+        str += "-".repeat(80);
+        return str;
     }
 
     /**
@@ -109,7 +111,5 @@ public class NotaEstudianteUnidad {
         System.out.println(this.toString());
 
     }
-
-   
 
 }
