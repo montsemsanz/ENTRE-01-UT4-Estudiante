@@ -106,7 +106,7 @@ public class Estudiante {
            return -1;
        }
        else{
-         return notaA.calcularNotaUnidad() * notaA.getUnidad().getPesoUnidad() + notaB.calcularNotaUnidad() * notaB.getUnidad().getPesoUnidad() + notaC.calcularNotaUnidad() * notaC.getUnidad().getPesoUnidad();
+         return notaA.calcularNotaUnidad() * (notaA.getUnidad().getPesoUnidad()/100) + notaB.calcularNotaUnidad() * (notaB.getUnidad().getPesoUnidad()/100) + notaC.calcularNotaUnidad() * (notaC.getUnidad().getPesoUnidad()/100);
        }
     }
 
@@ -116,20 +116,21 @@ public class Estudiante {
     public String toString() {
        System.out.println(nombre);
        System.out.println("*".repeat(80));
+       String str = "";
        if(calcularNotaFinalEstudiante() == -1){
-           System.out.println("No es posible calcular su nota final de evaluación, faltan notas por registrar");
+           str = "No es posible calcular su nota final de evaluación, faltan notas por registrar";
        }
        else{
-           notaA.getUnidad().print();
-           notaA.print();
-           notaB.getUnidad().print();
-           notaB.print();
-           notaC.getUnidad().print();
-           notaC.print();
-           System.out.println("Nota final de evaluación: " + calcularNotaFinalEstudiante());
-           System.out.println("=".repeat(62));
+           str += notaA.getUnidad().toString() + "\n";
+           str += notaA.toString() + "\n";
+           str += notaB.getUnidad().toString() + "\n";
+           str += notaB.toString() + "\n";
+           str += notaC.getUnidad().toString() + "\n";
+           str += notaC.toString() + "\n";
+           str += "Nota final de evaluación: " + calcularNotaFinalEstudiante() + "\n";
+           str += "=".repeat(80) + "\n";
        }
-       return null;
+       return str;
     }
 
     /**

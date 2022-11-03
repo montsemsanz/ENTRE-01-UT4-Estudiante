@@ -22,6 +22,7 @@ public class TestEstudiante {
        estudiante.registrarNotaUnidad(notaEstudianteUnidad3);
        estudiante.print();
        
+       System.out.println("Copia de la última UT añadida");
        unidadTrabajo3.clonar().print();
         
     }
