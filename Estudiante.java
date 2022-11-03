@@ -129,12 +129,12 @@ public class Estudiante {
         str += notaC.toString();
         str += "\n";
         
-        if(calcularNotaFinalEstudiante() < 1) {
-            str += "No es posible calcular su nota final de evaluación, faltan notas por registrar";
-        }
-        else{
-            str += String.format("Nota final de evaluación: %6.2f", calcularNotaFinalEstudiante());
-        }
+        // if(calcularNotaFinalEstudiante() < 1) {
+            // str += "No es posible calcular su nota final de evaluación, faltan notas por registrar";
+        // }
+        // else{
+            // str += String.format("Nota final de evaluación: %4.2f", calcularNotaFinalEstudiante());
+        // }
         
         str += "=".repeat(80) + "\n";
         
