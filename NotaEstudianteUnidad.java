@@ -82,23 +82,19 @@ public class NotaEstudianteUnidad {
      * en cuenta la ponderación de los instrumentos de evaluación
      */
     public double calcularNotaUnidad() {
-         //TODO
-         
-         
-         return 0;
-
-
+         double notaControlesFinal = notaControles * unidad.getPonderacion().getControles();
+         double notaActividadesFinal = notaActividades * unidad.getPonderacion().getActividades();
+         double notaProyectosFinal = notaProyectos * unidad.getPonderacion().getProyectos();
+         double notaFinal = (notaControles + notaActividades + notaProyectos)/3;
+         return notaFinal;
     }
 
     /**
      * Representación textual del objeto (ver enunciado)
      */
     public String toString() {
-        //TODO
-        
-        
-        
-        return null;
+        String str = String.format("Controles: %6.2f", notaControles) + String.format("Actividades clase: %6.2f", notaActividades) + String.format("Proyectos: %6.2f", notaProyectos) + String.format("\nNota final obtenida en Unidad de Trabajo: %6.2f", calcularNotaUnidad()) + "\n" + "-".repeat(80);
+        return str;
     }
 
     /**

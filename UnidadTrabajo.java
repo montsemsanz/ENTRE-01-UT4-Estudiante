@@ -104,10 +104,7 @@ public class UnidadTrabajo {
      * Se clonan también los objetos que incluya
      */
     public UnidadTrabajo clonar() {
-         //TODO
-         
-         
-        return null;
+        return new UnidadTrabajo("Copia de " + this.nombre,this.fechaFin,this.pesoUnidad, this.ponderacion);
     }
 
     /**
@@ -126,7 +123,7 @@ public class UnidadTrabajo {
      */
     public void print() {
         System.out.println(this.toString());
-
+        
     }
 
 
