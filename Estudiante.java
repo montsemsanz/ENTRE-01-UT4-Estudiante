@@ -52,7 +52,7 @@ public class Estudiante {
         if(notaC == null){
             notasTotal --;
         }
-        
+
         return notasTotal;
     }
 
@@ -65,11 +65,32 @@ public class Estudiante {
      * Pista!! En este método se utilizará el método totalNotas()
      */
     public void registrarNotaUnidad(NotaEstudianteUnidad nota) {
-        //TODO
-
+        switch (totalNotas()){
+            case 0: notaA = nota;
+                break;
+            case 1: if(nota.getUnidad().anteriorA(notaA.getUnidad())){
+                        notaB = notaA;
+                        notaA = nota;        
+                    }
+                    else {
+                        notaB = nota;
+                    }
+                break;
+            case 2: if(nota.getUnidad().anteriorA(notaA.getUnidad())){
+                        notaC = notaB;
+                        notaB = notaA;
+                        notaA = nota;
+                    }
+                    else if(nota.getUnidad().anteriorA(notaB.getUnidad())){
+                        notaC = notaB;
+                        notaB = nota;
+                    }
+                    else{
+                        notaC = nota;
+                    }
+        }
     }
 
-   
     /**
      * Calcula y devuelve la nota final obtenida por el estudiante en la
      * evaluación que dependerá de la ponderación de cada UT
@@ -77,21 +98,17 @@ public class Estudiante {
      * objetos NotaEstudianteUnidad que se necesitan para calcular la nota final
      */
     public double calcularNotaFinalEstudiante() {
-       //TODO
-       
-       
-       return 0;
+        
 
+        return 0;
     }
-
     /**
      * Representación textual del estudiante (ver enunciado)
      */
     public String toString() {
-       //TODO
-       
-       
-       return null;
+        //TODO
+
+        return null;
     }
 
     /**
@@ -102,6 +119,5 @@ public class Estudiante {
 
     }
 
-    
 
 }
