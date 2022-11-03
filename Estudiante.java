@@ -43,9 +43,18 @@ public class Estudiante {
      */
     public int totalNotas() {
         //TODO
+        int notas = 0;
+        if(notaA != null){
+            notas++;
+        }
+        else if(notaA != null){
+            notas++;
+        }
+        else if(notaA != null){
+            notas++;
+        }
         
-        
-        return 0;
+        return notas;
     }
 
     /**
