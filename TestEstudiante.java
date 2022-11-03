@@ -18,19 +18,16 @@ public class TestEstudiante {
             // nombreEstudiante = "MOLINA HUARTE, Isabel";
             String nombreEstudiante = teclado.nextLine();
             
-        Estudiante estudiante = new Estudiante(nombreEstudiante);
+        //Estudiante estudiante = new Estudiante(nombreEstudiante);
         
         
         //-------CREAMOS LA UNIDAD DE TRABAJO 1-----------------------------------------------        
     
         //- - - pedir datos sobre la ut - - - - - - - - - - - - - - - - - - 
         System.out.println("Nombre de la UT: ");
-                teclado.nextLine();
+            //  teclado.nextLine();
             String nombreUT = teclado.nextLine();
             //  teclado.nextLine();
-        
-        System.out.println("Peso de la UT: ");
-            int peso = teclado.nextInt();
         
         System.out.println("Día de finalización de la UT: ");
             int dia = teclado.nextInt();
@@ -40,6 +37,9 @@ public class TestEstudiante {
         
         System.out.println("Año de finalización de la UT: ");
             int año = teclado.nextInt();
+            
+        System.out.println("Peso de la UT: ");
+            int peso = teclado.nextInt();
         
         System.out.println("Ponderación controles: ");
             int ponderaControles = teclado.nextInt();
@@ -52,22 +52,34 @@ public class TestEstudiante {
             
         //- - - pedir datos sobre las notas - - - - - - - - - - - - - - - - - -     
         System.out.println("Nota controles: ");
-            int notaControles = teclado.nextInt();
+            double notaControles = teclado.nextDouble();
             
         System.out.println("Nota actividades: ");
-            int notaActividades = teclado.nextInt();
+            double notaActividades = teclado.nextDouble();
             
         System.out.println("Nota proyectos: ");
-            int notaProyectos = teclado.nextInt();
+            double notaProyectos = teclado.nextDouble();
             
         //- - - creamos ambos objetos (UT y notas) - - - - - - - - - - - - - - - - - -  
+        Estudiante estudiante = new Estudiante(nombreEstudiante);
+        
         UnidadTrabajo unidadTrabajo1 = new UnidadTrabajo(nombreUT, dia, mes, año, peso,
                                          ponderaControles, ponderaActividades, ponderaProyectos);
-                                                    
-        NotaEstudianteUnidad notaUnidad1 = new NotaEstudianteUnidad(unidadTrabajo1, 
+                                         
+        NotaEstudianteUnidad notasEstudianteUT1 = new NotaEstudianteUnidad(unidadTrabajo1, 
                                             notaControles, notaActividades, notaProyectos);
+                                            
+        //- - - registramos las notas de esta UT - - - - - - - - - - - - - - - - - -                                   
+        notasEstudianteUT1.setNotaControles(notaControles); 
+        notasEstudianteUT1.setNotaActividades(notaActividades); 
+        notasEstudianteUT1.setNotaProyectos(notaProyectos);
         
+        //double notaUnidad = notasEstudianteUT1.calcularNotaUnidad();
+        estudiante.registrarNotaUnidad(notasEstudianteUT1);
         
+        estudiante.print();
+        notasEstudianteUT1.print();
+        //- - - Mostrar en pantalla toda la información del alumno - - - - - - - - - - - - - - - - - -  
         
         
         
