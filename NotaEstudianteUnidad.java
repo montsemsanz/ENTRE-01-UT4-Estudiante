@@ -93,7 +93,7 @@ public class NotaEstudianteUnidad {
      * Representación textual del objeto (ver enunciado)
      */
     public String toString() {
-        String str = String.format("Controles: %6.2f", notaControles) + String.format("Actividades clase: %6.2f", notaActividades) + String.format("Proyectos: %6.2f", notaProyectos) + String.format("\nNota final obtenida en Unidad de Trabajo: %6.2f", calcularNotaUnidad()) + "\n" + "-".repeat(80);
+        String str = String.format("Controles: %6.2f", notaControles) + String.format("      Actividades clase: %6.2f", notaActividades) + String.format("      Proyectos: %6.2f", notaProyectos) + String.format("\nNota final obtenida en Unidad de Trabajo: %6.2f", calcularNotaUnidad()) + "\n" + "-".repeat(80);
         return str;
     }
 
