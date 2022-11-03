@@ -102,20 +102,35 @@ public class Estudiante {
      * objetos NotaEstudianteUnidad que se necesitan para calcular la nota final
      */
     public double calcularNotaFinalEstudiante() {
-       //TODO
-       
-       
-       return 0;
-
+       if(totalNotas() != 3){
+           return -1;
+       }
+       else{
+         return notaA.calcularNotaUnidad() * notaA.getUnidad().getPesoUnidad() + notaB.calcularNotaUnidad() * notaB.getUnidad().getPesoUnidad() + notaC.calcularNotaUnidad() * notaC.getUnidad().getPesoUnidad();
+       }
     }
 
     /**
      * Representación textual del estudiante (ver enunciado)
      */
     public String toString() {
-       //TODO
-       
-       
+       System.out.println(nombre);
+       System.out.println("*".repeat(80));
+       if(calcularNotaFinalEstudiante() == -1){
+           System.out.println("No es posible calcular su nota final de evaluación, faltan notas por registrar");
+       }
+       else{
+           notaA.getUnidad().print();
+           notaA.print();
+           notaB.getUnidad().print();
+           notaB.print();
+           notaC.getUnidad().print();
+           notaC.print();
+           System.out.println("Nota final de evaluación: " + calcularNotaFinalEstudiante());
+           System.out.println("=".repeat(62));
+           System.out.println("Copia de la última UT añadida");
+           
+       }
        return null;
     }
 

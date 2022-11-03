@@ -82,10 +82,10 @@ public class NotaEstudianteUnidad {
      * en cuenta la ponderación de los instrumentos de evaluación
      */
     public double calcularNotaUnidad() {
-         double notaControlesFinal = notaControles * unidad.getPonderacion().getControles();
-         double notaActividadesFinal = notaActividades * unidad.getPonderacion().getActividades();
-         double notaProyectosFinal = notaProyectos * unidad.getPonderacion().getProyectos();
-         double notaFinal = (notaControles + notaActividades + notaProyectos)/3;
+         double notaControlesFinal = notaControles * (unidad.getPonderacion().getControles()/100);
+         double notaActividadesFinal = notaActividades * (unidad.getPonderacion().getActividades()/100);
+         double notaProyectosFinal = notaProyectos * (unidad.getPonderacion().getProyectos()/100);
+         double notaFinal = (notaControles + notaActividades + notaProyectos);
          return notaFinal;
     }
 
