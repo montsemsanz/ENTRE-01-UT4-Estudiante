@@ -67,11 +67,12 @@ public class Estudiante {
      * Pista!! En este método se utilizará el método totalNotas()
      */
     public void registrarNotaUnidad(NotaEstudianteUnidad nota) {
-        //TODO
-
+        //
+        if (notaA.getUnidad().anteriorA(notaB.getUnidad())) {
+            ;
+        }
     }
 
-   
     /**
      * Calcula y devuelve la nota final obtenida por el estudiante en la
      * evaluación que dependerá de la ponderación de cada UT
@@ -99,11 +100,16 @@ public class Estudiante {
      * Representación textual del estudiante (ver enunciado)
      */
     public String toString() {
-        String str2 = String.format("MOLINA HUARTE, Isabel\n" + "*".repeat(80) +
-                    "\nNo es posible calcular su nota final de evaluación," +  
-                    "faltan notas por registrar");
+        String str = String.format(nombre + "\n" + "*".repeat(80) + "\n");
+        if (calcularNotaFinalEstudiante() == 3) {
+            str += notaA.toString() + notaB.toString() + notaC.toString();
+        }
+        else {
+            str = "No es posible calcular su nota final de evaluación, " +
+                  "faltan notas por registrar";
+        }
         
-        return str2;
+        return str;
     }
 
     /**
