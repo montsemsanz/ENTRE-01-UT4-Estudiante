@@ -42,15 +42,15 @@ public class Estudiante {
      * (0, 1, 2 o 3)
      */
     public int totalNotas() {
-        //TODO
         int notas = 0;
+        
         if(notaA != null){
             notas++;
         }
-        else if(notaA != null){
+        else if(notaB != null){
             notas++;
         }
-        else if(notaA != null){
+        else if(notaC != null){
             notas++;
         }
         
