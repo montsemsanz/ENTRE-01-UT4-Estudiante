@@ -82,7 +82,7 @@ public class NotaEstudianteUnidad {
      * en cuenta la ponderación de los instrumentos de evaluación
      */
     public double calcularNotaUnidad() {
-         return (getNotaControles() * unidad.getPonderacion().getControles()) + (getNotaActividades() * unidad.getPonderacion().getActividades()) + (getNotaProyectos() * unidad.getPonderacion().getProyectos());
+         return (double)(getNotaControles() * ((double)unidad.getPonderacion().getControles() / 100)) + (getNotaActividades() * ((double)unidad.getPonderacion().getActividades() / 100)) + (getNotaProyectos() * ((double)unidad.getPonderacion().getProyectos() / 100));
 
 
     }
@@ -95,7 +95,7 @@ public class NotaEstudianteUnidad {
         unidad.toString() + "\n" +
         "Controles:  " + getNotaControles() + "      Actividades clase:  " + getNotaActividades() + "      Proyectos:  " + getNotaProyectos() + "\n"
         + "Nota final obtenida en Unidad de Trabajo:  " + calcularNotaUnidad() + "\n" + 
-        "*".repeat(80);
+        "-".repeat(80);
         
         return str;
     }

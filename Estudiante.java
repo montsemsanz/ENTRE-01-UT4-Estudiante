@@ -42,15 +42,15 @@ public class Estudiante {
      * (0, 1, 2 o 3)
      */
     public int totalNotas() {
-        int notasTotal = 3;
-        if (notaA == null){
-            notasTotal --;
+        int notasTotal = 0;
+        if (notaA != null){
+            notasTotal ++;
         }
-        if(notaB == null){
-            notasTotal --;
+        if(notaB != null){
+            notasTotal ++;
         }
-        if(notaC == null){
-            notasTotal --;
+        if(notaC != null){
+            notasTotal ++;
         }
 
         return notasTotal;
@@ -76,7 +76,7 @@ public class Estudiante {
                         notaB = nota;
                     }
                 break;
-            case 2: if(nota.getUnidad().anteriorA(notaA.getUnidad())){
+            case 2: if(nota.getUnidad().anteriorA(notaA.getUnidad()) && nota.getUnidad().anteriorA(notaB.getUnidad())){
                         notaC = notaB;
                         notaB = notaA;
                         notaA = nota;
@@ -98,9 +98,9 @@ public class Estudiante {
      * objetos NotaEstudianteUnidad que se necesitan para calcular la nota final
      */
     public double calcularNotaFinalEstudiante() {
-        double nota1 = notaA.calcularNotaUnidad() * notaA.getUnidad().getPesoUnidad();
-        double nota2 = notaB.calcularNotaUnidad() * notaB.getUnidad().getPesoUnidad();
-        double nota3 = notaC.calcularNotaUnidad() * notaC.getUnidad().getPesoUnidad();
+        double nota1 = notaA.calcularNotaUnidad() * notaA.getUnidad().getPesoUnidad() / 100;
+        double nota2 = notaB.calcularNotaUnidad() * notaB.getUnidad().getPesoUnidad() / 100;
+        double nota3 = notaC.calcularNotaUnidad() * notaC.getUnidad().getPesoUnidad() / 100;
         
         double notaFinal = nota1 + nota2 + nota3;
 
@@ -110,13 +110,15 @@ public class Estudiante {
      * Representación textual del estudiante (ver enunciado)
      */
     public String toString() {
-        String str;
+        String str; 
+            str = getNombre() + "\n";
         if(notaA == null || notaB == null || notaC == null){
             str = "No es posible calcular su nota final de evaluación, faltan notas por registrar \n" + 
             "*".repeat(80);
         }
         else{
-             str = "nota final de evaluación:  " + "\n" + calcularNotaFinalEstudiante();
+             str = notaA.toString() + "\n" + notaB.toString() + "\n" + notaC.toString() + "\n" + 
+             "nota final de evaluación:  " + "\n" + calcularNotaFinalEstudiante() + "\n" + "=".repeat(80);
         }
 
         return str;
