@@ -106,7 +106,8 @@ public class UnidadTrabajo {
      * Se clonan también los objetos que incluya
      */
     public UnidadTrabajo clonar() {
-        
+        return new UnidadTrabajo("Copia de " + this.nombre, this.fechaFin,
+        this.pesoUnidad, this.ponderacion);
     }
 
     /**
