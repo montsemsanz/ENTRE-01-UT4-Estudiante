@@ -117,9 +117,28 @@ public class Estudiante {
      * Representación textual del estudiante (ver enunciado)
      */
     public String toString() {
-        //TODO
-
-        return null;
+        String str = "";
+        
+        str += getNombre();
+        str += "*".repeat(80);
+        
+        str += notaA.toString();
+        str += "\n";
+        str += notaB.toString();
+        str += "\n";
+        str += notaC.toString();
+        str += "\n";
+        
+        if(calcularNotaFinalEstudiante() < 1) {
+            str += "No es posible calcular su nota final de evaluación, faltan notas por registrar";
+        }
+        else{
+            str += String.format("Nota final de evaluación: %6.2f", calcularNotaFinalEstudiante());
+        }
+        
+        str += "=".repeat(80) + "\n";
+        
+        return str;
     }
 
     /**
