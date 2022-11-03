@@ -17,9 +17,9 @@ public class UnidadTrabajo {
     public UnidadTrabajo(String nombre, int dia, int mes, int year, int peso,
                          int controles, int actividades, int proyectos) {
        this.nombre = nombre;
-       fechaFin = new Fecha(0, 0, 0);
+       fechaFin = new Fecha(dia, mes, year);
        pesoUnidad = peso;
-       ponderacion = new PonderacionInstrumentos(0, 0, 0);
+       ponderacion = new PonderacionInstrumentos(controles, actividades, proyectos);
     }
 
     /**
@@ -93,11 +93,11 @@ public class UnidadTrabajo {
      * Devuelve true si la UT actual ha finalizado antes
      * que la recibida como parámetro
      */
-    public boolean anteriorA(UnidadTrabajo unidad) {
-        //TODO
+    public UnidadTrabajo anteriorA(UnidadTrabajo unidad) {
+        fechaFin.antesQue(unidad.fechaFin);
+        UnidadTrabajo ut = new UnidadTrabajo(nombre,fechaFin, pesoUnidad, ponderacion);
         
-        
-        return true;
+        return ut;
     }
 
     /**
@@ -105,11 +105,10 @@ public class UnidadTrabajo {
      * "Copia de " + nombre de la UT actual
      * Se clonan también los objetos que incluya
      */
-    public UnidadTrabajo clonar() {
-         //TODO
-         
-         
-        return null;
+   public UnidadTrabajo clonar() {
+
+        UnidadTrabajo ut = new UnidadTrabajo("Copia de " + getNombre(), this.fechaFin, this.pesoUnidad, this.ponderacion);
+        return ut;
     }
 
     /**

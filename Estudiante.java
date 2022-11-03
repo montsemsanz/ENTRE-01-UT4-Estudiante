@@ -42,10 +42,20 @@ public class Estudiante {
      * (0, 1, 2 o 3)
      */
     public int totalNotas() {
-        //TODO
+        int nota = 0;
+        if (notaA != null) {
+            nota++;
+        }
         
+        if (notaB != null) {
+            nota++;
+        }
         
-        return 0;
+        if (notaC != null) {
+            nota++;
+        }
+
+        return nota;
     }
 
     /**
@@ -57,8 +67,29 @@ public class Estudiante {
      * Pista!! En este método se utilizará el método totalNotas()
      */
     public void registrarNotaUnidad(NotaEstudianteUnidad nota) {
-        //TODO
-
+        switch (this.totalNotas()) {
+            case 0:
+                this.notaA = nota;
+                break;
+            case 1:
+                if (nota.getUnidad().getFechaFin().antesQue(notaA.getUnidad().getFechaFin())) {
+                    notaB = notaA;
+                    notaA = nota;
+                }   break;
+            default:
+                if (nota.getUnidad().getFechaFin().antesQue(notaB.getUnidad().getFechaFin())) {
+                    if (nota.getUnidad().getFechaFin().antesQue(notaA.getUnidad().getFechaFin())) {
+                        notaC = notaB;
+                        notaB = notaA;
+                        notaA = nota;
+                    } else {
+                        notaC = notaB;
+                        notaB = nota;
+                    }
+                } else {
+                    notaC = nota;
+                }   break;
+        }
     }
 
    
@@ -69,10 +100,24 @@ public class Estudiante {
      * objetos NotaEstudianteUnidad que se necesitan para calcular la nota final
      */
     public double calcularNotaFinalEstudiante() {
-       //TODO
-       
-       
-       return 0;
+        double nota = 0;
+        if (notaA != null) {
+            nota += notaA.calcularNotaUnidad() * notaA.getUnidad().getPesoUnidad();
+        }else {
+            return -1;
+        }
+        if (notaB != null) {
+            nota += notaB.calcularNotaUnidad() * notaB.getUnidad().getPesoUnidad();
+        }else {
+            return -1;
+        }
+        if (notaC != null) {
+            nota += notaC.calcularNotaUnidad() * notaC.getUnidad().getPesoUnidad();
+        }else {
+            return -1;
+        }
+        nota = nota / 100;
+        return nota;
 
     }
 
@@ -80,10 +125,26 @@ public class Estudiante {
      * Representación textual del estudiante (ver enunciado)
      */
     public String toString() {
-       //TODO
-       
-       
-       return null;
+        String str;
+        double nota = this.calcularNotaFinalEstudiante();
+        str = this.nombre;
+        System.out.println("***");
+        this.notaA.getUnidad().print();
+        this.notaA.print();
+        System.out.println("---------------------------------------------------------------");
+        this.notaB.getUnidad().print();
+        this.notaB.print();
+        System.out.println("---------------------------------------------------------------");
+        this.notaC.getUnidad().print();
+        this.notaC.print();
+        System.out.println("---------------------------------------------------------------");
+        if (nota == -1){
+            str += "No es posible calcular su nota final de evaluación, faltan notas por registrar";
+        }else {
+            str += "Nota final de evaluación: "+ nota;
+        }
+        System.out.println("================================================================");
+        return str;
     }
 
     /**
