@@ -66,7 +66,9 @@ public class Estudiante {
      * Pista!! En este método se utilizará el método totalNotas()
      */
     public void registrarNotaUnidad(NotaEstudianteUnidad nota) {
-        //TODO
+        if(totalNotas() < 1){
+            
+        }
 
     }
 
