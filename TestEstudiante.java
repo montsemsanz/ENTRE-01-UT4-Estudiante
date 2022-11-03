@@ -12,33 +12,65 @@ public class TestEstudiante {
      */
     public static void main(String[] args) {
         Scanner teclado = new Scanner(System.in); 
-        
-          // System.out.println("Nombre: ");
-        // String nombre = teclado.nextLine();
-
-        // System.out.println("Edad: ");
-        // int edad = teclado.nextInt();
-
-
-        // System.out.println("Sueldo: ");
-        // double sueldo = teclado.nextDouble();
-        
-        // teclado.nextLine();
-        
-        // System.out.println("Estado civil: ");
-        // char estadoCivil = teclado.nextLine().charAt(0);
-        
-        // Persona persona = new Persona (nombre, edad, sueldo, estadoCivil);
-        // System.out.println(persona.toString()); persona = new Persona (nombre, edad, sueldo, estadoCivil);
-        // System.out.println(persona.toString());
-        
-        System.out.println("MOLINA HUARTE, Isabel");
-        String nombreEstudiante = teclado.nextLine();
-        
+     
+        //---------CREAMOS EL ESTUDIANTE-----------------------------------------------------
+        System.out.println("Nombre:");
+            // nombreEstudiante = "MOLINA HUARTE, Isabel";
+            String nombreEstudiante = teclado.nextLine();
+            
         Estudiante estudiante = new Estudiante(nombreEstudiante);
         
-        System.out.println("Interacción de objetos. Estructura de control iterativa.");
-        String nombreUT = teclado.nextLine();
+        
+        //-------CREAMOS LA UNIDAD DE TRABAJO 1-----------------------------------------------        
+    
+        //- - - pedir datos sobre la ut - - - - - - - - - - - - - - - - - - 
+        System.out.println("Nombre de la UT: ");
+                teclado.nextLine();
+            String nombreUT = teclado.nextLine();
+            //  teclado.nextLine();
+        
+        System.out.println("Peso de la UT: ");
+            int peso = teclado.nextInt();
+        
+        System.out.println("Día de finalización de la UT: ");
+            int dia = teclado.nextInt();
+        
+        System.out.println("Mes de finalización de la UT: ");
+            int mes = teclado.nextInt();
+        
+        System.out.println("Año de finalización de la UT: ");
+            int año = teclado.nextInt();
+        
+        System.out.println("Ponderación controles: ");
+            int ponderaControles = teclado.nextInt();
+            
+        System.out.println("Ponderación actividades: ");
+            int ponderaActividades = teclado.nextInt();
+            
+        System.out.println("Ponderación proyectos: ");
+            int ponderaProyectos = teclado.nextInt();
+            
+        //- - - pedir datos sobre las notas - - - - - - - - - - - - - - - - - -     
+        System.out.println("Nota controles: ");
+            int notaControles = teclado.nextInt();
+            
+        System.out.println("Nota actividades: ");
+            int notaActividades = teclado.nextInt();
+            
+        System.out.println("Nota proyectos: ");
+            int notaProyectos = teclado.nextInt();
+            
+        //- - - creamos ambos objetos (UT y notas) - - - - - - - - - - - - - - - - - -  
+        UnidadTrabajo unidadTrabajo1 = new UnidadTrabajo(nombreUT, dia, mes, año, peso,
+                                         ponderaControles, ponderaActividades, ponderaProyectos);
+                                                    
+        NotaEstudianteUnidad notaUnidad1 = new NotaEstudianteUnidad(unidadTrabajo1, 
+                                            notaControles, notaActividades, notaProyectos);
+        
+        
+        
+        
+        
         
         //FALTA POR TERMINAR
 
