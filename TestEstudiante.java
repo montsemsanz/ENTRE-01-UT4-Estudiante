@@ -16,9 +16,24 @@ public class TestEstudiante {
         
         
         Fecha fecha1 = new Fecha(21, 9, 2022);
-        PonderacionInstrumentos ponderacion1 = new PonderacionInstrumentos(6, 10, 7);
+        PonderacionInstrumentos ponderacion1 = new PonderacionInstrumentos(70, 10, 20);
         UnidadTrabajo unidad2 = new UnidadTrabajo("Objetos y clases",fecha1,10, ponderacion1);
         NotaEstudianteUnidad notaUnidad2 = new NotaEstudianteUnidad (unidad2, 6, 10, 7);
+        
+        estudiante1.registrarNotaUnidad(notaUnidad2);
+        estudiante1.print();
+        
+
+        Fecha fecha2 = new Fecha(16, 10, 2022);
+        PonderacionInstrumentos ponderacion2 = new PonderacionInstrumentos(65, 10, 25);
+        UnidadTrabajo unidad3 = new UnidadTrabajo ("Definición de una clase. Estructura condicional", fecha2, 35, ponderacion2);
+        NotaEstudianteUnidad notaUnidad3 = new NotaEstudianteUnidad (unidad3, 8, 6, 9);
+        
+        estudiante1.registrarNotaUnidad(notaUnidad3);
+        estudiante1.print();
+        
+        System.out.println("\n\n Copia de la última UT añadida\n" + unidad3.clonar());
+        
        
     }
 }

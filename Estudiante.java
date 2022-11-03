@@ -97,7 +97,7 @@ public class Estudiante {
                 notaC = extra;
             }
         }
-       
+        
 
     }
     /**
@@ -122,6 +122,9 @@ public class Estudiante {
             resultado = -1;
         }
         return resultado;
+     
+        
+        
     }
 
     /**
@@ -130,15 +133,9 @@ public class Estudiante {
     public String toString() {
         String string = "";
 
-        // string = nombre + "/n" +
-        // "*".repeat(80) + "\n" +
-        // notaA.toString() + "\n" +
-        // notaB.toString() + "\n" +
-        // notaC.toString() + "\n";
-
         if (calcularNotaFinalEstudiante() == -1) {
-            string = nombre + "/n" +
-            "No es posible calcular su nota final de evaluación, faltan notas por registrar.\n" +
+            string = nombre +
+            "\n" + "No es posible calcular su nota final de evaluación, faltan notas por registrar." + "\n" +
             "=".repeat(60) + "\n\n\n";
         }else {
             string = String.format("Nota final de evaluación: %4.2f\n", calcularNotaFinalEstudiante())+"/n" +

@@ -93,10 +93,14 @@ public class NotaEstudianteUnidad {
      */
     public String toString() {
         
-        String stringFormateado = String.format("controles: " + "%6.2f" + "    Actividad clase: " + "%6.2f" + "Proyectos: "+ "%6.2f" + "\n",
-        "Nota final obtenida en Unidad de Trabajo: " + "%6.2f"+ "\n" + "-".repeat(80),
-        getNotaControles(),getNotaActividades(),getNotaProyectos(),calcularNotaUnidad());
-        
+        String stringFormateado = "";
+        stringFormateado += unidad.toString();
+        stringFormateado +=String.format("controles: %6.2f \n", getNotaControles());
+        stringFormateado +=String.format("Actividad clase: %6.2f \n", getNotaActividades());
+        stringFormateado +=String.format("Proyectos: %6.2f \n", getNotaProyectos());
+        stringFormateado +=String.format("Nota final obtenida en Unidad de Trabajo:  %6.2f \n", calcularNotaUnidad());
+        stringFormateado +="-".repeat(80);
+    
         return stringFormateado;
     }
 
