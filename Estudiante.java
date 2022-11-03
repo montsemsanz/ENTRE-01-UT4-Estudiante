@@ -128,8 +128,6 @@ public class Estudiante {
            notaC.print();
            System.out.println("Nota final de evaluación: " + calcularNotaFinalEstudiante());
            System.out.println("=".repeat(62));
-           System.out.println("Copia de la última UT añadida");
-           
        }
        return null;
     }
