@@ -98,9 +98,13 @@ public class Estudiante {
      * objetos NotaEstudianteUnidad que se necesitan para calcular la nota final
      */
     public double calcularNotaFinalEstudiante() {
+        double nota1 = notaA.calcularNotaUnidad() * notaA.getUnidad().getPesoUnidad();
+        double nota2 = notaB.calcularNotaUnidad() * notaB.getUnidad().getPesoUnidad();
+        double nota3 = notaC.calcularNotaUnidad() * notaC.getUnidad().getPesoUnidad();
         
+        double notaFinal = nota1 + nota2 + nota3;
 
-        return 0;
+        return notaFinal;
     }
     /**
      * Representación textual del estudiante (ver enunciado)
