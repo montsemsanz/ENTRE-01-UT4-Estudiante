@@ -16,8 +16,10 @@ public class UnidadTrabajo {
      */
     public UnidadTrabajo(String nombre, int dia, int mes, int year, int peso,
                          int controles, int actividades, int proyectos) {
-       //TODO
-       
+       this.nombre = nombre;
+       this.fechaFin = new Fecha(dia, mes, year);
+       pesoUnidad = peso;
+       this.ponderacion = new PonderacionInstrumentos(controles, actividades, proyectos);
        
     }
 
@@ -93,8 +95,7 @@ public class UnidadTrabajo {
      * que la recibida como parámetro
      */
     public boolean anteriorA(UnidadTrabajo unidad) {
-        //TODO
-        
+        fechaFin.antesQue(fechaFin);
         
         return true;
     }
