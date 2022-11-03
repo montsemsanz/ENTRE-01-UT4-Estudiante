@@ -127,7 +127,7 @@ public class Estudiante {
            str += notaB.toString() + "\n";
            str += notaC.getUnidad().toString() + "\n";
            str += notaC.toString() + "\n";
-           str += "Nota final de evaluación: " + calcularNotaFinalEstudiante() + "\n";
+           str += String.format("Nota final de evaluación: %6.2f", calcularNotaFinalEstudiante()) + "\n";
            str += "=".repeat(80) + "\n";
        }
        return str;
