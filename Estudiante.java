@@ -66,10 +66,35 @@ public class Estudiante {
      * Pista!! En este método se utilizará el método totalNotas()
      */
     public void registrarNotaUnidad(NotaEstudianteUnidad nota) {
-        if(totalNotas() < 1){
-            
+        if(totalNotas() == 0){
+            notaA = nota;
+        }   
+        else if(totalNotas() == 1){
+            if(notaA.getUnidad().getFechaFin().antesQue(nota.getUnidad().getFechaFin())) {
+                notaB = nota;
+            }
+            else{
+                NotaEstudianteUnidad temp = notaA;
+                notaA = nota;
+                notaB = temp;
+            }
         }
-
+        else if(totalNotas() == 2){
+            if(nota.getUnidad().getFechaFin().antesQue(notaA.getUnidad().getFechaFin()) && nota.getUnidad().getFechaFin().antesQue(notaB.getUnidad().getFechaFin())){
+                NotaEstudianteUnidad temp1 = notaA;
+                NotaEstudianteUnidad temp2 = notaB;
+                
+                notaA = nota;
+                notaB = temp1;
+                notaC = temp2;
+            }
+            else if(nota.getUnidad().getFechaFin().antesQue(notaB.getUnidad().getFechaFin())){
+                NotaEstudianteUnidad temp1 = notaB;
+                
+                notaB = nota;
+                notaC = temp1;
+            }
+        }
     }
 
    

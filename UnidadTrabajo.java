@@ -105,6 +105,7 @@ public class UnidadTrabajo {
      */
     public UnidadTrabajo clonar() { 
         UnidadTrabajo copia = new UnidadTrabajo(this.nombre,this.fechaFin, this.pesoUnidad, this.ponderacion);
+        copia.setNombre("Copia del " + getNombre());
         return copia;
         
     }
