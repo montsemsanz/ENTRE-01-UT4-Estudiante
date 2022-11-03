@@ -43,7 +43,7 @@ public class Estudiante {
      */
     public int totalNotas() {
         int notas = 0;
-        
+
         if(notaA != null){
             notas++;
         }
@@ -53,7 +53,7 @@ public class Estudiante {
         else if(notaC != null){
             notas++;
         }
-        
+
         return notas;
     }
 
@@ -83,21 +83,20 @@ public class Estudiante {
             if(nota.getUnidad().getFechaFin().antesQue(notaA.getUnidad().getFechaFin()) && nota.getUnidad().getFechaFin().antesQue(notaB.getUnidad().getFechaFin())){
                 NotaEstudianteUnidad temp1 = notaA;
                 NotaEstudianteUnidad temp2 = notaB;
-                
+
                 notaA = nota;
                 notaB = temp1;
                 notaC = temp2;
             }
             else if(nota.getUnidad().getFechaFin().antesQue(notaB.getUnidad().getFechaFin())){
                 NotaEstudianteUnidad temp1 = notaB;
-                
+
                 notaB = nota;
                 notaC = temp1;
             }
         }
     }
 
-   
     /**
      * Calcula y devuelve la nota final obtenida por el estudiante en la
      * evaluación que dependerá de la ponderación de cada UT
@@ -105,21 +104,22 @@ public class Estudiante {
      * objetos NotaEstudianteUnidad que se necesitan para calcular la nota final
      */
     public double calcularNotaFinalEstudiante() {
-       //TODO
-       
-       
-       return 0;
-
+        if(totalNotas() < 3){
+            return -1;
+        }
+        double notaFinal = 0.0;
+        
+        notaFinal = notaA.calcularNotaUnidad() + notaB.calcularNotaUnidad() + notaC.calcularNotaUnidad();
+        return notaFinal;
     }
-
+    
     /**
      * Representación textual del estudiante (ver enunciado)
      */
     public String toString() {
-       //TODO
-       
-       
-       return null;
+        //TODO
+
+        return null;
     }
 
     /**
@@ -130,6 +130,5 @@ public class Estudiante {
 
     }
 
-    
 
 }
