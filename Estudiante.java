@@ -110,9 +110,16 @@ public class Estudiante {
      * Representación textual del estudiante (ver enunciado)
      */
     public String toString() {
-        //TODO
+        String str;
+        if(notaA == null || notaB == null || notaC == null){
+            str = "No es posible calcular su nota final de evaluación, faltan notas por registrar \n" + 
+            "*".repeat(80);
+        }
+        else{
+             str = "nota final de evaluación:  " + "\n" + calcularNotaFinalEstudiante();
+        }
 
-        return null;
+        return str;
     }
 
     /**
