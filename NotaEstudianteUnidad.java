@@ -107,7 +107,7 @@ public class NotaEstudianteUnidad {
      * Este método se ha incluido solo para testear la clase más fácilmente
      */
     public void print() {
-        System.out.println(this.toString());
+        System.out.println(toString());
 
     }
 

@@ -83,3 +83,21 @@ Error or exception for source not in project: C:\Users\Danna\Programación\Estudi
 Invalid value for DayOfMonth (valid values 1 - 28/31): 34 (in java.time.temporal.ValueRange)
 Error or exception for source not in project: C:\Users\Danna\Programación\Estudiante\ENTRE-01-UT4-Estudiante\LocalDate.java, line 270: java.time.DateTimeException:
 Invalid value for DayOfMonth (valid values 1 - 28/31): 34 (in java.time.temporal.ValueRange)
+Error or exception for source not in project: C:\Users\Danna\Programación\Estudiante\ENTRE-01-UT4-Estudiante\String.java, line 3160: java.lang.StackOverflowError:
+null
+====
+
+====
+BlueJ run started: Fri Nov 04 23:20:27 CET 2022
+BlueJ version 5.0.3
+Java version 11.0.14.1
+JavaFX version 11.0.13.1+1
+Virtual machine: OpenJDK 64-Bit Server VM 11.0.14.1+1 (Eclipse Adoptium)
+Running on: Windows 10 10.0 (amd64)
+Java Home: C:\Program Files\bluej\jdk
+----
+Internal error: Unable to load frame labels file: C:\Program Files\bluej\lib\spanish\frame-labels
+Opening project: C:\Users\Danna\Programación\Estudiante\ENTRE-01-UT4-Estudiante
+1667600429988: Listening for JDWP connection on address: javadebug
+Connected to debug VM via dt_shmem transport...
+Communication with debug VM fully established.

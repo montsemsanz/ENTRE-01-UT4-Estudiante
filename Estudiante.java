@@ -93,21 +93,24 @@ public class Estudiante {
         if (notaCantidad == 0){
             notaA = nota;
         }
-        else if (notaCantidad == 1){
+
+        if (notaCantidad == 1){
             notaB = nota;
         }
 
-        else if (notaCantidad == 2){
+        if (notaCantidad == 2){
             notaC = nota;
         }
-        else if (notaCantidad == 3){
+
+        if (notaCantidad == 3){
             notaA = nota;
         }
-        else if (notaCantidad == 4){
+
+        if (notaCantidad == 4){
             notaB = nota;
         }
 
-        else if (notaCantidad == 5){
+        if (notaCantidad == 5){
             notaC = nota;
         }
     }
@@ -119,16 +122,15 @@ public class Estudiante {
      * objetos NotaEstudianteUnidad que se necesitan para calcular la nota final
      */
     public double calcularNotaFinalEstudiante() {
-        
+
         if(totalNotas() != 3){
             return -1;
         }
-        
-        double notaFinal = notaA.calcularNotaUnidad();
-        notaB.calcularNotaUnidad();
-        notaC.calcularNotaUnidad();
-        
-        
+
+        double notaFinal = notaA.calcularNotaUnidad() +
+            notaB.calcularNotaUnidad() +
+            notaC.calcularNotaUnidad();
+
         return notaFinal;
     }
 
@@ -136,9 +138,22 @@ public class Estudiante {
      * Representación textual del estudiante (ver enunciado)
      */
     public String toString() {
-        
+        String str = "";
+        str = str + nombre + "\n" + "*".repeat(80);
 
-        return null;
+        if(totalNotas() == 3) {
+            str = str + "\n" + notaA.getUnidad().toString();
+            str = str + "\n" + notaB.getUnidad().toString();
+            str = str + "\n" + notaC.getUnidad().toString();
+            str = str + "\n" + notaA.getUnidad().clonar().toString(); 
+        }
+
+        else if(totalNotas() != 3) {
+            str = str +
+            "\nNo es posible calcular su nota final de evaluación, faltan notas por registrar";
+        }
+
+        return str;
     }
 
     /**
