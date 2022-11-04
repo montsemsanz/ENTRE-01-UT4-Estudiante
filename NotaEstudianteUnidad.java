@@ -82,23 +82,21 @@ public class NotaEstudianteUnidad {
      * en cuenta la ponderación de los instrumentos de evaluación
      */
     public double calcularNotaUnidad() {
-         //TODO
-         
-         
-         return 0;
-
-
+         double notaUnidad;
+         notaUnidad = (notaControles  * 0.7) + (notaActividades * 0.1) + (notaProyectos * 0.2);
+         return notaUnidad;
     }
 
     /**
      * Representación textual del objeto (ver enunciado)
      */
     public String toString() {
-        //TODO
+        String notaTexto;
+        double notaUnidad;
+        notaUnidad = (notaControles  * 0.7) + (notaActividades * 0.1) + (notaProyectos * 0.2);
+        notaTexto = "Nota final obtenida en Unidad de Trabajo: " + notaUnidad +  "\n" + "-".repeat(80);
         
-        
-        
-        return null;
+        return notaTexto;
     }
 
     /**

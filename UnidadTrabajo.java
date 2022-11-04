@@ -16,9 +16,14 @@ public class UnidadTrabajo {
      */
     public UnidadTrabajo(String nombre, int dia, int mes, int year, int peso,
                          int controles, int actividades, int proyectos) {
-       //TODO
-       
-       
+       nombre = null;
+       dia= 0;
+       mes = 0;
+       year = 0;
+       peso = 0;
+       controles = 0;
+       actividades = 0;
+       proyectos = 0;
     }
 
     /**
@@ -93,19 +98,20 @@ public class UnidadTrabajo {
      * que la recibida como parámetro
      */
     public boolean anteriorA(UnidadTrabajo unidad) {
-        //TODO
-        
+        // if(this.fechaFin ){
+            
+        // }
         
         return true;
     }
-
+    
     /**
      * Devuelve una copia (clon) de la unidad de trabajo actual con el nombre
      * "Copia de " + nombre de la UT actual
      * Se clonan también los objetos que incluya
      */
     public UnidadTrabajo clonar() {
-         //TODO
+        String clonacion = "Copia de " + nombre;
          
          
         return null;
