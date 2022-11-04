@@ -44,19 +44,39 @@ public class Estudiante {
      * (0, 1, 2 o 3)
      */
     public int totalNotas() {
-        // if(notaA == null) {
-            // notaA = 1;
-        // }
-        
-        // if(notaB == null) {
-            // return 0;
-        // }
-        
-        // if(notaC == null) {
-            // return 0;
-        // }
-        
-        return 0;
+        int cantNotasRegis = 0;
+
+        if(notaA ==  null)
+        {
+            cantNotasRegis = 0;
+        }
+
+        if(notaB ==  null)
+        {
+            cantNotasRegis = 0;
+        }
+
+        if(notaC ==  null)
+        {
+            cantNotasRegis = 0;
+        }
+
+        if (notaA !=  null)
+        {
+            cantNotasRegis ++;
+        }
+
+        if (notaB !=  null)
+        {
+            cantNotasRegis ++;
+        }
+
+        if (notaC !=  null)
+        {
+            cantNotasRegis ++;
+        }
+
+        return cantNotasRegis;
     }
 
     /**
@@ -68,11 +88,30 @@ public class Estudiante {
      * Pista!! En este método se utilizará el método totalNotas()
      */
     public void registrarNotaUnidad(NotaEstudianteUnidad nota) {
-        //TODO
+        int notaCantidad = totalNotas();
 
+        if (notaCantidad == 0){
+            notaA = nota;
+        }
+        else if (notaCantidad == 1){
+            notaB = nota;
+        }
+
+        else if (notaCantidad == 2){
+            notaC = nota;
+        }
+        else if (notaCantidad == 3){
+            notaA = nota;
+        }
+        else if (notaCantidad == 4){
+            notaB = nota;
+        }
+
+        else if (notaCantidad == 5){
+            notaC = nota;
+        }
     }
 
-   
     /**
      * Calcula y devuelve la nota final obtenida por el estudiante en la
      * evaluación que dependerá de la ponderación de cada UT
@@ -80,21 +119,26 @@ public class Estudiante {
      * objetos NotaEstudianteUnidad que se necesitan para calcular la nota final
      */
     public double calcularNotaFinalEstudiante() {
-       //TODO
-       
-       
-       return 0;
-
+        
+        if(totalNotas() != 3){
+            return -1;
+        }
+        
+        double notaFinal = notaA.calcularNotaUnidad();
+        notaB.calcularNotaUnidad();
+        notaC.calcularNotaUnidad();
+        
+        
+        return notaFinal;
     }
 
     /**
      * Representación textual del estudiante (ver enunciado)
      */
     public String toString() {
-       //TODO
-       
-       
-       return null;
+        
+
+        return null;
     }
 
     /**
@@ -104,7 +148,5 @@ public class Estudiante {
         System.out.println(this.toString());
 
     }
-
-    
 
 }
