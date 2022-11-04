@@ -48,13 +48,15 @@ public class Estudiante {
         if (notaA != null){
             totalNotas++;
         }
+        
         if (notaB != null){
             totalNotas++;
         }
+        
         if (notaC != null){
             totalNotas++;
         }
-        
+
         return totalNotas;
     }
 
@@ -67,20 +69,19 @@ public class Estudiante {
      * Pista!! En este método se utilizará el método totalNotas()
      */
     public void registrarNotaUnidad(NotaEstudianteUnidad nota) {
-        
         String printNotaUnidad = "";
         notaA = nota;
         printNotaUnidad += notaA.toString();
         
+        notaB = nota;
+        if (notaB != notaA){
+            printNotaUnidad += notaB.toString();
+        }
         
-        // if (notaB != notaA){
-            // printNotaUnidad += notaB.toString();
-        // }
-        
-        // notaC = nota;
-        // if (notaC != notaB && notaC != notaA){
-            // printNotaUnidad += notaC.toString();
-        // }
+        notaC = nota;
+        if (notaC != notaB && notaC != notaA){
+            printNotaUnidad += notaC.toString();
+        }
         
         System.out.println(printNotaUnidad);
     }
@@ -113,11 +114,25 @@ public class Estudiante {
     public String toString() {
         String result = "";
         
-        if(notaA != null && notaB != null && notaC != null){
+        if(notaA != null){
             result += nombre;
             result += "\n";
             result += "*".repeat(80);
             result += notaA.toString();
+        }
+        
+        if ( notaB != null){
+            result += nombre;
+            result += "\n";
+            result += "*".repeat(80);
+            result += notaB.toString();
+        }   
+        
+        if (notaC != null){
+            result += nombre;
+            result += "\n";
+            result += "*".repeat(80);
+            result += notaC.toString();
         }
         
         if (notaA == null || notaB == null ||notaC == null){

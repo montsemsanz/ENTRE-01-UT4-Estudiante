@@ -38,7 +38,6 @@ public class TestEstudiante {
         NotaEstudianteUnidad nota3 = new NotaEstudianteUnidad(unidad3,8,6,9);   
         System.out.println(nota3 + "\n");
         
-        
         Estudiante resumen = new Estudiante(nombre);
         System.out.println("-".repeat(60));
         System.out.println("Nota final de evaluación: " + resumen);
