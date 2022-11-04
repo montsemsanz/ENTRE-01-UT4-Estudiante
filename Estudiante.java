@@ -81,12 +81,12 @@ public class Estudiante {
         // }
     
         if(this.notaA == null){
-            notaA = nota;
+            this.notaA = nota;
         }
         else if(this.notaA != null && this.notaB == null){
-            notaB = nota;
+            this.notaB = nota;
         }else if(this.notaA != null && this.notaB != null){
-            notaC = nota;
+            this.notaC = nota;
         }
     
     }
@@ -98,9 +98,20 @@ public class Estudiante {
      * objetos NotaEstudianteUnidad que se necesitan para calcular la nota final
      */
     public double calcularNotaFinalEstudiante() {
-       double notaAUnidadPonderada = notaA.calcularNotaUnidad() * notaA.getUnidad().getPesoUnidad() / 10;
-       double notaBUnidadPonderada = notaB.calcularNotaUnidad() * notaB.getUnidad().getPesoUnidad() / 10;
-       double notaCUnidadPonderada = notaC.calcularNotaUnidad() * notaC.getUnidad().getPesoUnidad() / 10;
+        double notaBUnidadPonderada = 0;
+       if(notaB != null){
+        notaBUnidadPonderada = this.notaB.calcularNotaUnidad() * notaB.getUnidad().getPesoUnidad() / 10;
+        }
+        double notaCUnidadPonderada = 0;
+       if(notaC != null){
+         notaCUnidadPonderada = this.notaC.calcularNotaUnidad() * notaC.getUnidad().getPesoUnidad() / 10;
+        }
+        
+    
+        
+       double notaAUnidadPonderada = this.notaA.calcularNotaUnidad() * notaA.getUnidad().getPesoUnidad() / 10;
+       // double notaBUnidadPonderada = this.notaB.calcularNotaUnidad() * notaB.getUnidad().getPesoUnidad() / 10;
+       // double notaCUnidadPonderada = this.notaC.calcularNotaUnidad() * notaC.getUnidad().getPesoUnidad() / 10;
        
        double notaFinalEstudiante = 0;
        

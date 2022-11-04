@@ -16,7 +16,7 @@ public class TestEstudiante {
         
             String nombreEstudiante = "MOLINA HUARTE, Isabel";
             
-        //Estudiante estudiante = new Estudiante(nombreEstudiante);
+        Estudiante estudiante = new Estudiante(nombreEstudiante);
         
         
         //-------CREAMOS LA UNIDAD DE TRABAJO 1-----------------------------------------------        
@@ -39,7 +39,7 @@ public class TestEstudiante {
             double notaProyectos = 7;
             
         //- - - creamos ambos objetos (UT y notas) - - - - - - - - - - - - - - - - - -  
-        Estudiante estudiante = new Estudiante(nombreEstudiante);
+        //Estudiante estudiante = new Estudiante(nombreEstudiante);
         
         UnidadTrabajo unidadTrabajo1 = new UnidadTrabajo(nombreUT, dia, mes, año, peso,
                                          ponderaControles, ponderaActividades, ponderaProyectos);
@@ -47,12 +47,18 @@ public class TestEstudiante {
         NotaEstudianteUnidad notasEstudianteUT1 = new NotaEstudianteUnidad(unidadTrabajo1, 
                                             notaControles, notaActividades, notaProyectos);
                                             
+        // NotaEstudianteUnidad notasEstudianteUT2 = new NotaEstudianteUnidad(unidadTrabajo1, 
+                                            // notaControles, notaActividades, notaProyectos);
+                                            
+        // NotaEstudianteUnidad notasEstudianteUT3 = new NotaEstudianteUnidad(unidadTrabajo1, 
+                                            // notaControles, notaActividades, notaProyectos);
+                                            
         //- - - registramos las notas de esta UT - - - - - - - - - - - - - - - - - -                                   
         notasEstudianteUT1.setNotaControles(notaControles); 
         notasEstudianteUT1.setNotaActividades(notaActividades); 
         notasEstudianteUT1.setNotaProyectos(notaProyectos);
         
-            //double notaUnidad = notasEstudianteUT1.calcularNotaUnidad();
+        double notaUnidad = notasEstudianteUT1.calcularNotaUnidad();
         estudiante.registrarNotaUnidad(notasEstudianteUT1);
         
         //- - - Mostrar en pantalla toda la información del alumno - - - - - - - - - - - - - - - - - -  
@@ -66,8 +72,8 @@ public class TestEstudiante {
         
         
         //-------HACEMOS UNA COPIA DE UT3 -----------------------------------------------  
-            // UnidadTrabajo copiaUT3 = unidadTrabajo3.clonar();
-            // copiaUT3.print();
+        // UnidadTrabajo copiaUT3 = unidadTrabajo3.clonar();
+        // copiaUT3.print();
         
     
     
