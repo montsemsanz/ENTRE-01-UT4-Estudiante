@@ -26,7 +26,7 @@ public class TestEstudiante {
         estudiante.registrarNotaUnidad(nota3);
         
         estudiante.print();
-        System.out.println("=".repeat(80) + "\n");
+        System.out.println("=".repeat(80) + "\n\n");
         UnidadTrabajo clon = unidad3.clonar();
         System.out.println("Copia de la ultima UT añadida" + clon.toString());
     }

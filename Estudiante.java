@@ -124,8 +124,8 @@ public class Estudiante {
             str += "No es posible calcular su nota final de evaluación, faltan notas por registrar";
         }
         else {
-            str +=notaA.getUnidad().toString() + notaA.toString() + 
-                  notaB.getUnidad().toString() + notaB.toString() +
+            str +=notaA.getUnidad().toString() + notaA.toString() + "\n\n" +
+                  notaB.getUnidad().toString() + notaB.toString() + "\n\n" +
                   notaC.getUnidad().toString() + notaC.toString();  
             str += String.format("Nota final de evaluación: %6.2f" ,
                    calcularNotaFinalEstudiante());
