@@ -44,11 +44,15 @@ public class Estudiante {
      */
     public int totalNotas() {
         int totalNotas = 0;
-        notaA = this.notaA.getUnidad();
-        totalNotas++;
         
-        if (notaA == null && notaB == null && notaC == null){
-            totalNotas = 0;        
+        if (notaA != null){
+            totalNotas++;
+        }
+        if (notaB != null){
+            totalNotas++;
+        }
+        if (notaC != null){
+            totalNotas++;
         }
         
         return totalNotas;
@@ -74,21 +78,17 @@ public class Estudiante {
      * objetos NotaEstudianteUnidad que se necesitan para calcular la nota final
      */
     public double calcularNotaFinalEstudiante() {
-       //TODO
-       
-       
-       return 0;
+        //TODO
 
+        return 0;
     }
-
     /**
      * Representación textual del estudiante (ver enunciado)
      */
     public String toString() {
-       //TODO
-       
-       
-       return null;
+        String result = "";
+        result += "No es posible calcular su nota final de evaluación, faltan notas por registrar";
+        return result;
     }
 
     /**
@@ -99,6 +99,5 @@ public class Estudiante {
 
     }
 
-    
 
 }
