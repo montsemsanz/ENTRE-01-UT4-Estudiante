@@ -13,8 +13,8 @@ public class NotaEstudianteUnidad {
      * Constructor
      */
     public NotaEstudianteUnidad(UnidadTrabajo unidad, double notaControles,
-                                double notaActividades,
-                                double notaProyectos) {
+    double notaActividades,
+    double notaProyectos) {
         this.unidad = unidad;
         this.notaControles = notaControles;
         this.notaActividades = notaActividades;
@@ -82,9 +82,8 @@ public class NotaEstudianteUnidad {
      * en cuenta la ponderación de los instrumentos de evaluación
      */
     public double calcularNotaUnidad() {
-            
-         return getNotaControles() * unidad.getPonderacion().getControles() + getNotaProyectos() * unidad.getPonderacion().getProyectos() + getNotaActividades() * unidad.getPonderacion().getActividades();
 
+        return (getNotaControles() * unidad.getPonderacion().getControles() + getNotaProyectos() * unidad.getPonderacion().getProyectos() + getNotaActividades() * unidad.getPonderacion().getActividades())/100;
 
     }
 
@@ -92,15 +91,15 @@ public class NotaEstudianteUnidad {
      * Representación textual del objeto (ver enunciado)
      */
     public String toString() {
-        
+
         String stringFormateado = "";
         stringFormateado += unidad.toString();
-        stringFormateado +=String.format("controles: %6.2f \n", getNotaControles());
-        stringFormateado +=String.format("Actividad clase: %6.2f \n", getNotaActividades());
-        stringFormateado +=String.format("Proyectos: %6.2f \n", getNotaProyectos());
+        stringFormateado +=String.format("controles: %6.2f   ", getNotaControles());
+        stringFormateado +=String.format("Actividad clase: %6.2f   ", getNotaActividades());
+        stringFormateado +=String.format("Proyectos: %6.2f  \n", getNotaProyectos());
         stringFormateado +=String.format("Nota final obtenida en Unidad de Trabajo:  %6.2f \n", calcularNotaUnidad());
         stringFormateado +="-".repeat(80);
-    
+
         return stringFormateado;
     }
 
@@ -111,7 +110,5 @@ public class NotaEstudianteUnidad {
         System.out.println(this.toString());
 
     }
-
-   
 
 }

@@ -12,7 +12,7 @@ public class PonderacionInstrumentos {
      * Constructor  
      */
     public PonderacionInstrumentos(int controles, int actividades,
-                                   int proyectos) {
+    int proyectos) {
         this.controles = controles;
         this.actividades = actividades;
         this.proyectos = proyectos;
@@ -65,9 +65,9 @@ public class PonderacionInstrumentos {
      */
     public String toString() {
         return "Ponderacion Instrumentos Evaluación" +
-                "\n\tControles = " + controles + "%" +
-                "\n\tActividades = " + actividades + "%" +
-                "\n\tProyectos = " + proyectos + "%\n\n";
+        "\n\tControles = " + controles + "%" +
+        "\n\tActividades = " + actividades + "%" +
+        "\n\tProyectos = " + proyectos + "%\n\n";
     }
 
     /**

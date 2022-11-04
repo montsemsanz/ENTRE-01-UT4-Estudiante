@@ -52,7 +52,7 @@ public class Estudiante {
             cantidadNotas++;
         }
 
-        if (notaB != null){
+        if (notaC != null){
             cantidadNotas++;
         }
 
@@ -68,11 +68,11 @@ public class Estudiante {
      * Pista!! En este método se utilizará el método totalNotas()
      */
     public void registrarNotaUnidad(NotaEstudianteUnidad nota) {
-       
+
         NotaEstudianteUnidad extra = notaA;
         NotaEstudianteUnidad extra2 = notaB;
         //pone la nota en la primera posición
-           if (totalNotas() == 0) {
+        if (totalNotas() == 0) {
             notaA = nota;
         }
         //pone la nota en segunda posicion y la que estaba en la 2 en la primera
@@ -82,7 +82,7 @@ public class Estudiante {
                 notaA = notaB;
                 notaB = extra;
             }
-            
+
         }//pone la nota en tercera posicion y la que estaba en tercera en segunda o en primera
         else if (totalNotas() == 2) {
             notaC = nota;
@@ -97,7 +97,6 @@ public class Estudiante {
                 notaC = extra;
             }
         }
-        
 
     }
     /**
@@ -112,6 +111,7 @@ public class Estudiante {
         double notaFinalB = 0.0;
         double notaFinalC = 0.0;
         double resultado = 0.0;
+        
         if (totalNotas() == 3) {
             notaFinalA = notaA.getUnidad().getPesoUnidad() * notaA.calcularNotaUnidad() / 100;
             notaFinalB = notaB.getUnidad().getPesoUnidad() * notaA.calcularNotaUnidad() / 100;
@@ -122,8 +122,7 @@ public class Estudiante {
             resultado = -1;
         }
         return resultado;
-     
-        
+
         
     }
 
@@ -131,15 +130,19 @@ public class Estudiante {
      * Representación textual del estudiante (ver enunciado)
      */
     public String toString() {
-        String string = "";
 
-        if (calcularNotaFinalEstudiante() == -1) {
-            string = nombre +
-            "\n" + "No es posible calcular su nota final de evaluación, faltan notas por registrar." + "\n" +
-            "=".repeat(60) + "\n\n\n";
-        }else {
-            string = String.format("Nota final de evaluación: %4.2f\n", calcularNotaFinalEstudiante())+"/n" +
-            "=".repeat(60) + "\n\n\n";
+        String string = "";
+        string += nombre + "\n";
+        string +="*".repeat(80) + "\n";
+        if (!(totalNotas() == 3)){
+            string += "No es posible calcular su nota final de evaluación, faltan notas por registrar \n";
+        }
+        else{
+            string += notaA.toString() + "\n\n";
+            string += notaB.toString() + "\n\n";
+            string += notaC.toString() + "\n\n";
+            string += String.format("Nota final de evaluación: %4.2f \n", this.calcularNotaFinalEstudiante());
+            string += "=".repeat(80);
         }
 
         return string;
