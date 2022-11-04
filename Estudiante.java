@@ -68,60 +68,31 @@ public class Estudiante {
      * Pista!! En este método se utilizará el método totalNotas()
      */
     public void registrarNotaUnidad(NotaEstudianteUnidad nota) {
-        if (totalNotas() == 1) {
-            if (notaA.getUnidad().anteriorA(notaB.getUnidad()) && 
-                notaA.getUnidad().anteriorA(notaC.getUnidad())) {
-                notaA = nota;
+        if (totalNotas() == 0) {
+            notaA = nota;
+        }
+        else if (totalNotas() == 1) {
+            if (nota.getUnidad().anteriorA(notaA.getUnidad())) {
+                notaB = notaB;
+                nota = notaB;
             }
-            else if (notaB.getUnidad().anteriorA(notaA.getUnidad()) && 
-                    notaB.getUnidad().anteriorA(notaC.getUnidad())) {
+            else if (notaA.getUnidad().anteriorA(nota.getUnidad())) {
                 notaB = nota;
             }
-            else if (notaC.getUnidad().anteriorA(notaA.getUnidad()) && 
-                    notaC.getUnidad().anteriorA(notaB.getUnidad())) {
-                notaC = nota;
-            }
-            else {
-                nota = null;
-            }
         }
-    
         else if (totalNotas() == 2) {
-            if (notaA.getUnidad().anteriorA(notaB.getUnidad()) && 
-                notaA.getUnidad().anteriorA(notaC.getUnidad())) {
+            if (nota.getUnidad().anteriorA(notaA.getUnidad())) {
                 notaA = nota;
+                notaB = notaA;
+                notaC = notaB;
             }
-            else if (notaB.getUnidad().anteriorA(notaA.getUnidad()) && 
-                    notaB.getUnidad().anteriorA(notaC.getUnidad())) {
+            else if (nota.getUnidad().anteriorA(notaB.getUnidad())) {
                 notaB = nota;
-            }
-            else if (notaC.getUnidad().anteriorA(notaA.getUnidad()) && 
-                    notaC.getUnidad().anteriorA(notaB.getUnidad())) {
-                notaC = nota;
-            }
-            else {
-                        nota = null;
+                notaC = notaB;
             }
         }
-        else if (totalNotas() == 3) {
-            if (notaA.getUnidad().anteriorA(notaB.getUnidad()) && 
-                notaA.getUnidad().anteriorA(notaC.getUnidad())) {
-                notaA = nota;
-            }
-            else if (notaB.getUnidad().anteriorA(notaA.getUnidad()) && 
-                    notaB.getUnidad().anteriorA(notaC.getUnidad())) {
-                notaB = nota;
-            }
-            else if (notaC.getUnidad().anteriorA(notaA.getUnidad()) && 
-                    notaC.getUnidad().anteriorA(notaB.getUnidad())) {
-                notaC = nota;
-            }
-            else {
-                nota = null;
-            }
-        }  
-    }
-
+    }    
+    
     /**
      * Calcula y devuelve la nota final obtenida por el estudiante en la
      * evaluación que dependerá de la ponderación de cada UT
