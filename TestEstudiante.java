@@ -199,23 +199,10 @@ public class TestEstudiante {
                 estudiante.registrarNotaUnidad(notasEstudianteUT3);
                 //notasEstudianteUT3.print();
                 
-                UnidadTrabajo copiaUT3 = unidadTrabajo3.clonar();
+               estudiante.print();
+               UnidadTrabajo copiaUT3 = unidadTrabajo3.clonar();
                copiaUT3.print();
         }      
-           
-        estudiante.print();        
-        
-        //notasEstudianteUT1.print();
-        //notasEstudianteUT2.print();
-        //notasEstudianteUT3.print();
-        
-        // UnidadTrabajo copiaUT3 = unidadTrabajo3.clonar();
-        // copiaUT3.print();
-                  
-        
-    
-        //-------HACEMOS UNA COPIA DE UT3 -----------------------------------------------  
-         // UnidadTrabajo copiaUT3 = unidadTrabajo3.clonar();
-         // copiaUT3.print();
+       
     }
 }

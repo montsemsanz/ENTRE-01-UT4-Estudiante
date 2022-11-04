@@ -129,7 +129,7 @@ public class Estudiante {
         // str += notaA.toString() + notaB.toString() + notaC.toString() + notaFin;
         // }
        
-        return str + "\n" + notaA.toString() + "\n" + notaB.toString() + "\n" + notaC.toString() + notaFin;
+        return str + "\n" + notaA.toString() + "\n" + notaB.toString() + "\n" + notaC.toString() + notaFin + "\n" + "=".repeat(80);
     }
 
     /**
