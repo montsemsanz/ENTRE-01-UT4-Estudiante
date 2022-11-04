@@ -124,11 +124,7 @@ public class Estudiante {
        
        if(totalNotas() != 3){
         str += "No es posible calcular su nota final de evaluación, faltan notas por registrar.\n";
-        }
-        // else {
-        // str += notaA.toString() + notaB.toString() + notaC.toString() + notaFin;
-        // }
-       
+        }       
         return str + "\n" + notaA.toString() + "\n" + notaB.toString() + "\n" + notaC.toString() + notaFin + "\n" + "=".repeat(80);
     }
 

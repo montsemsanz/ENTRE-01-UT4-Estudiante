@@ -85,10 +85,6 @@ public class NotaEstudianteUnidad {
      * en cuenta la ponderación de los instrumentos de evaluación
      */
     public double calcularNotaUnidad() {
-         
-        //controles = 6.00/10 y controles valen 70/100, por lo que si 10 es 70, 6 es x: x=6*70/10 
-        //x es la nota/100 de la unidad total y nosotros queremos que la nota final esté escrita en nota/10x
-         
         double notaPonderadaControles = getNotaControles() * (unidad.getPonderacion().getControles()) / 10;
         double notaPonderadaActividades = getNotaActividades() * (unidad.getPonderacion().getActividades()) / 10;
         double notaPonderadaProyectos = getNotaProyectos() * (unidad.getPonderacion().getProyectos()) / 10;
