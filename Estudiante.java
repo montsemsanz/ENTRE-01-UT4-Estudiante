@@ -71,14 +71,24 @@ public class Estudiante {
      * Pista!! En este método se utilizará el método totalNotas()
      */
      public void registrarNotaUnidad(NotaEstudianteUnidad nota) {   
-         switch (totalNotas()){
-        case 0: notaA = nota;
-                break;
-        case 1: notaB = nota;
-                break;
-        case 2: notaC = nota;
-                break;
+         // switch (totalNotas()){
+        // case 0: notaA = nota;
+                // break;
+        // case 1: notaB = nota;
+                // break;
+        // case 2: notaC = nota;
+                // break;
+        // }
+    
+        if(this.notaA == null){
+            notaA = nota;
         }
+        else if(this.notaA != null && this.notaB == null){
+            notaB = nota;
+        }else if(this.notaA != null && this.notaB != null){
+            notaC = nota;
+        }
+    
     }
   
     /**
