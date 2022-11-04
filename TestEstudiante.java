@@ -13,7 +13,6 @@ public class TestEstudiante {
        Estudiante estudiante = new Estudiante("MOLINA HUARTE, Isabel");
        
        
-       
        UnidadTrabajo ut1 = new UnidadTrabajo("Interacción de objetos. Estructura de control iterativa", 25, 11, 2022, 55, 60, 10, 30);
        NotaEstudianteUnidad notaUt1 = new NotaEstudianteUnidad(ut1, 5.00, 6.00, 7.00);
        estudiante.registrarNotaUnidad(notaUt1);

@@ -76,18 +76,20 @@ public class Estudiante {
                         notaB = nota;
                     }
                 break;
-            case 2: if(nota.getUnidad().anteriorA(notaA.getUnidad()) && nota.getUnidad().anteriorA(notaB.getUnidad())){
+            case 2: if(nota.getUnidad().anteriorA(notaB.getUnidad()) ){
+                        notaC = notaB;
+                        notaB = nota;
+                    }
+                    else if(nota.getUnidad().anteriorA(notaA.getUnidad())){
                         notaC = notaB;
                         notaB = notaA;
                         notaA = nota;
                     }
-                    else if(nota.getUnidad().anteriorA(notaB.getUnidad())){
-                        notaC = notaB;
-                        notaB = nota;
-                    }
                     else{
                         notaC = nota;
                     }
+                break;
+                
         }
     }
 
@@ -113,11 +115,13 @@ public class Estudiante {
         String str; 
             str = getNombre() + "\n";
         if(notaA == null || notaB == null || notaC == null){
-            str = "No es posible calcular su nota final de evaluación, faltan notas por registrar \n" + 
+            str = getNombre() + "\n" + "*".repeat(80) + 
+            "No es posible calcular su nota final de evaluación, faltan notas por registrar \n" + 
             "*".repeat(80);
         }
         else{
-             str = notaA.toString() + "\n" + notaB.toString() + "\n" + notaC.toString() + "\n" + 
+             str = getNombre() + "\n" + "*".repeat(80) + "\n" + 
+             notaA.toString() + "\n" + notaB.toString() + "\n" + notaC.toString() + "\n" + 
              "nota final de evaluación:  " + "\n" + calcularNotaFinalEstudiante() + "\n" + "=".repeat(80);
         }
 

@@ -95,7 +95,7 @@ public class UnidadTrabajo {
      * que la recibida como parámetro
      */
     public boolean anteriorA(UnidadTrabajo unidad) {
-        this.fechaFin.antesQue(fechaFin);
+        this.fechaFin.antesQue(unidad.getFechaFin());
         
         return true;
     }

@@ -93,7 +93,7 @@ public class NotaEstudianteUnidad {
     public String toString() {
         String str = 
         unidad.toString() + "\n" +
-        "Controles:  " + getNotaControles() + "      Actividades clase:  " + getNotaActividades() + "      Proyectos:  " + getNotaProyectos() + "\n"
+        "Controles:" + getNotaControles() + "      Actividades clase:  " + getNotaActividades() + "      Proyectos:  " + getNotaProyectos() + "\n"
         + "Nota final obtenida en Unidad de Trabajo:  " + calcularNotaUnidad() + "\n" + 
         "-".repeat(80);
         
