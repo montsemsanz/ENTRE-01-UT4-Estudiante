@@ -7,6 +7,7 @@
  * @author (Aimar Urquizu Diego)
  */
 public class UnidadTrabajo {
+    
     private String nombre;
     private Fecha fechaFin;
     private int pesoUnidad;
@@ -22,7 +23,6 @@ public class UnidadTrabajo {
        pesoUnidad = peso;
        ponderacion = new PonderacionInstrumentos(controles, actividades, 
                                             proyectos);
-       
     }
 
     /**
@@ -122,6 +122,7 @@ public class UnidadTrabajo {
                 "\n\tFecha finalización: " + this.getFechaFin().toString() +
                 " | Peso UT: " + this.pesoUnidad + "%\n";
         str += this.ponderacion;
+        
         return str;
     }
 
@@ -130,7 +131,6 @@ public class UnidadTrabajo {
      */
     public void print() {
         System.out.println(this.toString());
-
     }
 
 

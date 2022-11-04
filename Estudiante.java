@@ -6,6 +6,7 @@
  * @author (Aimar Urquizu Diego)
  */
 public class Estudiante {
+    
     private String nombre;
     private NotaEstudianteUnidad notaA;
     private NotaEstudianteUnidad notaB;
@@ -68,16 +69,16 @@ public class Estudiante {
      */
     public void registrarNotaUnidad(NotaEstudianteUnidad nota) {
         if (totalNotas() == 1) {
-            if (notaA.getUnidad().getFechaFin().anteriorA(notaB.getUnidad()) && 
-                notaA.getUnidad().getFechaFin().anteriorA(notaC.getUnidad())) {
+            if (notaA.getUnidad().anteriorA(notaB.getUnidad()) && 
+                notaA.getUnidad().anteriorA(notaC.getUnidad())) {
                 notaA = nota;
             }
-            else if (notaB.getUnidad().getFechaFin().anteriorA(notaA.getUnidad()) && 
-                    notaB.getUnidad().getFechaFin().anteriorA(notaC.getUnidad())) {
+            else if (notaB.getUnidad().anteriorA(notaA.getUnidad()) && 
+                    notaB.getUnidad().anteriorA(notaC.getUnidad())) {
                 notaB = nota;
             }
-            else if (notaC.getUnidad().getFechaFin().anteriorA(notaA.getUnidad()) && 
-                        notaC.getUnidad().getFechaFin().anteriorA(notaB.getUnidad())) {
+            else if (notaC.getUnidad().anteriorA(notaA.getUnidad()) && 
+                    notaC.getUnidad().anteriorA(notaB.getUnidad())) {
                 notaC = nota;
             }
             else {
@@ -86,16 +87,16 @@ public class Estudiante {
         }
     
         else if (totalNotas() == 2) {
-            if (notaA.getUnidad().getFechaFin().anteriorA(notaB.getUnidad()) && 
-                notaA.getUnidad().getFechaFin().anteriorA(notaC.getUnidad())) {
+            if (notaA.getUnidad().anteriorA(notaB.getUnidad()) && 
+                notaA.getUnidad().anteriorA(notaC.getUnidad())) {
                 notaA = nota;
             }
-            else if (notaB.getUnidad().getFechaFin().anteriorA(notaA.getUnidad()) && 
-                    notaB.getUnidad().getFechaFin().anteriorA(notaC.getUnidad())) {
+            else if (notaB.getUnidad().anteriorA(notaA.getUnidad()) && 
+                    notaB.getUnidad().anteriorA(notaC.getUnidad())) {
                 notaB = nota;
             }
-            else if (notaC.getUnidad().getFechaFin().anteriorA(notaA.getUnidad()) && 
-                    notaC.getUnidad().getFechaFin().anteriorA(notaB.getUnidad())) {
+            else if (notaC.getUnidad().anteriorA(notaA.getUnidad()) && 
+                    notaC.getUnidad().anteriorA(notaB.getUnidad())) {
                 notaC = nota;
             }
             else {
@@ -103,16 +104,16 @@ public class Estudiante {
             }
         }
         else if (totalNotas() == 3) {
-            if (notaA.getUnidad().getFechaFin().anteriorA(notaB.getUnidad()) && 
-                notaA.getUnidad().getFechaFin().anteriorA(notaC.getUnidad())) {
+            if (notaA.getUnidad().anteriorA(notaB.getUnidad()) && 
+                notaA.getUnidad().anteriorA(notaC.getUnidad())) {
                 notaA = nota;
             }
-            else if (notaB.getUnidad().getFechaFin().anteriorA(notaA.getUnidad()) && 
-                    notaB.getUnidad().getFechaFin().anteriorA(notaC.getUnidad())) {
+            else if (notaB.getUnidad().anteriorA(notaA.getUnidad()) && 
+                    notaB.getUnidad().anteriorA(notaC.getUnidad())) {
                 notaB = nota;
             }
-            else if (notaC.getUnidad().getFechaFin().anteriorA(notaA.getUnidad()) && 
-                    notaC.getUnidad().getFechaFin().anteriorA(notaB.getUnidad())) {
+            else if (notaC.getUnidad().anteriorA(notaA.getUnidad()) && 
+                    notaC.getUnidad().anteriorA(notaB.getUnidad())) {
                 notaC = nota;
             }
             else {
@@ -141,17 +142,16 @@ public class Estudiante {
        }
        
        return notaFinalEstudiante;
-
     }
 
     /**
      * Representación textual del estudiante (ver enunciado)
      */
     public String toString() {
-        String str = String.format(nombre + "\n" + "*".repeat(80) + "\n");
+        String str = "";
+        str += nombre + "\n" + "*".repeat(80) + "\n";
         if (calcularNotaFinalEstudiante() == 3) {
-            str += ;
-            str += notaA.toString() + notaB.toString() + notaC.toString();
+            str += notaA.toString() + notaB.toString() + notaC.toString() + "=".repeat(70);
         }
         else {
             str = "No es posible calcular su nota final de evaluación, " +
@@ -166,7 +166,6 @@ public class Estudiante {
      */
     public void print() {
         System.out.println(this.toString());
-
     }
 
     

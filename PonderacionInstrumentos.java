@@ -5,6 +5,7 @@
  * @author (Aimar Urquizu Diego)
  */
 public class PonderacionInstrumentos {
+    
     private int controles;
     private int actividades;
     private int proyectos;
@@ -76,6 +77,5 @@ public class PonderacionInstrumentos {
      */
     public void print() {
         System.out.println(this.toString());
-
     }
 }

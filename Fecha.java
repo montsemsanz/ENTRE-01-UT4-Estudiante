@@ -7,6 +7,7 @@ import java.time.format.DateTimeFormatter;
  * @author (Aimar Urquizu Diego)
  */
 public class Fecha {
+    
     private LocalDate fecha;
 
     /**
@@ -44,6 +45,7 @@ public class Fecha {
     public boolean antesQue(Fecha fecha) {
         LocalDate otra = LocalDate.of(fecha.getYear(),
                 fecha.getMes(), fecha.getDia());
+                
         return this.fecha.isBefore(otra);
     }
 
@@ -52,7 +54,6 @@ public class Fecha {
      */
     public String toString() {
         return this.fecha.format(DateTimeFormatter.ofPattern("dd/MM/yyyy"));
-
     }
 
     

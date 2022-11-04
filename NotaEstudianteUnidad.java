@@ -5,6 +5,7 @@
  * @author (Aimar Urquizu Diego)
  */
 public class NotaEstudianteUnidad {
+    
     private UnidadTrabajo unidad;
     private double notaControles;
     private double notaActividades;
@@ -90,7 +91,6 @@ public class NotaEstudianteUnidad {
             (getNotaProyectos() * ponderacion.getProyectos() / 100);
             
         return calcularNotaUnidad;
-
     }
 
     /**
@@ -102,8 +102,8 @@ public class NotaEstudianteUnidad {
                     "Controles: %6.2f", getNotaControles() + 
                     "      " + "Actividades: %6.2f", getNotaActividades() + 
                     "      " + "Proyectos: %6.2f", getNotaProyectos() + 
-                    "\nNota final obtenida en Unidad de Trabajo: %6.2f", 
-                    calcularNotaUnidad());
+                    "\nNota final obtenida en Unidad de Trabajo: %6.2f\n", 
+                    calcularNotaUnidad()) + "-".repeat(80);
 
         return str1;
     }
@@ -113,7 +113,6 @@ public class NotaEstudianteUnidad {
      */
     public void print() {
         System.out.println(this.toString());
-
     }
 
 

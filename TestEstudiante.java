@@ -49,7 +49,5 @@ public class TestEstudiante {
         nombreEstudiante.print();
         
         clonUT.print();// Imprimir clon en pantalla
-        
-
     }
 }
