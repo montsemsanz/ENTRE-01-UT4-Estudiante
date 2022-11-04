@@ -137,7 +137,6 @@ public class Estudiante {
      */
     public void print() {
         System.out.println(this.toString());
-
     }
 
 }
