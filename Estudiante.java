@@ -42,11 +42,18 @@ public class Estudiante {
      * Devuelve la cantidad de notas registradas hasta el momento
      * (0, 1, 2 o 3)
      */
-    public int totalNotas() {
-        //TODO
-        
-        
-        return 0;
+    public int totalNotas() {     
+        int notasTotal = 0;
+        if(this.notaA != null){
+            notasTotal++;
+        }
+        if(this.notaB != null){
+            notasTotal++;
+        }
+        if(this.notaC != null){
+            notasTotal++;
+        }
+        return notasTotal;
     }
 
     /**
@@ -62,7 +69,6 @@ public class Estudiante {
 
     }
 
-   
     /**
      * Calcula y devuelve la nota final obtenida por el estudiante en la
      * evaluación que dependerá de la ponderación de cada UT
@@ -70,21 +76,18 @@ public class Estudiante {
      * objetos NotaEstudianteUnidad que se necesitan para calcular la nota final
      */
     public double calcularNotaFinalEstudiante() {
-       //TODO
-       
-       
-       return 0;
+        //TODO
 
+        return 0;
     }
 
     /**
      * Representación textual del estudiante (ver enunciado)
      */
     public String toString() {
-       //TODO
-       
-       
-       return null;
+        //TODO
+
+        return null;
     }
 
     /**
@@ -94,7 +97,5 @@ public class Estudiante {
         System.out.println(this.toString());
 
     }
-
-    
 
 }
