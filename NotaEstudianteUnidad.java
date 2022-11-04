@@ -99,16 +99,14 @@ public class NotaEstudianteUnidad {
 
     }
 
-        /**
+    /**
      * Representación textual del objeto (ver enunciado)
      */
     public String toString() {
-        String str = String.format("Controles: %3.2f    Actividades clase: %4.2f    Proyectos: %3.2f  \nNota final obtenida en Unidad de Trabajo: %6.2f\n", 
-                        getNotaControles(), getNotaActividades(), getNotaProyectos(), calcularNotaUnidad());     
+        String str = String.format("Controles: %3.2f    Actividades clase: %3.2f    Proyectos: %3.2f  \nNota final obtenida en Unidad de Trabajo: %4.2f\n", 
+                getNotaControles(), getNotaActividades(), getNotaProyectos(), calcularNotaUnidad());     
 
-        
         return unidad.toString() + str + "-".repeat(80);
-        
         //como no puedo concatenar varios string.format()... uno el anterior toString al final en el return
     }
 
@@ -117,19 +115,6 @@ public class NotaEstudianteUnidad {
      */
     public void print() {
         System.out.println(this.toString());
-        
-        // System.out.printf("Controles: %3.2f\n", getNotaControles());
-
-        // System.out.printf("Actividades clase: %4.2f\n", getNotaActividades());
-        
-        // System.out.printf("Proyectos:  %3.2f\n" , getNotaProyectos());
-        
-        // System.out.printf("Nota final obtenida en Unidad de Trabajo %6.2f\n" , calcularNotaUnidad());
-        
-        // System.out.println("-".repeat(80));
-        
-        //funciona pero no valido porque este metodo es intocable
-        
     }
 
 }

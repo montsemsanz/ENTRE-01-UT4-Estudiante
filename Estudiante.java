@@ -89,12 +89,12 @@ public class Estudiante {
      * objetos NotaEstudianteUnidad que se necesitan para calcular la nota final
      */
     public double calcularNotaFinalEstudiante() {
-        double A = notaA.calcularNotaUnidad() * notaA.getUnidad().getPesoUnidad();
+        double A = notaA.calcularNotaUnidad() * notaA.getUnidad().getPesoUnidad() /10; //Rebajar la ponderacion de 100 a 10
         
-        double B = notaB.calcularNotaUnidad() * notaB.getUnidad().getPesoUnidad();
+        double B = notaB.calcularNotaUnidad() * notaB.getUnidad().getPesoUnidad() /10;
         
-        double C = notaC.calcularNotaUnidad() * notaC.getUnidad().getPesoUnidad();
-         //le doy sus notas respectivas a la UT (1 2 Y 3
+        double C = notaC.calcularNotaUnidad() * notaC.getUnidad().getPesoUnidad() /10;
+         //le doy sus notas respectivas a la UT (1 2 Y 3)
         double notaFinal = 0;
         
         if(totalNotas()==3){
@@ -122,12 +122,13 @@ public class Estudiante {
         
         String str = String.format("%-40s\n" + "*".repeat(80) , nombre); //Saca el nombreEstudiante
         
-        String str2 = String.format("Nota final de evaluacion: %%3.2f", calcularNotaFinalEstudiante());
+        String str2 = String.format("\nNota final de evaluacion: %3.2f\n", calcularNotaFinalEstudiante());
         
-        String str3 = String.format("Copia de la ultima UT añadida: %-40s" , notaA.getUnidad().clonar().toString()); //Estoy intentando llegar al toString de la clase UT
+        String str3 = String.format("\nCopia de la ultima UT añadida: %-40s\n" , notaA.getUnidad().clonar().toString()); //Estoy intentando llegar al toString de la clase UT
         
-        return str + notaA.toString() +  notaB.toString() + notaC.toString() 
-        + "*".repeat(80) + str2 + "=".repeat(80) + str3; //str2 es para el bloque de nota final y el str3 para la copia creada antes
+        
+        return str + "\n" + notaA.toString() + "\n" + notaB.toString() + "\n"+ notaC.toString() 
+         + str2 + "=".repeat(80) + str3; //str2 es para el bloque de nota final y el str3 para la copia creada antes
         
     }
 
