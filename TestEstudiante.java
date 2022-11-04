@@ -46,9 +46,9 @@ public class TestEstudiante {
         UnidadTrabajo clonUT = newUT3.clonar();
         
         // La informacion del estudiante en pantalla
-        System.out.println(nombreEstudiante.toString());
+        nombreEstudiante.print();
         
-        System.out.println(clonUT.toString());// Imprimir clon en pantalla
+        clonUT.print();// Imprimir clon en pantalla
         
 
     }

@@ -98,7 +98,8 @@ public class NotaEstudianteUnidad {
      */
     public String toString() {
         // Necesario comprobar al acabar la clase
-        String str1 = String.format("Controles: %6.2f", getNotaControles() + 
+        String str1 = String.format(unidad.toString() + 
+                    "Controles: %6.2f", getNotaControles() + 
                     "      " + "Actividades: %6.2f", getNotaActividades() + 
                     "      " + "Proyectos: %6.2f", getNotaProyectos() + 
                     "\nNota final obtenida en Unidad de Trabajo: %6.2f", 

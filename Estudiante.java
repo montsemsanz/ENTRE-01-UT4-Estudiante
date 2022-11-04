@@ -67,10 +67,58 @@ public class Estudiante {
      * Pista!! En este método se utilizará el método totalNotas()
      */
     public void registrarNotaUnidad(NotaEstudianteUnidad nota) {
-        //
-        if (notaA.getUnidad().anteriorA(notaB.getUnidad())) {
-            ;
+        if (totalNotas() == 1) {
+            if (notaA.getUnidad().getFechaFin().anteriorA(notaB.getUnidad()) && 
+                notaA.getUnidad().getFechaFin().anteriorA(notaC.getUnidad())) {
+                notaA = nota;
+            }
+            else if (notaB.getUnidad().getFechaFin().anteriorA(notaA.getUnidad()) && 
+                    notaB.getUnidad().getFechaFin().anteriorA(notaC.getUnidad())) {
+                notaB = nota;
+            }
+            else if (notaC.getUnidad().getFechaFin().anteriorA(notaA.getUnidad()) && 
+                        notaC.getUnidad().getFechaFin().anteriorA(notaB.getUnidad())) {
+                notaC = nota;
+            }
+            else {
+                nota = null;
+            }
         }
+    
+        else if (totalNotas() == 2) {
+            if (notaA.getUnidad().getFechaFin().anteriorA(notaB.getUnidad()) && 
+                notaA.getUnidad().getFechaFin().anteriorA(notaC.getUnidad())) {
+                notaA = nota;
+            }
+            else if (notaB.getUnidad().getFechaFin().anteriorA(notaA.getUnidad()) && 
+                    notaB.getUnidad().getFechaFin().anteriorA(notaC.getUnidad())) {
+                notaB = nota;
+            }
+            else if (notaC.getUnidad().getFechaFin().anteriorA(notaA.getUnidad()) && 
+                    notaC.getUnidad().getFechaFin().anteriorA(notaB.getUnidad())) {
+                notaC = nota;
+            }
+            else {
+                        nota = null;
+            }
+        }
+        else if (totalNotas() == 3) {
+            if (notaA.getUnidad().getFechaFin().anteriorA(notaB.getUnidad()) && 
+                notaA.getUnidad().getFechaFin().anteriorA(notaC.getUnidad())) {
+                notaA = nota;
+            }
+            else if (notaB.getUnidad().getFechaFin().anteriorA(notaA.getUnidad()) && 
+                    notaB.getUnidad().getFechaFin().anteriorA(notaC.getUnidad())) {
+                notaB = nota;
+            }
+            else if (notaC.getUnidad().getFechaFin().anteriorA(notaA.getUnidad()) && 
+                    notaC.getUnidad().getFechaFin().anteriorA(notaB.getUnidad())) {
+                notaC = nota;
+            }
+            else {
+                nota = null;
+            }
+        }  
     }
 
     /**
@@ -102,6 +150,7 @@ public class Estudiante {
     public String toString() {
         String str = String.format(nombre + "\n" + "*".repeat(80) + "\n");
         if (calcularNotaFinalEstudiante() == 3) {
+            str += ;
             str += notaA.toString() + notaB.toString() + notaC.toString();
         }
         else {
