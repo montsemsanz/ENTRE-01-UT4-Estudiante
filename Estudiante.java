@@ -76,18 +76,32 @@ public class Estudiante {
      * objetos NotaEstudianteUnidad que se necesitan para calcular la nota final
      */
     public double calcularNotaFinalEstudiante() {
-        //TODO
-
-        return 0;
+        double totalA = (notaA.calcularNotaUnidad() * notaA.getUnidad().getPesoUnidad() / 100);
+        double totalB = (notaB.calcularNotaUnidad() * notaB.getUnidad().getPesoUnidad() / 100);
+        double totalC = (notaC.calcularNotaUnidad() * notaC.getUnidad().getPesoUnidad() / 100);
+        double notaTotal = totalA + totalB + totalC;
+        if(totalNotas() != 3){
+            return -1;
+        }
+        else{
+            return notaTotal;
+        }
     }
 
     /**
      * Representación textual del estudiante (ver enunciado)
      */
     public String toString() {
-        //TODO
-
-        return null;
+        System.out.println(nombre);
+        System.out.println("*".repeat(80));
+        if(calcularNotaFinalEstudiante() == -1){
+            return "No es posible calcular su nota final de evaluación, faltan notas por registrar.";
+        }
+        else{
+            return notaA.toString() + "\n" + notaB.toString() + "\n" + 
+                notaC.toString() + "\n" + "Nota final de evaluación: " + 
+                calcularNotaFinalEstudiante() + "\n" + "=".repeat(80);
+        }
     }
 
     /**
