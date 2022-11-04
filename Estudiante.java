@@ -81,11 +81,20 @@ public class Estudiante {
      * objetos NotaEstudianteUnidad que se necesitan para calcular la nota final
      */
     public double calcularNotaFinalEstudiante() {
-       double notaFinal = calcularNotaUnidad();
+       double nota1 = 0.0;
+       double nota2 = 0.0;
+       double nota3 = 0.0;
+       if(totalNotas() == 3){
+           nota1 = calcularNotaFinalEstudiante();
+           nota2 = calcularNotaFinalEstudiante();
+           nota3 = calcularNotaFinalEstudiante();
+        return calcularNotaFinalEstudiante();
+       }
        
+       else {
+           return -1;
+       }
        
-       
-       return 0;
 
     }
 
