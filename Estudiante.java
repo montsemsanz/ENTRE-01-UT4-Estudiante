@@ -42,10 +42,17 @@ public class Estudiante {
      * (0, 1, 2 o 3)
      */
     public int totalNotas() {
-        //TODO
-        
-        
-        return 0;
+        int notasObtenidas = 0;
+        if (notaA != null) {
+            notasObtenidas++;
+        }
+        if (notaB != null) {
+            notasObtenidas++;
+        }
+        if (notaC != null) {
+            notasObtenidas++;
+        }
+        return notasObtenidas;
     }
 
     /**
@@ -57,7 +64,12 @@ public class Estudiante {
      * Pista!! En este método se utilizará el método totalNotas()
      */
     public void registrarNotaUnidad(NotaEstudianteUnidad nota) {
-        //TODO
+        if(totalNotas() == 0){
+            notaA = nota;
+        }
+        else if (totalNotas() == 1){
+            notaB = nota;
+        }
 
     }
 
@@ -69,21 +81,39 @@ public class Estudiante {
      * objetos NotaEstudianteUnidad que se necesitan para calcular la nota final
      */
     public double calcularNotaFinalEstudiante() {
-       //TODO
+       double sinNotaA;
+       double sinNotaB;
+       double sinNotaC;
        
-       
-       return 0;
-
+       if (totalNotas() != 3){
+           return -1;
+       }
+       else {   
+           return notaA.calcularNotaUnidad() * (notaA.getUnidad().getPesoUnidad()/100) + notaB.calcularNotaUnidad() * (notaB.getUnidad().getPesoUnidad()/100) + notaC.calcularNotaUnidad() * (notaC.getUnidad().getPesoUnidad()/100);
+       }
     }
 
     /**
      * Representación textual del estudiante (ver enunciado)
      */
     public String toString() {
-       //TODO
-       
-       
-       return null;
+       System.out.println(nombre);
+       System.out.println("*".repeat(80));
+       String str = "";
+       if(calcularNotaFinalEstudiante() == -1){
+           str = "No es posible calcular su nota final de evaluación, faltan notas por registrar";
+       }
+       else{
+           str += notaA.getUnidad().toString() + "\n";
+           str += notaA.toString() + "\n";
+           str += notaB.getUnidad().toString() + "\n";
+           str += notaB.toString() + "\n";
+           str += notaC.getUnidad().toString() + "\n";
+           str += notaC.toString() + "\n";
+           str += String.format("Nota final de evaluación: %6.2f", calcularNotaFinalEstudiante()) + "\n";
+           str += "=".repeat(80) + "\n";
+       }
+       return str;
     }
 
     /**
