@@ -109,13 +109,9 @@ public class Estudiante {
             return -1;
         }
         else {
-            UnidadTrabajo unidadA = notaA.getUnidad();
-            UnidadTrabajo unidadB = notaB.getUnidad();
-            UnidadTrabajo unidadC = notaC.getUnidad();
-
-            return notaA.calcularNotaUnidad() * unidadA.getPesoUnidad() / 100 +
-            notaB.calcularNotaUnidad() * unidadB.getPesoUnidad() / 100 +
-            notaC.calcularNotaUnidad() * unidadC.getPesoUnidad() / 100; 
+            return notaA.calcularNotaUnidad() * notaA.getUnidad().getPesoUnidad() / 100 +
+            notaB.calcularNotaUnidad() * notaB.getUnidad().getPesoUnidad() / 100 +
+            notaC.calcularNotaUnidad() * notaC.getUnidad().getPesoUnidad() / 100; 
         }
     }
 
