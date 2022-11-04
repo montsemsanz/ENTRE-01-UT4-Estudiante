@@ -43,15 +43,15 @@ public class Estudiante {
      */
     public int totalNotas() {
         int total = 0;
-        
+
         if (notaA != null) {
             total++;
         }
-        
+
         if (notaB != null) {
             total++;
         }
-        
+
         if (notaC != null) {
             total++;
         }
@@ -68,20 +68,17 @@ public class Estudiante {
      * Pista!! En este método se utilizará el método totalNotas()
      */
     public void registrarNotaUnidad(NotaEstudianteUnidad nota) {
-        if (totalNotas() == 1) {
+        if (totalNotas() == 0) {
             notaA = nota;
         }
-        
-        else if (totalNotas() == 2) {
+
+        else if (totalNotas() == 1) {
             UnidadTrabajo unidadA = notaA.getUnidad();
             UnidadTrabajo unidadNota = nota.getUnidad();
             Fecha fechaA = unidadA.getFechaFin();
             Fecha fechaNota = unidadNota.getFechaFin();
-            
-            if (notaA == null) {
-                notaA = nota;
-            }
-            else if (fechaA.antesQue(fechaNota)) {
+
+            if (fechaA.antesQue(fechaNota)) {
                 notaB = nota;
             }
             else {
@@ -89,48 +86,28 @@ public class Estudiante {
                 notaA = nota;
             }
         }
-        
-        else {
-            if (notaA == null) {
+
+        else if (totalNotas() == 2){
+            UnidadTrabajo unidadA = notaA.getUnidad();
+            UnidadTrabajo unidadB = notaB.getUnidad();
+            UnidadTrabajo unidadNota = nota.getUnidad();
+            Fecha fechaA = unidadA.getFechaFin();
+            Fecha fechaB = unidadB.getFechaFin();
+            Fecha fechaNota = unidadNota.getFechaFin();
+
+            if (fechaNota.antesQue(fechaA)) {
+                notaC = notaB;
+                notaB = notaA;
                 notaA = nota;
             }
-            else if (notaB == null) {
-                UnidadTrabajo unidadA = notaA.getUnidad();
-                UnidadTrabajo unidadNota = nota.getUnidad();
-                Fecha fechaA = unidadA.getFechaFin();
-                Fecha fechaNota = unidadNota.getFechaFin();
-                
-                if (fechaA.antesQue(fechaNota)) {
-                    notaB = nota;
-                }
-                else {
-                    notaB = notaA;
-                    notaA = nota;
-                }
+            else if (fechaNota.antesQue(fechaB)) {
+                notaC = notaB;
+                notaB = nota;
             }
             else {
-                UnidadTrabajo unidadA = notaA.getUnidad();
-                UnidadTrabajo unidadB = notaB.getUnidad();
-                UnidadTrabajo unidadNota = nota.getUnidad();
-                Fecha fechaA = unidadA.getFechaFin();
-                Fecha fechaB = unidadB.getFechaFin();
-                Fecha fechaNota = unidadNota.getFechaFin();
-                
-                if (fechaNota.antesQue(fechaA)) {
-                    notaC = notaB;
-                    notaB = notaA;
-                    notaA = nota;
-                }
-                else if (fechaNota.antesQue(fechaB)) {
-                    notaC = notaB;
-                    notaB = nota;
-                }
-                else {
-                    notaC = nota;
-                }
+                notaC = nota;
             }
         }
-
     }
 
     /**
@@ -147,20 +124,27 @@ public class Estudiante {
             UnidadTrabajo unidadA = notaA.getUnidad();
             UnidadTrabajo unidadB = notaB.getUnidad();
             UnidadTrabajo unidadC = notaC.getUnidad();
-           
+
             return notaA.calcularNotaUnidad() * unidadA.getPesoUnidad() / 100 +
-                   notaB.calcularNotaUnidad() * unidadB.getPesoUnidad() / 100 +
-                   notaC.calcularNotaUnidad() * unidadC.getPesoUnidad() / 100; 
+            notaB.calcularNotaUnidad() * unidadB.getPesoUnidad() / 100 +
+            notaC.calcularNotaUnidad() * unidadC.getPesoUnidad() / 100; 
         }
     }
-    
+
     /**
      * Representación textual del estudiante (ver enunciado)
      */
     public String toString() {
-        String str = String.format(nombre + "\n" + "*".repeat(80));
+        String str = String.format(nombre + "\n" + "*".repeat(80) + "\n");
         if (totalNotas() != 3) {
-            str += "\nNo es posible calcular su nota final de evaluación, faltan notas por registrar";
+            str += "No es posible calcular su nota final de evaluación, faltan notas por registrar";
+        }
+        else {
+            str +=notaA.getUnidad().toString() + notaA.toString() + 
+                  notaB.getUnidad().toString() + notaB.toString() +
+                  notaC.getUnidad().toString() + notaC.toString();  
+            str += String.format("Nota final de evaluación: %6.2f" ,
+                   calcularNotaFinalEstudiante());
         }
         return str;
     }
@@ -172,6 +156,5 @@ public class Estudiante {
         System.out.println(this.toString());
 
     }
-
 
 }
