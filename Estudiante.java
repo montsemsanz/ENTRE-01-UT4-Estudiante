@@ -53,8 +53,7 @@ public class Estudiante {
         if (notaC != null){
             notasRegistradas++;
         }
-        
-        
+
         return notasRegistradas;
     }
 
@@ -67,16 +66,9 @@ public class Estudiante {
      * Pista!! En este método se utilizará el método totalNotas()
      */
     public void registrarNotaUnidad(NotaEstudianteUnidad nota) {
-        if(totalNotas() == 0){
-            notaA = nota;
-        }
-        else if (totalNotas() == 1){
-            notaB = nota;
-        }
-
+       //TODO
     }
 
-   
     /**
      * Calcula y devuelve la nota final obtenida por el estudiante en la
      * evaluación que dependerá de la ponderación de cada UT
@@ -84,17 +76,17 @@ public class Estudiante {
      * objetos NotaEstudianteUnidad que se necesitan para calcular la nota final
      */
     public double calcularNotaFinalEstudiante() {
-       double notA;
-       double notB;
-       double notC;
-       if(totalNotas() != 3){
-           return -1;
-       }
-       else {
-           notA = (notaA.getUnidad().getPesoUnidad() * notaA.calcularNotaUnidad() / 100);
-           notB = (notaB.getUnidad().getPesoUnidad() * notaB.calcularNotaUnidad() / 100);
-           notC = (notaC.getUnidad().getPesoUnidad() * notaC.calcularNotaUnidad() / 100);
-       }
+        double notA;
+        double notB;
+        double notC;
+        if(totalNotas() != 3){
+            return -1;
+        }
+        else {
+            notA = (notaA.getUnidad().getPesoUnidad() * notaA.calcularNotaUnidad() / 100);
+            notB = (notaB.getUnidad().getPesoUnidad() * notaB.calcularNotaUnidad() / 100);
+            notC = (notaC.getUnidad().getPesoUnidad() * notaC.calcularNotaUnidad() / 100);
+        }
         return notA + notB + notC;
     }
 
@@ -102,12 +94,24 @@ public class Estudiante {
      * Representación textual del estudiante (ver enunciado)
      */
     public String toString() {
-       //TODO
-       
-       
-       return null;
-    }
+        String str = "";
+        str += nombre + "\n";
+        str += "-".repeat(80) + "\n";
+        if(calcularNotaFinalEstudiante() == -1){
+            str += nombre + "\n" +
+            "*".repeat(80) + "No es posible calcula su nota final de evaluacion, faltan notas por resgistras";
+        }
 
+        else {
+            str += notaA.getUnidad().toString() + notaB.getUnidad().toString() + notaC.getUnidad().toString();
+            str += ("Nota final de evaluacion: %6.2f" + calcularNotaFinalEstudiante() + "\n");
+            str += "\n" + "=".repeat(80);
+
+        }
+
+        return str;
+
+    }
     /**
      * Este método se ha incluido solo para testear la clase más fácilmente
      */
@@ -116,6 +120,5 @@ public class Estudiante {
 
     }
 
-    
 
 }

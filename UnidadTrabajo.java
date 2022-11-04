@@ -105,10 +105,10 @@ public class UnidadTrabajo {
      * "Copia de " + nombre de la UT actual
      * Se clonan también los objetos que incluya
      */
-    public UnidadTrabajo clonar(UnidadTrabajo queUnidad) {
-        UnidadTrabajo unClon = queUnidad;
-        unClon.setNombre("Copia de " + unClon.getNombre());
-        return unClon;
+    public UnidadTrabajo clonar() {
+        String nombreCambiado = ("Copia de " + this.nombre);
+        UnidadTrabajo nuevoClon = new UnidadTrabajo ( nombreCambiado, fechaFin, pesoUnidad, ponderacion);
+        return nuevoClon;
     }
 
     /**
