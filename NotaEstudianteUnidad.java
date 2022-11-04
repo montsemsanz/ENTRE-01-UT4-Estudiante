@@ -103,7 +103,7 @@ public class NotaEstudianteUnidad {
     public String toString() {
         String lineaFormateada = "";
         lineaFormateada += unidad.toString();
-        lineaFormateada += String.format("Controles:%6.2f \n Actividades clase:%6.2f \n Proyectos:%6.2f\n Nota final obtenida en Unidad de Trabajo:%6.2f"
+        lineaFormateada += String.format("Controles:%6.2f      Actividades clase:%6.2f     Proyectos:%6.2f\n Nota final obtenida en Unidad de Trabajo:%6.2f"
         ,notaControles, notaActividades,notaProyectos, calcularNotaUnidad(), "-".repeat(80) );
         return lineaFormateada; 
     }

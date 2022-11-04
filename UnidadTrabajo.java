@@ -25,7 +25,7 @@ public class UnidadTrabajo {
 
     /**
      * Constructor 2
-     */
+         */
     public UnidadTrabajo(String nombre, Fecha fechaFin, int peso,
     PonderacionInstrumentos ponderacion) {
         this.nombre = nombre;
