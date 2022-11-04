@@ -47,7 +47,7 @@ public class Estudiante {
     public int totalNotas() {
         int totalCantidadNotas = 0;
         
-        if(this.notaA != null){
+        if(this.notaA != null){ 
             totalCantidadNotas += 1;
         }
         
@@ -71,22 +71,13 @@ public class Estudiante {
      * Pista!! En este método se utilizará el método totalNotas()
      */
      public void registrarNotaUnidad(NotaEstudianteUnidad nota) {   
-         // switch (totalNotas()){
-        // case 0: notaA = nota;
-                // break;
-        // case 1: notaB = nota;
-                // break;
-        // case 2: notaC = nota;
-                // break;
-        // }
-    
-        if(this.notaA == null){
-            this.notaA = nota;
-        }
-        else if(this.notaA != null && this.notaB == null){
-            this.notaB = nota;
-        }else if(this.notaA != null && this.notaB != null){
-            this.notaC = nota;
+         switch (totalNotas()){
+        case 0: notaA = nota;
+                break;
+        case 1: notaB = nota;
+                break;
+        case 2: notaC = nota;
+                break;
         }
     
     }
@@ -98,6 +89,10 @@ public class Estudiante {
      * objetos NotaEstudianteUnidad que se necesitan para calcular la nota final
      */
     public double calcularNotaFinalEstudiante() {
+        double notaAUnidadPonderada = 0;
+       if(notaA != null){
+        notaAUnidadPonderada = this.notaA.calcularNotaUnidad() * notaA.getUnidad().getPesoUnidad() / 10;
+        }
         double notaBUnidadPonderada = 0;
        if(notaB != null){
         notaBUnidadPonderada = this.notaB.calcularNotaUnidad() * notaB.getUnidad().getPesoUnidad() / 10;
@@ -107,12 +102,6 @@ public class Estudiante {
          notaCUnidadPonderada = this.notaC.calcularNotaUnidad() * notaC.getUnidad().getPesoUnidad() / 10;
         }
         
-    
-        
-       double notaAUnidadPonderada = this.notaA.calcularNotaUnidad() * notaA.getUnidad().getPesoUnidad() / 10;
-       // double notaBUnidadPonderada = this.notaB.calcularNotaUnidad() * notaB.getUnidad().getPesoUnidad() / 10;
-       // double notaCUnidadPonderada = this.notaC.calcularNotaUnidad() * notaC.getUnidad().getPesoUnidad() / 10;
-       
        double notaFinalEstudiante = 0;
        
        if(totalNotas() < 3){

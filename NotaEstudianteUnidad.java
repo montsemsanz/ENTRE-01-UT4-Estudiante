@@ -106,7 +106,7 @@ public class NotaEstudianteUnidad {
                                     getNotaControles(), getNotaActividades(), getNotaProyectos());
         String str2 = String.format("\nNota final obtenida en Unidad de Trabajo: %5.2f\n", calcularNotaUnidad());
         
-        return unidad.toString() + unidad.getPonderacion().toString() + str1 + str2 + "-".repeat(80);
+        return unidad.toString() + str1 + str2 + "-".repeat(80);
     }
 
     /**

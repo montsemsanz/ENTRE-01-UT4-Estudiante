@@ -116,7 +116,7 @@ public class UnidadTrabajo {
     public String toString() {
         String str = "Unidad de trabajo - " + this.nombre +
                 "\n\tFecha finalización: " + this.getFechaFin().toString() +
-                " | Peso UT: " + this.pesoUnidad + "%\n";
+                " | Peso UT: " + this.pesoUnidad + "%\n\n";
         str += this.ponderacion;
         return str;
     }
