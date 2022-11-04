@@ -67,18 +67,22 @@ public class Estudiante {
      * Pista!! En este método se utilizará el método totalNotas()
      */
     public void registrarNotaUnidad(NotaEstudianteUnidad nota) {
+        
+        String printNotaUnidad = "";
         notaA = nota;
-        System.out.println(nota.toString());
+        printNotaUnidad += notaA.toString();
         
-        notaB = nota;
-        if (notaB != notaA){
-            System.out.println(nota.toString());
-        }
         
-        notaC = nota;
-        if (notaC != notaB && notaC != notaA){
-            System.out.println(nota.toString());
-        }
+        // if (notaB != notaA){
+            // printNotaUnidad += notaB.toString();
+        // }
+        
+        // notaC = nota;
+        // if (notaC != notaB && notaC != notaA){
+            // printNotaUnidad += notaC.toString();
+        // }
+        
+        System.out.println(printNotaUnidad);
     }
 
     /**
@@ -89,23 +93,41 @@ public class Estudiante {
      */
     public double calcularNotaFinalEstudiante() {
         double notaFinal = 0;
+        
         if (notaA != null && notaB != null && notaC != null){
-            notaFinal += notaA.calcularNotaUnidad() / 10;
-            notaFinal += notaB.calcularNotaUnidad() / 35;
-            notaFinal += notaC.calcularNotaUnidad() / 55;
+            notaFinal += notaA.calcularNotaUnidad() * notaA.getUnidad().getPesoUnidad() / 100;
+            notaFinal += notaB.calcularNotaUnidad() * notaB.getUnidad().getPesoUnidad() / 100;
+            notaFinal += notaC.calcularNotaUnidad() * notaC.getUnidad().getPesoUnidad() / 100;
         }
-        if (notaA == null || notaB == null ||notaC == null){
+        
+        if (notaA == null || notaB == null || notaC == null){
             notaFinal = -1;
         }
 
         return notaFinal;
     }
+    
     /**
      * Representación textual del estudiante (ver enunciado)
      */
     public String toString() {
         String result = "";
-        result += "No es posible calcular su nota final de evaluación, faltan notas por registrar";
+        
+        if(notaA != null && notaB != null && notaC != null){
+            result += nombre;
+            result += "\n";
+            result += "*".repeat(80);
+            result += notaA.toString();
+        }
+        
+        if (notaA == null || notaB == null ||notaC == null){
+            result += nombre;
+            result += "\n";
+            result += "*".repeat(80);
+            result += "\n";
+            result += "No es posible calcular su nota final de evaluación, faltan notas por registrar";
+        }
+        
         return result;
     }
 
@@ -116,6 +138,4 @@ public class Estudiante {
         System.out.println(this.toString());
 
     }
-
-
 }
