@@ -17,7 +17,7 @@ public class TestEstudiante {
             String nombreEstudiante = "MOLINA HUARTE, Isabel";
             
         Estudiante estudiante = new Estudiante(nombreEstudiante);
-        estudiante.print();
+       // estudiante.print();
         
         
         // //-------CREAMOS LA UNIDAD DE TRABAJO 1-----------------------------------------------        
@@ -107,8 +107,8 @@ public class TestEstudiante {
         String imprimirUT2 = "";
         String imprimirUT3 = "";
         
-        switch(estudiante.totalNotas()){
-        case 0: nombreUT = "Interaccion de objetos. Estructura de control iterativa.";
+        if(estudiante.totalNotas() == 0){
+                nombreUT = "Interaccion de objetos. Estructura de control iterativa.";
                 dia = 25;
                 mes = 11;
                 año = 2022;
@@ -134,9 +134,11 @@ public class TestEstudiante {
                 
                 estudiante.registrarNotaUnidad(notasEstudianteUT1);
     
-               // notasEstudianteUT1.print();
+               //notasEstudianteUT1.print();
+        }
         
-        case 1: nombreUT = "Objetos y clases.";
+        if(estudiante.totalNotas() == 1){
+                nombreUT = "Objetos y clases.";
                 dia = 21;
                 mes = 9;
                 año = 2022;
@@ -164,9 +166,11 @@ public class TestEstudiante {
                 
                 estudiante.registrarNotaUnidad(notasEstudianteUT2);
         
-              //  notasEstudianteUT2.print();
-                
-        case 2: nombreUT = "Definición de una clase. Estuctura condicional.";
+               //notasEstudianteUT2.print();
+        }      
+        
+        if(estudiante.totalNotas() == 2){
+                nombreUT = "Definición de una clase. Estuctura condicional.";
                 dia = 16;
                 mes = 10;
                 año = 2022;
@@ -193,18 +197,22 @@ public class TestEstudiante {
                 notaUnidad = notasEstudianteUT3.calcularNotaUnidad();
                 
                 estudiante.registrarNotaUnidad(notasEstudianteUT3);
-               // notasEstudianteUT3.print();
+                //notasEstudianteUT3.print();
                 
                 UnidadTrabajo copiaUT3 = unidadTrabajo3.clonar();
-               // copiaUT3.print();
-                
-        default:    
-                    // notasEstudianteUT1.print();
-                    // notasEstudianteUT2.print();
-                    // notasEstudianteUT3.print();
-                    // copiaUT3.print();
-                    break;
-        }
+               copiaUT3.print();
+        }      
+           
+        estudiante.print();        
+        
+        //notasEstudianteUT1.print();
+        //notasEstudianteUT2.print();
+        //notasEstudianteUT3.print();
+        
+        // UnidadTrabajo copiaUT3 = unidadTrabajo3.clonar();
+        // copiaUT3.print();
+                  
+        
     
         //-------HACEMOS UNA COPIA DE UT3 -----------------------------------------------  
          // UnidadTrabajo copiaUT3 = unidadTrabajo3.clonar();
