@@ -73,12 +73,7 @@ public class Estudiante {
         }
 
         else if (totalNotas() == 1) {
-            UnidadTrabajo unidadA = notaA.getUnidad();
-            UnidadTrabajo unidadNota = nota.getUnidad();
-            Fecha fechaA = unidadA.getFechaFin();
-            Fecha fechaNota = unidadNota.getFechaFin();
-
-            if (fechaA.antesQue(fechaNota)) {
+            if (notaA.getUnidad().getFechaFin().antesQue(nota.getUnidad().getFechaFin())) {
                 notaB = nota;
             }
             else {
@@ -88,19 +83,12 @@ public class Estudiante {
         }
 
         else if (totalNotas() == 2){
-            UnidadTrabajo unidadA = notaA.getUnidad();
-            UnidadTrabajo unidadB = notaB.getUnidad();
-            UnidadTrabajo unidadNota = nota.getUnidad();
-            Fecha fechaA = unidadA.getFechaFin();
-            Fecha fechaB = unidadB.getFechaFin();
-            Fecha fechaNota = unidadNota.getFechaFin();
-
-            if (fechaNota.antesQue(fechaA)) {
+            if (nota.getUnidad().getFechaFin().antesQue(notaA.getUnidad().getFechaFin())) {
                 notaC = notaB;
                 notaB = notaA;
                 notaA = nota;
             }
-            else if (fechaNota.antesQue(fechaB)) {
+            else if (nota.getUnidad().getFechaFin().antesQue(notaB.getUnidad().getFechaFin())) {
                 notaC = notaB;
                 notaB = nota;
             }
