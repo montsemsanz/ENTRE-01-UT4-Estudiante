@@ -64,8 +64,8 @@ public class Estudiante {
      * Pista!! En este método se utilizará el método totalNotas()
      */
     public void registrarNotaUnidad(NotaEstudianteUnidad nota) {
-        //TODO
-
+        
+        
     }
 
    
@@ -76,21 +76,38 @@ public class Estudiante {
      * objetos NotaEstudianteUnidad que se necesitan para calcular la nota final
      */
     public double calcularNotaFinalEstudiante() {
-       //TODO
-       
-       
-       return 0;
-
+        double notaUltimaA;
+        double notaUltimaB;
+        double notaUltimaC;
+        if(totalNotas() != 3){
+            return -1;
+        }
+        else {
+            notaUltimaA = (notaA.getUnidad().getPesoUnidad() * notaA.calcularNotaUnidad() / 100);
+            notaUltimaB = (notaB.getUnidad().getPesoUnidad() * notaB.calcularNotaUnidad() / 100);
+            notaUltimaC = (notaC.getUnidad().getPesoUnidad() * notaC.calcularNotaUnidad() / 100);
+        }
+        return notaUltimaA + notaUltimaB + notaUltimaC;
     }
 
     /**
      * Representación textual del estudiante (ver enunciado)
      */
     public String toString() {
-       //TODO
-       
-       
-       return null;
+    String str = "";
+    str += nombre + "\n";
+    str += "-".repeat(80) + "\n";
+        if(calcularNotaFinalEstudiante() == -1){
+            str += nombre + "\n" +
+            "*".repeat(80) + "No es posible calcula su nota final de evaluacion, faltan notas por resgistras";
+        }
+        else {
+            str += notaA.getUnidad().toString() + notaB.getUnidad().toString() + notaC.getUnidad().toString();
+            str += ("Nota final de evaluacion: %6.2f" + calcularNotaFinalEstudiante() + "\n");
+            str += "\n" + "=".repeat(80);
+
+        }
+        return str;
     }
 
     /**
