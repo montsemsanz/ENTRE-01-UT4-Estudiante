@@ -17,11 +17,13 @@ public class UnidadTrabajo {
     public UnidadTrabajo(String nombre, int dia, int mes, int year, int peso,
     int controles, int actividades, int proyectos) {
         this.nombre = nombre;
-        this.fechaFin = new Fecha(dia,mes,year); //referencia a un metodo de la clase Fecga
+        this.fechaFin = new Fecha(dia,mes,year); //referencia a un metodo de la clase Fecha
         this.pesoUnidad = peso;
         this.ponderacion = new PonderacionInstrumentos(controles, actividades, proyectos);
-        //ATR tenga TipoDato una Clase(Server), para definir sus valores 
-        //creo el objeto-(¿metódo?) que necesite y pongo (si hay) los PARAM de la Clase Cliente
+        
+        //Como nuestro ATB "fechaFin" es TD ("Fecha"-una Clase) sus valores se dan de la siguiente forma:
+        
+        // ATB = new Constructor("String", int, int,...) 
 
     }
 
@@ -31,7 +33,7 @@ public class UnidadTrabajo {
     public UnidadTrabajo(String nombre, Fecha fechaFin, int peso,
     PonderacionInstrumentos ponderacion) {
         this.nombre = nombre;
-        this.fechaFin = fechaFin; //ATB fechaFin = Param de TD (Fecha) fechaFin
+        this.fechaFin = fechaFin; //Aqui al momento de llamar al metodo, te pedira que pases un objeto Fecha que ya tendra definido el (dia, mes y año) cuando se creo ese objeto
         this.pesoUnidad = peso;
         this.ponderacion = ponderacion;
     }

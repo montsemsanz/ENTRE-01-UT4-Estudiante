@@ -78,7 +78,7 @@ public class NotaEstudianteUnidad {
     public void setNotaProyectos(double notaProyectos) {
         this.notaProyectos = notaProyectos;
     }
-    //aki lo ya dado
+    
 
     /**
      * Calcula y devuelve la nota obtenida en la UT teniendo
@@ -88,11 +88,11 @@ public class NotaEstudianteUnidad {
 
         //Este metodo solo funciona si se mete 70% tal cual 70 y no 7.
 
-        int ponderacionControles = (unidad.getPonderacion().getControles())/10;
+        double ponderacionControles = (unidad.getPonderacion().getControles())/10;
 
-        int ponderacionActividades = (unidad.getPonderacion().getActividades())/10;
+        double ponderacionActividades = (unidad.getPonderacion().getActividades())/10;
 
-        int ponderacionProyectos = (unidad.getPonderacion().getProyectos())/10;
+        double ponderacionProyectos = (unidad.getPonderacion().getProyectos())/10;
 
         return ((notaControles * ponderacionControles + 
                 notaActividades * ponderacionActividades + notaProyectos * ponderacionProyectos)/10);
