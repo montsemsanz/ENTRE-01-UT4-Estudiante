@@ -67,8 +67,18 @@ public class Estudiante {
      * Pista!! En este método se utilizará el método totalNotas()
      */
     public void registrarNotaUnidad(NotaEstudianteUnidad nota) {
-        //TODO
-
+        notaA = nota;
+        System.out.println(nota.toString());
+        
+        notaB = nota;
+        if (notaB != notaA){
+            System.out.println(nota.toString());
+        }
+        
+        notaC = nota;
+        if (notaC != notaB && notaC != notaA){
+            System.out.println(nota.toString());
+        }
     }
 
     /**
@@ -78,9 +88,17 @@ public class Estudiante {
      * objetos NotaEstudianteUnidad que se necesitan para calcular la nota final
      */
     public double calcularNotaFinalEstudiante() {
-        //TODO
+        double notaFinal = 0;
+        if (notaA != null && notaB != null && notaC != null){
+            notaFinal += notaA.calcularNotaUnidad() / 10;
+            notaFinal += notaB.calcularNotaUnidad() / 35;
+            notaFinal += notaC.calcularNotaUnidad() / 55;
+        }
+        if (notaA == null || notaB == null ||notaC == null){
+            notaFinal = -1;
+        }
 
-        return 0;
+        return notaFinal;
     }
     /**
      * Representación textual del estudiante (ver enunciado)
