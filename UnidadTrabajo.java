@@ -112,9 +112,11 @@ public class UnidadTrabajo {
      */
     public UnidadTrabajo clonar() {
         String clonacion = "Copia de " + nombre;
+        UnidadTrabajo clonacionEntera = new UnidadTrabajo(nombre, fechaFin,
+        pesoUnidad, ponderacion);
          
          
-        return null;
+        return clonacionEntera;
     }
 
     /**

@@ -81,6 +81,7 @@ public class Estudiante {
      * objetos NotaEstudianteUnidad que se necesitan para calcular la nota final
      */
     public double calcularNotaFinalEstudiante() {
+       double notaFinal = calcularNotaUnidad();
        
        
        
@@ -92,9 +93,6 @@ public class Estudiante {
      * Representación textual del estudiante (ver enunciado)
      */
     public String toString() {
-       //TODO
-       
-       
        return null;
     }
 
