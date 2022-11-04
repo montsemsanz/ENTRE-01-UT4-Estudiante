@@ -108,36 +108,36 @@ public class Estudiante {
             return -1;
         }
         double notaFinal = 0.0;
-        
+
         notaFinal = notaA.calcularNotaUnidad() + notaB.calcularNotaUnidad() + notaC.calcularNotaUnidad();
         return notaFinal;
     }
-    
+
     /**
      * Representación textual del estudiante (ver enunciado)
      */
     public String toString() {
         String str = "";
-        
+
         str += getNombre();
         str += "*".repeat(80);
-        
+
         str += notaA.toString();
         str += "\n";
         str += notaB.toString();
         str += "\n";
         str += notaC.toString();
         str += "\n";
-        
-        // if(calcularNotaFinalEstudiante() < 1) {
-            // str += "No es posible calcular su nota final de evaluación, faltan notas por registrar";
-        // }
-        // else{
-            // str += String.format("Nota final de evaluación: %4.2f", calcularNotaFinalEstudiante());
-        // }
-        
+
+        if(calcularNotaFinalEstudiante() < 1) {
+            str += "No es posible calcular su nota final de evaluación, faltan notas por registrar";
+        }
+        else{
+            str += String.format("Nota final de evaluación: %4.2f", calcularNotaFinalEstudiante());
+        }
+
         str += "=".repeat(80) + "\n";
-        
+
         return str;
     }
 
@@ -148,6 +148,5 @@ public class Estudiante {
         System.out.println(this.toString());
 
     }
-
 
 }
