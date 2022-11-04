@@ -102,10 +102,11 @@ public class NotaEstudianteUnidad {
      * Representación textual del objeto (ver enunciado)
      */
     public String toString() {
-        
+        String str1 = String.format("Controles: %5.2f \tActividades clase: %5.2f \tProyectos: %5.2f",
+                                    getNotaControles(), getNotaActividades(), getNotaProyectos());
         String str2 = String.format("\nNota final obtenida en Unidad de Trabajo: %5.2f\n", calcularNotaUnidad());
         
-        return unidad.toString() + unidad.getPonderacion().toString() + str2 + "-".repeat(80);
+        return unidad.toString() + unidad.getPonderacion().toString() + str1 + str2 + "-".repeat(80);
     }
 
     /**
